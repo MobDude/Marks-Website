@@ -1,0 +1,15 @@
+/* comment*/
+body{
+    background-color: lightgray;
+
+}
+
+.text{
+    color: black;
+    margin-left: 2%;
+}
+
+p.text{
+    color: rgb(43, 43, 43);
+    margin-left: 2%;
+}

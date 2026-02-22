@@ -1,18 +1,28 @@
-# Marks-Website
+# Marks Personal Website
 
-**INTRODUCTION**
-Welcome to my personal website! This is where you'll find information about me, my coding projects, and more. I've created this space to share my journey, experiences, and projects with the world. While it's currently in its early stages, I plan to develop it into a valuable resource.
+Welcome to my personal website! This site showcases my projects, hobbies, and skills, while also serving as a space for me to practice web development.
 
-**FEATURES**
-As of now, my personal website is in its initial phase and includes the following features:
--A basic landing page
+---
 
-**FUTURE PLANS**
+## Features
+
+- About Me section with hobbies and interests
+- Projects section showcasing GitHub projects
+- Contact page with social media links
+- Clean layout
+
+## Future Plans
+
 I have big plans for this website, including:
--My coding projects 
--Information about me
--Personal Blog
--Better aesthetics
 
-**HOW TO USE**
-The site is currently not acctually live, so if you want to use it you will have to dowload and run the html file.
+- Adding more coding projects 
+- Expanding the "About Me" section
+- Improving the design and feel
+
+## How to Run Locally
+
+Right now the site is not actually hosted, so if you'd like to take a look at it, you will have to run it locally.
+
+1. Clone the repository
+2. Open website.html in your web browser.
+3. Enjoy exploring!

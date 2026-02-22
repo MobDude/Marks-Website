@@ -1,15 +1,103 @@
-/* comment*/
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body{
-    background-color: lightgray;
-
+    min-height: 100vh;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #C5B3ED, #DAEDB3);
+    background-attachment: fixed;
+    color: #333333;
+    padding: 20px;
 }
 
-.text{
-    color: black;
-    margin-left: 2%;
+header{
+    background: #333333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
 }
 
-p.text{
-    color: rgb(43, 43, 43);
-    margin-left: 2%;
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+ul {
+    margin-left: 20px;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+.about-section {
+    display: flex;
+    gap: 20px ;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.profile-pic {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text ul{
+    margin-left: 20px;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+a{
+    color: #333333;
+}
+
+hr{
+    margin: 20px 0;
+    border: 0;
+    height: 1px;
+    background: #333333;
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px ;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li {
+    margin-bottom: 10px;
+}
+
+.social-icons img{
+    vertical-align: middle;
+    margin-right: 8px;
 }

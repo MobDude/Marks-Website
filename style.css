@@ -1,14 +1,9 @@
-* {
+/*Global styles*/
+*{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 body{
@@ -20,31 +15,149 @@ body{
     padding: 20px;
 }
 
+ul{
+    margin-left: 20px;
+    list-style-position: inside;
+}
+
+a{
+    color: #333;
+    text-decoration: none;
+}
+
+/*Header*/
 header{
-    background: #333333;
+    background: rgba(51, 51, 51, 0.85);
+    backdrop-filter: blur(10px);
     color: white;
-    padding: 1rem;
-    text-align: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }
 
 nav a {
     color: white;
-    margin: 0 10px;
-    text-decoration: none;
+    position: relative;
+    font-weight: 500;
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: white;
+    transition: width 0.3s ease;
 }
 
-
-ul {
-    margin-left: 20px;
-    padding-left: 0;
-    list-style-position: inside;
+nav a:hover::after{
+    width: 100%;
 }
 
-.about-section {
+/*Hero Section*/
+.hero{
+    text-align: center;
+    margin: 60px 0px;
+    
+}
+
+.hero h1{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero p{
+    font-size: 1.2rem;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/*Cards*/
+.project-card{
+    background: rgba(250, 250, 250, 0.8);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.card{
+    background: rgba(250, 250, 250, 0.8);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.card:hover, .project-card:hover{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    transition: all 0.2s ease;
+}
+
+.card h2, .project-card h2{
+    margin-bottom: 10px;
+}
+
+.card p, .project-card p{
+    margin-bottom: 15px;
+}
+
+/*Reusable button style*/
+.button-link{
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.button-link:hover{
+    background: #333;
+    color: white;
+}
+
+/*layout sections*/
+.nav-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.currently{
+    margin: 60px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: rgba(250, 250, 250, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/*About and contact*/
+.about-section, .contact-info{
     display: flex;
     gap: 20px ;
     align-items: flex-start;
@@ -56,35 +169,6 @@ ul {
     width: 200px;
     height: auto;
     border-radius: 10px;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text ul{
-    margin-left: 20px;
-    padding-left: 0;
-    list-style-position: inside;
-}
-
-a{
-    color: #333333;
-}
-
-hr{
-    margin: 20px 0;
-    border: 0;
-    height: 1px;
-    background: #333333;
-}
-
-.contact-info {
-    display: flex;
-    gap: 20px ;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-top: 20px;
 }
 
 .social-icons {
@@ -100,4 +184,12 @@ hr{
 .social-icons img{
     vertical-align: middle;
     margin-right: 8px;
+}
+
+/*divider*/
+hr{
+    margin: 20px 0;
+    border: 0;
+    height: 1px;
+    background: #333333;
 }

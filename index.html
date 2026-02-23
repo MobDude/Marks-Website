@@ -6,39 +6,58 @@
     <head>
         <meta name="description" content="This is Mark's personal website. It showcases his projects and skills.">
         <meta name="author" content="Mark">
-        <title>Mark's HTML Page</title>
+        <title>Mark's Website</title>
         <link rel="icon" href="https://www.favicon.cc/logo3d/308368.png">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
+
+        <!--The header bar with naviagation links to the other pages of the website. The header is consistent across all pages of the website. -->
         <header>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="about.html">About Me</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </header>
 
-        <h1 id="welcome">Welcome</h1>
-        <section>
-            <h2>Introduction</h2>
-            <hr>
-            <p>
-                Welcome to my personal website! Here you can learn more about me and my projects. <br>
-                I am hoping to use this website to share a bit about myself and practice some web development skills. Feel free to explore!
-            </p>
+        <section class="hero">
+            <h1>Mark Bowerman</h1>
+            <p>Software Engineering Student</p>
         </section>
 
-        <section>
-            <h2>My Projects</h2>
-            <hr>
+        <!-- A section with three cards that link to different pages of the website. The cards are styled with CSS to look like cards. -->
+        <section class="nav-cards">
+            <div class="card">
+                <h2>Projects</h2>
+                <p>Explore my projects and see what I've been working on!</p>
+                <a href="projects.html" class="button-link">View Projects</a>
+            </div>
+
+            <div class="card">
+                <h2>About Me</h2>
+                <p>Learn more about me and my background.</p>
+                <a href="about.html" class="button-link">View About</a>
+            </div>
+
+            <div class="card">
+                <h2>Explore</h2>
+                <p>Movies, adventures, opinions, and more!</p>
+                <a href="#" class="button-link">Coming Soon</a>
+            </div>
+        </section>
+
+        <!--A section showing some things I am currently working on or interested in. -->
+        <section class="currently">
+            <h2>Currently</h2>
             <ul>
-                <li><a href="https://github.com/MobDude/Discord_MovieBot">Discord Movie Bot</a></li>
-                <li><a href="https://github.com/MobDude/Marks-Website">This Website</a></li>
+                <li><strong>Building:</strong> Improving this website</li>
+                <li><strong>Watching:</strong> Too many movies</li>
+                <li><strong>Learning:</strong> CSS, JavaScript, HTML, Java, and software design</li>
             </ul>
         </section>
-        
     </body>
 
 </html>

@@ -375,3 +375,31 @@ hr{
     color: #666666;
     font-style: italic;
 }
+
+.about-card{
+    background: rgba(255, 255, 240, 0.95);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+    max-width: 1250px;
+    margin: 40px auto;
+}
+
+.about-lists{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.about-list-card{
+    background: rgba(255, 255, 240, 0.95);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+    flex: 1;
+    max-width: 400px;
+}

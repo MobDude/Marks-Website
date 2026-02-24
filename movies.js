@@ -205,371 +205,593 @@ const movies = [
     {
         title: "Evil Bong 420",
         year: 2015,
-        rating: 0.08
+        rating: 0.08,
+        minutes: 53,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/8W2u9wFRtBcaezebHT0uLybuzV9.jpg",
+        comment: ""
     },
     {
         title: "Gingerdead Man vs. Evil Bong",
         year: 2013,
-        rating: 0.32
+        rating: 0.32,
+        minutes: 83,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/g5AefV3s6ojqbqC1Lh7vEAaBTf.jpg",
+        comment: ""
     },
     {
         title: "Evil Bong 3: The Wrath of Bong",
         year: 2011,
-        rating: 0.94
+        rating: 0.94,
+        minutes: 86,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/da5UVMB9021zljUAxExAS38IAlG.jpg",
+        comment: ""
     },
     {
         title: "Evil Bong 2: King Bong",
         year: 2009,
-        rating: 1.63
+        rating: 1.63,
+        minutes: 80,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/8ATSJrEaWaAi5NmRoxYB1If6lQP.jpg",
+        comment: ""
     },
     {
         title: " Evil Bong",
         year: 2006,
-        rating: 2.09
+        rating: 2.09,
+        minutes: 84,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tQlUiiQD5PviCm5pJ21cgb8Qxw0.jpg",
+        comment: ""
     },
     {
         title: "Help! I'm a Fish",
         year: 2000,
-        rating: 7.57
+        rating: 7.57,
+        minutes: 80,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/s9yFQD19xJqXEnAnUAZFUan25DJ.jpg",
+        comment: ""
     },
     {
         title: "The Silence of the Lambs",
         year: 1991,
-        rating: 8.71
+        rating: 8.71,
+        minutes: 119,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg",
+        comment: ""
     },
     {
-        title: " Arthur Christmas",
+        title: "Arthur Christmas",
         year: 2011,
-        rating: 6.07
+        rating: 6.07,
+        minutes: 97,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/yF7SNheAGWavNnjbAronedwjC1N.jpg",
+        comment: ""
+
     },
     {
         title: "Eight Crazy Nights",
         year: 2002,
-        rating: 4.93
+        rating: 4.93,
+        minutes: 76,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/k25VkKJjo52vuo4rUKEG4qFLQjL.jpg",
+        comment: ""
     },
     {
         title: "Klaus",
         year: 2019,
-        rating: 9.57
+        rating: 9.57,
+        minutes: 97,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/q125RHUDgR4gjwh1QkfYuJLYkL.jpg",
+        comment: ""
     },
     {
         title: "The Lost Boys",
         year: 1987,
-        rating: 6.8
+        rating: 6.8,
+        minutes: 97,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/nH1lvyQvfbL5GKScTtT6zkIvDEn.jpg",
+        comment: ""
     },
     {
         title: "The Thing",
         year: 1982,
-        rating: 8.5
+        rating: 8.5,
+        minutes: 109,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tzGY49kseSE9QAKk47uuDGwnSCu.jpg",
+        comment: ""
     },
     {
         title: "The Sixth Sense",
         year: 1999,
-        rating: 7.94
+        rating: 7.94,
+        minutes: 107,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vOyfUXNFSnaTk7Vk5AjpsKTUWsu.jpg",
+        comment: ""
     },
     {
         title: "The Truman Show",
         year: 1998,
-        rating: 9.43
+        rating: 9.43,
+        minutes: 103,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vuza0WqY239yBXOadKlGwJsZJFE.jpg",
+        comment: ""
     },
     {
         title: "Idiocracy",
         year: 2006,
-        rating: 2.58
+        rating: 2.58,
+        minutes: 84,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/k75tEyoPbPlfHSKakJBOR5dx1Dp.jpg",
+        comment: ""
     },
     {
-        title: "Dune Part Two",
+        title: "Dune: Part Two",
         year: 2024,
-        rating: 9.07
+        rating: 9.07,
+        minutes: 167,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+        comment: ""
     },
     {
         title: "Scream",
         year: 1996,
-        rating: 9.0
+        rating: 9.0,
+        minutes: 112,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/lr9ZIrmuwVmZhpZuTCW8D9g0ZJe.jpg",
+        comment: ""
     },
     {
         title: "Barbie as The Princess & the Pauper",
         year: 2004,
-        rating: 5.44
+        rating: 5.44,
+        minutes: 86,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/xHYsUwUe4MaNc6mbNBGTkqZSnPk.jpg",
+        comment: ""
+
     },
     {
-        title: "Dune Part One",
+        title: "Dune",
         year: 2021,
-        rating: 8.93
+        rating: 8.93,
+        minutes: 155,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+        comment: ""
+
     },
     {
         title: "C.I.APE",
         year: 2022,
-        rating: 2.06
+        rating: 2.06,
+        minutes: 82,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/oaW0zqkYJxgdYdgykKY89jr118X.jpg",
+        comment: ""
     },
     {
         title: "Ender's Game",
         year: 2013,
-        rating: 3.88
+        rating: 3.88,
+        minutes: 114,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pVcRI5YKnkkgaAD876jBeKb189d.jpg",
+        comment: ""
     },
     {
         title: "The Usual Suspects",
         year: 1995,
-        rating: 8.25
+        rating: 8.25,
+        minutes: 106,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/99X2SgyFunJFXGAYnDv3sb9pnUD.jpg",
+        comment: ""
+
     },
     {
         title: "Barbarella",
         year: 1986,
-        rating: 3.79
+        rating: 3.79,
+        minutes: 98,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/facTz5BZz4AkJal1FWgjYciekih.jpg",
+        comment: ""
     },
     {
         title: "Mr. Poppers Penguins",
         year: 2011,
-        rating: 6.25
+        rating: 6.25,
+        minutes: 94,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/jGwZ1QI5DaL7mHQ2ZsMV1p8xvPS.jpg",
+        comment: ""
     },
     {
         title: "The Boss Baby",
         year: 2017,
-        rating: 3.36
+        rating: 3.36,
+        minutes: 97,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/unPB1iyEeTBcKiLg8W083rlViFH.jpg",
+        comment: ""
     },
     {
         title: "The Princess Bride",
         year: 1987,
-        rating: 9.75
+        rating: 9.75,
+        minutes: 99,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/kTXxdNv44najTayFcrT487xWuDv.jpg",
+        comment: ""
     },
     {
         title: "Remember the Titans",
         year: 2000,
-        rating: 7.64
+        rating: 7.64,
+        minutes: 113,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/825ohvC4wZ3gCuncCaqkWeQnK8h.jpg",
+        comment: ""
     },
     {
         title: "Porco Rosso",
         year: 1992,
-        rating: 7.75
+        rating: 7.75,
+        minutes: 93,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/8mIvSvnVBApfORL9N6S38Q7wD6A.jpg",
+        comment: ""
     },
     {
         title: "The Secret Life of Walter Mitty",
         year: 2013,
-        rating: 9.36
+        rating: 9.36,
+        minutes: 114,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tY6ypjKOOtujhxiSwTmvA4OZ5IE.jpg",
+        comment: ""
     },
     {
         title: "MegaMind",
         year: 2010,
-        rating: 9.0
+        rating: 9.0,
+        minutes: 96,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/uZ9ytt3sPTx62XTfN56ILSuYWRe.jpg",
+        comment: ""
     },
     {
         title: "The Adventures of Tintin",
         year: 2011,
-        rating: 7.83
+        rating: 7.83,
+        minutes: 107,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/fQZ3sLR1Fi63NMsNRbjm9q5qODJ.jpg",
+        comment: ""
+
     },
     {
         title: "Baby Driver",
         year: 2017,
-        rating: 9.69
+        rating: 9.69,
+        minutes: 113,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tYzFuYXmT8LOYASlFCkaPiAFAl0.jpg",
+        comment: ""
     },
     {
         title: "Look Back",
         year: 2024, 
-        rating: 8.5
+        rating: 8.5,
+        minutes: 58,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/4f2EcNkp1Mvp9wE5w7HKxcmACWg.jpg",
+        comment: ""
     },
     {
         title: "Finding Jesus",
         year: 2020,
-        rating: 0.05
+        rating: 0.05,
+        minutes: 69,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/qNLiZTxTQU1w999Avs7UBGJxqPV.jpg",
+        comment: ""
     },
     {
         title: "Voyage to the Planet of Prehistoric Women",
         year: 1968,
-        rating: 0.48
+        rating: 0.48,
+        minutes: 80,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/aTZHuHghiEpB3WYM93V1FtYyJ4B.jpg",
+        comment: ""
     },
     {
         title: "Superbad",
         year: 2007,
-        rating: 5.75
+        rating: 5.75,
+        minutes: 113,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/ek8e8txUyUwd2BNqj6lFEerJfbq.jpg",
+        comment: ""
     },
     {
         title: "Early Man",
         year: 2018,
-        rating: 7.14
+        rating: 7.14,
+        minutes: 89,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/5iW2rntwLZoGlFCYYy8TjHyblbw.jpg",
+        comment: ""
     },
     {
         title: "The Flintstones",
         year: 1994,
-        rating: 5.17
+        rating: 5.17,
+        minutes: 91,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/k7gkf5Wa8YZ9iyEOylBMfw9pnkp.jpg",
+        comment: ""
     },
     {
         title: "The Lego Batman Movie",
         year: 2017,
-        rating: 7.83
+        rating: 7.83,
+        minutes: 104,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/snGwr2gag4Fcgx2OGmH9otl6ofW.jpg",
+        comment: ""
     },
     {
         title: "Cats",
         year: 2019,
-        rating: 0.14
+        rating: 0.14,
+        minutes: 110,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/aCNch5FmzT2WaUcY44925owIZXY.jpg",
+        comment: ""
     },
     {
         title: "The Prince of Egypt",
         year: 1998,
-        rating: 9.0
+        rating: 9.0,
+        minutes: 99,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/2xUjYwL6Ol7TLJPPKs7sYW5PWLX.jpg",
+        comment: ""
     },
     {
         title: "Coneheads",
         year: 1993,
-        rating: 5.75
+        rating: 5.75,
+        minutes: 88,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vlpQnf0rl0FpMjWLS0TNd8Bog2F.jpg",
+        comment: ""
     },
     {
         title: "The Croods: A New Age",
         year: 2020,
-        rating: 6.08
+        rating: 6.08,
+        minutes: 95,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tbVZ3Sq88dZaCANlUcewQuHQOaE.jpg",
+        comment: ""
     },
     {
         title: "Plan 9 from Outer Space",
         year: 1957,
-        rating: 0.92
+        rating: 0.92,
+        minutes: 79,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/bmicZi7PvlnZ9rZqp6QXN2Db0pT.jpg",
+        comment: ""
     },
     {
         title: "Tucker and Dale vs. Evil",
         year: 2010,
-        rating: 9.07
+        rating: 9.07,
+        minutes: 89,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/8shwLEDzajJGSfLgbpac8x8xn1U.jpg",
+        comment: ""
     },
     {
         title: "Everything Everywhere All At Once",
         year: 2022,
-        rating: 9.07
+        rating: 9.07,
+        minutes: 140,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/u68AjlvlutfEIcpmbYpKcdi09ut.jpg",
+        comment: ""
     },
     {
         title: "Scott Pilgrim vs. the World",
         year: 2010,
-        rating: 7.36
+        rating: 7.36,
+        minutes: 113,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/g5IoYeudx9XBEfwNL0fHvSckLBz.jpg",
+        comment: ""
     },
     {
         title: "Epic",
         year: 2013,
-        rating: 7.42
+        rating: 7.42,
+        minutes: 102,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/81cSsWzjTfR3cJSqnTiHwy1eyPK.jpg",
+        comment: ""
     },
     {
         title: "The Wild",
         year: 2006,
-        rating: 0.99
+        rating: 0.99,
+        minutes: 82,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/sxqzaOto1qyUseSg6YpIP9Su5lp.jpg",
+        comment: ""
     },
     {
         title: "The Lorax",
         year: 2012,
-        rating: 7.14
+        rating: 7.14,
+        minutes: 86,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tePFnZFw5JvjwjQjaKkqDPNMLPU.jpg",
+        comment: ""
     },
     {
         title: "The Adventures of Sharkboy and Lavagirl",
         year: 2005,
-        rating: 3.0
+        rating: 3.0,
+        minutes: 92,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/xpFbHSkRgOxOoutKqXob9T8iBPA.jpg",
+        comment: ""
     },
     {
         title: "Paranoman",
         year: 2012,
-        rating: 8.0
+        rating: 8.0,
+        minutes: 93,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/9DZPtuYTKYxt6vzHvZ5FLThG4fl.jpg",
+        comment: ""
     },
     {
         title: "Spy Kids",
         year: 2001,
-        rating: 3.5
+        rating: 3.5,
+        minutes : 88,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/j3rUkHIAAoKr6jU30q3Db4fcIF9.jpg",
+        comment: ""
     },
     {
         title: "The Phoenician Scheme",
         year: 2025,
-        rating: 7.08
+        rating: 7.08,
+        minutes: 122,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/u2jxeYLXTYfu0bqJmnLGIgZswib.jpg",
+        comment: ""
     },
     {
-        title: "The Incredibles 2",
+        title: "Incredibles 2",
         year: 2018,
-        rating: 4.92
+        rating: 4.92,
+        minutes: 118,
+        psoter: "https://www.themoviedb.org/t/p/w600_and_h900_face/9lFKBtaVIhP7E2Pk0IY1CwTKTMZ.jpg",
+        comment: ""
     },
     {
         title: "The Incredibles",
         year: 2004,
-        rating: 9.21
+        rating: 9.21,
+        minutes: 115,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/2LqaLgk4Z226KkgPJuiOQ58wvrm.jpg",
+        comment: ""
     },
     {
         title: "The Cat in the Hat",
         year: 2003,
-        rating: 7.5
+        rating: 7.5,
+        minutes: 82,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/uYYLz67e5xEQMsY858VSSCDsLU6.jpg",
+        comment: ""
     },
     {
         title: "Monster House",
         year: 2006,
-        rating: 8.06
+        rating: 8.06,
+        minutes: 91,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/1YtLhQ9j6gTqH2yU8rFvXlXoG7.jpg",
+        comment: ""
     },
     {
         title: "Strays",
         year: 2023,
-        rating: 5.8
+        rating: 5.8,
+        minutes: 93,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/n1hqbSCtyBAxaXEl1Dj3ipXJAJG.jpg",
+        comment: ""
     },
     {
         title: "Year One",
         year: 2009,
-        rating: 5.17
+        rating: 5.17,
+        minutes: 97,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/qF573jdJYwtCbXVXPDn4xu8nW2a.jpg",
+        comment: ""
     },
     {
         title: "Baby John",
         year: 2024,
-        rating: 4.38
+        rating: 4.38,
+        minutes: 162,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/5Oqsh17dq0cIRFPynPNy5elmyxW.jpg",
+        comment: ""
     },
     {
         title: "Cave Man",
         year: 1981,
-        rating: 5.0
+        rating: 5.0,
+        minutes: 91,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/cfZfl3wxO8QxHKJsiWUHZg1D62B.jpg",
+        comment: ""
     },
     {
         title: "Scooby Doo",
         year: 2002,
-        rating: 6.29
+        rating: 6.29,
+        minutes: 87,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/mTAiBJGg8mqEfnYHHbi37ZoRSZm.jpg",
+        comment: ""
     },
     {
         title: "Planet Terror",
         year: 2007,
-        rating: 5.2
+        rating: 5.2,
+        minutes: 105,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/3705GxG0RN9XDV5y9IiXKYHw1fK.jpg",
+        comment: ""
     },
     {
         title: "Premature",
         year: 2014,
-        rating: 6.2
+        rating: 6.2,
+        minutes: 93,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/9nqj8s1l7XoGQYp3v2mLh5ZtH8.jpg",
+        comment: ""
     },
     {
-        title: "Emporers New Groove",
+        title: "The Emperor's New Groove",
         year: 2000,
-        rating: 8.86
+        rating: 8.86,
+        minutes: 78,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/isA0acj3ONKBLp1pKadUNzxEPFv.jpg",
+        comment: ""
     },
     {
         title: "Mars Needs Moms",
         year: 2011,
-        rating: 3.1
+        rating: 3.1,
+        minutes: 88,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/g94LNU4pipIUJLkTvYIgNGfT2J2.jpg",
+        comment: ""
     },
     {
         title: "Trolls",
         year: 2016,
-        rating: 2.33
+        rating: 2.33,
+        minutes: 92,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/9VlK2j0THZWzhQPq0W3Oc0IIdBB.jpg",
+        comment: ""
     },
     {
         title: "Planet 51",
         year: 2009,
-        rating: 6.1
+        rating: 6.1,
+        minutes: 91,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/x7Itcg3ZdExKwdKguy73WPEqosW.jpg",
+        comment: ""
     },
     {
         title: "Monsters vs. Aliens",
         year: 2009,
-        rating: 7.21
+        rating: 7.21,
+        minutes: 94,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/hpHarddVj34j53T7NsoUGdKj4mP.jpg",
+        comment: ""
     },
     {
         title: "Croods",
         year: 2013,
-        rating: 7.36
+        rating: 7.36,
+        minutes: 99,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/27zvjVOtOi5ped1HSlJKNsKXkFH.jpg",
+        comment: ""
     },
     {
         title: "Chicken Little",
         year: 2005,
-        rating: 6.0
+        rating: 6.0,
+        minutes: 81,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/87FpA4b90eTaw3U6zmCNikoPLir.jpg",
+        comment: ""
     }
 ];
 
 function generateStars(rating) {
     let stars = "";
-    for (let i = 1; i < 5; i++) {
-        if (rating >= i){
+    const rounded = Math.round(rating * 2) / 2; // Round to nearest 0.5
+    for (let i = 1; i <= 5; i++) {
+        if (rounded >= i){
             stars += "★";
-        } else if (rating >= i - 0.5) {
+        } else if (rounded + 0.5 ===i) {
             stars += "⯨";
         } else {
             stars += "☆";

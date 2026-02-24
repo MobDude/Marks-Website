@@ -9,12 +9,15 @@ Welcome to my personal website! This site showcases my projects, hobbies, and sk
 - About Me section with hobbies and interests
 - Projects section showcasing GitHub projects
 - Contact page with social media links
-- Clean layout
+- Movies page with movies I have watched rated and reveiwed.
+- Adventures page where I can share adventure stories.
 
 ## Future Plans
 
 I have big plans for this website, including:
 
 - Adding more coding projects 
-- Expanding the "About Me" section
-- Improving the design and feel
+- Adding more Advenures and stories
+- Sharing some music I like, maybe built in music player?
+- Improving the design and feel, perhaps custom art?
+- and more

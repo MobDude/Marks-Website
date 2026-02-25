@@ -1,5 +1,13 @@
 const movies = [
     {
+        title: "Twelve Monkeys",
+        year: 1995,
+        rating: 6.1,
+        minutes: 129,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/gt3iyguaCIw8DpQZI1LIN5TohM2.jpg",
+        comment: "A pretty cool time travelling movie. I kinda liked how it kept you guessing, but it felt like it may have been going on too long. The use of insanity was a really interesting twist to me. I also think that some of the cinamatography was pretty decent, such as how it opened and closed with the same screen."
+    },
+    {
         title: "Interstellar",
         year: 2014,
         rating: 9.9,

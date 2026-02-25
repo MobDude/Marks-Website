@@ -13,7 +13,7 @@ const movies = [
         rating: 9.9,
         minutes: 169,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-        comment: ""
+        comment: "An amazing film. The sound design and visuals are stunning. The story itself its really interesting, and its fun to see how it all comes together. The power of love thing can be a little silly, but I think this movie puklled it off well. This is a movie I would love to see in theatres."
     },
     {
         title: "The Adventures of Pluto Nash",  
@@ -29,7 +29,7 @@ const movies = [
         rating: 7.7,
         minutes: 96,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/kNbaxEsnCyWBTfANVPHayujBsxp.jpg",
-        comment: ""
+        comment: "A pretty silly star wars spoof. Pretty good if thats your thing."
 
     },
     {
@@ -46,7 +46,7 @@ const movies = [
         rating: 8.0,
         minutes: 96,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/bbBGSm1kjgmZ0O3bPUQIbA0xlKQ.jpg",
-        comment: ""
+        comment: "A really fun and wholesome movie. Jerry uses his math skills to not only win the lottery for himself, but also for the whole town, which is really awesome. PLus it is based on a true story."
     },
     {
         title: "Bit",
@@ -54,7 +54,7 @@ const movies = [
         rating: 2.92,
         minutes:94,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/9SlKmu0a1G1eihI29WMQogBWgzr.jpg",
-        comment: ""
+        comment: "Gay vampires, uh power corrupts, and a rat hole. This is a movie I guess."
     },
     {
         title: "The Ribald Tales of Robin Hood",
@@ -62,7 +62,7 @@ const movies = [
         rating: 0.3,
         minutes: 77,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/ph4jqjQczR32uaD7Fho5cmHkKmr.jpg",
-        comment: ""
+        comment: "Yeah dont watch this. Its basically just softcore porn. Would definately not recomend."
     },
     {
         title: "American Psycho",
@@ -78,7 +78,7 @@ const movies = [
         rating: 8.38,
         minutes: 96,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/kNhZkR3UNbXfvESQo7mJpOi4tGd.jpg",
-        comment: ""
+        comment: "An absolute favourite of mine. I love the original Treasure Planet book, and this movie is a great homage to that. It still has its own identity, and it draws from the strength of the original story. The animation  is really good, especially for the time. Its a shame the movie was marketed so poorly. I feel like it didn't get the attention it deserved."
     },
     {
         title: "Killer Klowns from Outer Space",
@@ -94,7 +94,7 @@ const movies = [
         rating: 8.0,
         minutes: 91,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/eJGvzGrsfe2sqTUPv5IwLWXjVuR.jpg",
-        comment: ""
+        comment: "I dont say blah bla blah. This is a pretty fun familiy movie. Its actually really wholesome."
     },
     {
         title: "Twilight",
@@ -118,7 +118,7 @@ const movies = [
         rating: 2.42,
         minutes: 90,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/g410Y1U1ELbmJG14Zru3UAimm1G.jpg",
-        comment: ""
+        comment: "This movie is really bad. Not even in a good way. Everything that happens has you upset. They do the typical stupid irrational horror movie things, but dont even attempt to provide a reason. A totally absurd and awful movie."
     },
     {
         title: "A Goofy Movie",
@@ -134,7 +134,7 @@ const movies = [
         rating: 6.67,
         minutes: 108,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pDsAAYf6Zn0yiAGJ6lYGs6hoZ4E.jpg",
-        comment: ""
+        comment: "They are alive! This is a fun movie from my childhood. It still holds up. Who wouldnt enjoy watching a museum come alive?"
     },
     {
         title: "Princess Mononoke",
@@ -142,7 +142,7 @@ const movies = [
         rating: 7.94,
         minutes: 134,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
-        comment: ""
+        comment: "This was one was honestly just ok. The whole length of the movie, the main charachter was just aura farming and flexing on everyone. I found it infuriateing that the humans got away unpunished after essentially killing an entire forest and its animals and spirits. That alone ruined the movie for me."
 
     },
     {
@@ -151,7 +151,7 @@ const movies = [
         rating: 3.3,
         minutes: 74,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/dM73WqNaIPDj7lwRBOT2ioMFAsq.jpg",
-        comment: ""
+        comment: "Story wise, not a great movie. Not even good really, but the animation is really goofy. You can pause on any frame and have a good chuckle."
     },
     {
         title: "The Mitchells vs. the Machines",
@@ -167,7 +167,7 @@ const movies = [
         rating: 9.2,
         minutes: 108,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/dmJW8IAKHKxFNiUnoDR7JfsK7Rp.jpg",
-        comment: ""
+        comment: "I think this is an incredible movie. I really good look into how AI like this could behave. I wont spoil anything, but this is definately worth a watch."
     },
     {
         title: "Monty Python and the Holy Grail",
@@ -175,7 +175,7 @@ const movies = [
         rating: 7.69,
         minutes: 91,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/7nTkHjETdGMYK1phHwDbPsrzbYl.jpg",
-        comment: ""
+        comment: "I've heard a ton of good things about this movie, and I cant deny that its a classic, but I honestly feel that it is over rated. Some of the jokes are good for sure, but there is also a good number of them that fall flat."
     },
     {
         title: "Shrek the Musical",
@@ -183,7 +183,7 @@ const movies = [
         rating: 6.07,
         minutes: 130,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/wRvMRdLa8zQ85drGAWEsZTuKJO.jpg",
-        comment: ""
+        comment: "I went into this expecting it to be horrible, but somehow this was actually really entertaining to watch. Honestly. It might even be more fun that the original. Ah maybe not."
 
     },
     {
@@ -192,7 +192,7 @@ const movies = [
         rating: 7.79,
         minutes: 100,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/hS4GYkYpN1rfl4GIxyc02sCyfAj.jpg",
-        comment: ""
+        comment: "This is a movie that was really controversial when we watched it. I thought it was a 10/10, because there was so much meaning in everything, and the acting was really quite good. Others didn't like it, seemingly because they didnt really relate or empathize with the characters very much."
     },
     {
         title: "Sinners",

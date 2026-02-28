@@ -1,5 +1,13 @@
 const movies = [
     {
+        title: "Arthur",
+        year: 1981,
+        rating: 8,
+        minutes: 97,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/m8yOFRDVZPxtsr4D2hVdzls6q6t.jpg",
+        comment: "I really enjoyed this movie. The characters were all likeable, and had some amazing quotes. The only thing I don't love about it is that Arthur doesn't seem to develop or learn anything by the end of the movie. None the less, I'd recommend this movie."
+    },
+    {
         title: "Twelve Monkeys",
         year: 1995,
         rating: 6.1,

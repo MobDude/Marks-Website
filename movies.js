@@ -1,5 +1,13 @@
 const movies = [
     {
+        title: "The Good, the Bad and the Ugly",
+        year: 1966,
+        rating: 8.0,
+        minutes: 161,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
+        comment: "A pretty slow movie, but it has some really good moments. The story is pretty simple, but it works well. It's a classic for a reason."
+    },
+    {
         title: "Arthur",
         year: 1981,
         rating: 8,

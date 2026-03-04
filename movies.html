@@ -27,10 +27,23 @@
         </section>
 
         <section class="movie-layout">
-            <section id="movie-stats" class="movie-stats"></section>    
 
-            <section id="movie-list" class="movie-list"></section>
+            <section id="movie-stats" class="movie-stats"></section>  
+            <section id="movie-list" class="movie-list">
+            
+                <section class="movie-filters">
+                    <span class="filter-label">Minimum Rating</span>
 
+                    <div class="star-filter">
+                        <button data-stars="0" class="active">All</button>
+                        <button data-stars="3">★★★+</button>
+                        <button data-stars="4">★★★★+</button>
+                        <button data-stars="4.5">★★★★½+</button>
+                        <button data-stars="5">★★★★★</button>
+                    </div>
+                </section>
+                <div id="movie-container"></div>
+            </section>
         </section>
 
         <script src="movies.js"></script>

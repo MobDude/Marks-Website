@@ -832,35 +832,46 @@ function generateStars(rating) {
     return stars;
 }
 
-const container = document.getElementById("movie-list");
+const container = document.getElementById("movie-container");
+const ratingFilter = document.getElementById("rating-filter");
 
-movies.forEach(movie => {
-    const card = document.createElement("div");
-    card.className = "movie-card";
+function renderMovies(movieArray) {
+    container.innerHTML = "";
 
-    card.innerHTML = `
-        <img src="${movie.poster}" alt="${movie.title} Poster" class="movie-poster">
-        <div class="movie-info">
-            <h2>${movie.title} (${movie.year})</h2>
-            <div class="stars">${generateStars(movie.rating/2)}</div>
-            <p>${movie.comment}</p>
-        </div>
-    `;
-    container.appendChild(card);
-});
+    if (movieArray.length === 0) {
+        container.innerHTML = "<p>No movies match this rating.</p>";
+        return;
+    }
 
-function calculateStats() {
+    movieArray.forEach(movie => {
+        const card = document.createElement("div");
+        card.className = "movie-card";
 
-    const totalMinutes = movies.reduce((sum, movie) => sum + movie.minutes, 0);
+        card.innerHTML = `
+            <img src="${movie.poster}" alt="${movie.title} Poster" class="movie-poster">
+            <div class="movie-info">
+                <h2>${movie.title} (${movie.year})</h2>
+                <div class="stars">${generateStars(movie.rating)}</div>
+                <p>${movie.comment}</p>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+function calculateStats(movieArray) {
+
+    const totalMinutes = movieArray.reduce((sum, movie) => sum + movie.minutes, 0);
 
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
 
-    const best = [...movies]
+    const best = [...movieArray]
         .sort((a,b) => b.rating - a.rating)
         .slice(0, 10);
 
-    const worst = [...movies]
+    const worst = [...movieArray]
         .sort((a,b) => a.rating - b.rating)
         .slice(0, 10);
 
@@ -882,4 +893,28 @@ function calculateStats() {
     `;
 }
 
-calculateStats();
+function getStarRating(movie) {
+    return Math.round((movie.rating / 2) * 2) / 2;
+}
+
+const filterButtons = document.querySelectorAll(".star-filter button");
+
+filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        // Remove active from all
+        filterButtons.forEach(b => b.classList.remove("active"));
+
+        // Add active to clicked
+        btn.classList.add("active");
+
+        const minStars = Number(btn.dataset.stars);
+
+        const filtered = movies.filter(movie =>
+            getStarRating(movie) >= minStars
+        );
+
+        renderMovies(filtered);
+        calculateStats(filtered);
+    });
+});

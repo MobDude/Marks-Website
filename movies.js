@@ -1,5 +1,13 @@
 const movies = [
     {
+        title: "The Birds",
+        year: 1963,
+        rating: 6.4,
+        minutes: 120,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/eClg8QPg8mwB6INIC4pyR5pAbDr.jpg",
+        comment: "This is a decent movie. The use of silence is really good, and the suspense is pretty well done. The ending is a little bit of a let down though, and the acting is not the best."
+    },
+    {
         title: "The Good, the Bad and the Ugly",
         year: 1966,
         rating: 8.0,

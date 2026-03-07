@@ -1,5 +1,13 @@
 const movies = [
     {
+        title: "labyrinth",
+        year: 1986,
+        rating: 6.9,
+        minutes: 101,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/hbSdA1DmNA9IlfVoqJkIWYF2oYm.jpg",
+        comment: "This is a wacky movie. It has a similar vibe as through the looking glass with it's fever dream like randomness. The practical effects are really good."
+    },
+    {
         title: "The Birds",
         year: 1963,
         rating: 6.4,
@@ -817,9 +825,32 @@ const movies = [
     }
 ];
 
+let currentSort = "watch";
+let sortDescending = false;
+let currentMinStars = 0;
+
+function updateMovies() {
+
+    let filtered = movies.filter(movie =>
+        getStarRating(movie) >= currentMinStars
+    );
+
+    let sorted = [...filtered];
+
+    if (currentSort !== "watch") {
+        sorted.sort((a, b) => a[currentSort] - b[currentSort]);
+    }
+
+    if (sortDescending) {
+        sorted.reverse();
+    }
+
+    renderMovies(sorted);
+}
+
 function generateStars(rating) {
     let stars = "";
-    const rounded = Math.round(rating * 2) / 2; // Round to nearest 0.5
+    const rounded = Math.round((rating / 2) * 2) / 2; 
     for (let i = 1; i <= 5; i++) {
         if (rounded >= i){
             stars += "★";
@@ -833,7 +864,6 @@ function generateStars(rating) {
 }
 
 const container = document.getElementById("movie-container");
-const ratingFilter = document.getElementById("rating-filter");
 
 function renderMovies(movieArray) {
     container.innerHTML = "";
@@ -894,27 +924,39 @@ function calculateStats(movieArray) {
 }
 
 function getStarRating(movie) {
-    return Math.round((movie.rating / 2) * 2) / 2;
+    const stars = movie.rating /2;
+    return Math.round(stars * 2) / 2;
 }
 
 const filterButtons = document.querySelectorAll(".star-filter button");
 
+const sortSelect = document.getElementById("sort-select");
+const sortDirection = document.getElementById("sort-direction");
+
+sortSelect.addEventListener("change", () => {
+    currentSort = sortSelect.value;
+    updateMovies();
+});
+
+sortDirection.addEventListener("click", () => {
+    sortDescending = !sortDescending;
+
+    sortDirection.textContent = sortDescending ? "⬆" : "⬇";
+
+    updateMovies();
+});
+
 filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
 
-        // Remove active from all
         filterButtons.forEach(b => b.classList.remove("active"));
-
-        // Add active to clicked
         btn.classList.add("active");
 
-        const minStars = Number(btn.dataset.stars);
+        currentMinStars = Number(btn.dataset.stars);
 
-        const filtered = movies.filter(movie =>
-            getStarRating(movie) >= minStars
-        );
-
-        renderMovies(filtered);
-        calculateStats(filtered);
+        updateMovies();
     });
 });
+
+updateMovies();
+calculateStats(movies);

@@ -215,7 +215,7 @@ hr{
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
 }
 
 .movie-card {
@@ -515,41 +515,85 @@ hr{
 }
 
 .movie-filters {
-    margin-bottom: 2rem;
-    padding: 1rem;
+    margin-bottom: 10px;
+    padding: 20px;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
+    background: #1e1e1e;
+    color: #f2f2f2;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .filter-label {
     display: block;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 12px;
 }
 
 .star-filter {
     display: flex;
-    gap: 0.75rem;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .star-filter button {
-    padding: 0.5rem 1rem;
+    padding: 6px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: transparent;
-    color: inherit;
+
+    border: 1px solid #444;
+    background: #2a2a2a;
+    color: #f2f2f2;
+
     cursor: pointer;
+    font-size: 0.9rem;
+
     transition: all 0.2s ease;
 }
 
 .star-filter button:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: #3a3a3a;
 }
 
 .star-filter button.active {
     background: #9968E6;
     border-color: #9968E6;
     color: white;
+}
+
+#movie-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sort-controls {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-controls label {
+    font-weight: 600;
+}
+
+.sort-controls select {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    background: #2a2a2a;
+    color: white;
+}
+
+#sort-direction {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    background: #2a2a2a;
+    color: white;
+    cursor: pointer;
+}
+
+#sort-direction:hover {
+    background: #3a3a3a;
 }

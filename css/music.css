@@ -98,3 +98,23 @@
 .genre-chip.electronic{
     background: #b1c500;
 }
+
+.music-button-link{
+    padding: 6px 12px;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #d2d2d2;
+    background-color: #1e1e1e ;
+    color: #d2d2d2;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin-top: auto;
+}
+
+.music-button-link:hover{
+    background: #1e1e1e;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}

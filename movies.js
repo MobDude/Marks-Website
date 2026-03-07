@@ -893,6 +893,7 @@ function renderMovies(movieArray) {
 function calculateStats(movieArray) {
 
     const totalMinutes = movieArray.reduce((sum, movie) => sum + movie.minutes, 0);
+    const averageRating = movieArray.reduce((sum, movie) => sum + movie.rating, 0) / movieArray.length;
 
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
@@ -911,6 +912,8 @@ function calculateStats(movieArray) {
         <div class="stats-card">
             <h2>Total Watch Time</h2>
             <p>${hours}h ${minutes}m</p>
+            <h2>Average Rating</h2>
+            <p>${averageRating.toFixed(2)} / 10</p>
         </div>
         <div class="stats-card">
             <h2>Top 10 Best</h2>

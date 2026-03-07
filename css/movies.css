@@ -53,7 +53,7 @@
 .movie-stats{
     flex: 0 0 400px;
     position: sticky;
-    top: 80px;
+    top: 60px;
     display: flex;
     flex-direction: column;
     padding: 25px;

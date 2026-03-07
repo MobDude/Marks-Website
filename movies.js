@@ -232,7 +232,7 @@ const movies = [
         rating: 9.33,
         minutes: 138,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/qTvFWCGeGXgBRaINLY1zqgTPSpn.jpg",
-        comment: ""
+        comment: "This is a really well made movie, and also pretty unique in the vampire genre. There are no meaningless interactions or dialogue. Taking nearly anything out would only make to movie worse, which speaks to how well crafted it is. The music is also incredible. I only wish I could have seen it in theatres.  "
     },
     {
         title: "Encino Man",
@@ -321,7 +321,7 @@ const movies = [
         rating: 9.57,
         minutes: 97,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/q125RHUDgR4gjwh1QkfYuJLYkL.jpg",
-        comment: ""
+        comment: "An incredibly animated christmas movie. The story is a super fun twist on the saint nick story. Probably my favourite christmas movie!"
     },
     {
         title: "The Lost Boys",
@@ -337,7 +337,7 @@ const movies = [
         rating: 8.5,
         minutes: 109,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tzGY49kseSE9QAKk47uuDGwnSCu.jpg",
-        comment: ""
+        comment: "The original behind the imposter trope found in all sorts of things now. It has become a staple horror movie, but that also means that it comes with the frustrating decisions of characters. The practical effects are really good though, and there is plenty to be gleaned from a rewatch or two."
     },
     {
         title: "The Sixth Sense",
@@ -452,7 +452,7 @@ const movies = [
         rating: 9.75,
         minutes: 99,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/kTXxdNv44najTayFcrT487xWuDv.jpg",
-        comment: ""
+        comment: "What a great movie. It has great mix of comedy, romance, and adventure. It also has some really good quotes. You should definitely watch this. I think its a movie anyone can enjoy."
     },
     {
         title: "Remember the Titans",
@@ -501,7 +501,7 @@ const movies = [
         rating: 9.69,
         minutes: 113,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tYzFuYXmT8LOYASlFCkaPiAFAl0.jpg",
-        comment: ""
+        comment: "An amazing heist movie. The action scenes are fantastic, the characters are well written, but what stands out the most to me is the attention to detail, especially in the sound design. The way they use sound and lack of sound in the movie is phenomenal."
     },
     {
         title: "Look Back",
@@ -605,7 +605,7 @@ const movies = [
         rating: 9.07,
         minutes: 89,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/8shwLEDzajJGSfLgbpac8x8xn1U.jpg",
-        comment: ""
+        comment: "A really good comedy-horror. Tucker and Dave are two good natured guys who keep being assumed to be serial killers, as some teenagers cause their own deaths in ridiculous ways while trying to flee."
     },
     {
         title: "Everything Everywhere All At Once",
@@ -613,7 +613,7 @@ const movies = [
         rating: 9.07,
         minutes: 140,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/u68AjlvlutfEIcpmbYpKcdi09ut.jpg",
-        comment: ""
+        comment: "Some people love it some people hate it. Personally I think this is a really unique and creative movie. It has a huge range of seriousness, from dildo sword fights and everything bagel singularities to deeper topics like the meaning of life and the power of choice."
     },
     {
         title: "Scott Pilgrim vs. the World",

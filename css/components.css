@@ -2,11 +2,11 @@
 
 .card,
 .project-card{
-    background: #1e1e1e;
-    color: #f2f2f2;
+    background: var(--bg-surface);
+    color: var(--text-light);
     padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
     transition: all 0.2s ease;
 }
 
@@ -18,9 +18,9 @@
 }
 
 .contact-card{
-    background: rgba(250, 250, 250, 0.8);
+    background: var(--bg-overlay);
     padding: 25px;
-    border-radius: 16px;
+    border-radius: var(--radius);
     max-width: 400px;
     margin: 40px auto;
     text-align: center;
@@ -29,7 +29,7 @@
 .card:hover,
 .project-card:hover,
 .contact-card:hover{
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-strong);
     transform: translateY(-5px);
 }
 
@@ -38,17 +38,17 @@
 .button-link{
     display: inline-block;
     padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid #d2d2d2;
-    color: #d2d2d2;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
     font-weight: bold;
     transition: all 0.2s ease;
     margin-top: auto;
 }
 
 .button-link:hover{
-    background: #1e1e1e;
-    color: white;
+    background: var(--bg-surface);
+    color: var(--text-light);
 }
 
 /* Under Construction Banner*/
@@ -58,7 +58,7 @@
     padding: 15px 20px;
     background: rgba(255, 193, 7, 0.2);
     border: 2px solid rgba(255, 193, 7, 0.6);
-    border-radius: 12px;
+    border-radius: var(--radius);
     text-align: center;
     font-weight: 600;
     backdrop-filter: blur(5px);

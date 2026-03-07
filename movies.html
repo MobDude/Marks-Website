@@ -14,14 +14,27 @@
 
         <body>
 
+        <!--header -->
         <header>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="about.html">About</a>
-                <a href="explore.html">Explore</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+
+            <div class="header-inner">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <select id="theme-selector">
+                    <option value="default">Default</option>
+                    <option value="light">Light</option>
+                    <option value="cherry">Cherry</option>
+                    <option value="dark">Dark</option>
+                    <option value="midnight">Midnight</option>
+                </select>
+                
+            </div>
         </header>
 
         <section class="hero">
@@ -70,6 +83,6 @@
         </section>
 
         <script src="movies.js"></script>
-
+        <script src="theme.js"></script>
     </body>
 </html>

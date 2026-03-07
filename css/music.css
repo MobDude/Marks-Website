@@ -4,24 +4,24 @@
     gap: 20px;
     align-items: flex-start;
 
-    background: #1e1e1e;
-    color: #f2f2f2;
+    background: var(--bg-surface);
+    color: var(--text-light);
 
     padding: 20px;
-    border-radius: 16px;
+    border-radius: var(--radius);
 
     width: 1000px;
     margin: 40px auto;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Notes section */
 .music-notes {
     max-width: 300px;
-    background: #2a2a2a;
+    background: var(--bg-surface-soft);
     padding: 12px;
-    border-radius: 12px;
+    border-radius: var(--radius);
     font-size: 0.9rem;
     line-height: 1.4;
 }
@@ -40,10 +40,10 @@
 
 .genre-chip{
     padding: 4px 10px;
-    border-radius: 999px;
+    border-radius:  calc(var(--radius) * 100);
     font-size: 0.75rem;
     font-weight: 600;
-    color: white;
+    color: var(--text-light);
     letter-spacing: 0.5px;
 }
 
@@ -103,18 +103,18 @@
     padding: 6px 12px;
     display: inline-block;
     padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid #d2d2d2;
-    background-color: #1e1e1e ;
-    color: #d2d2d2;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+    background-color: var(--bg-surface);
+    color: var(--text-light);
     font-weight: bold;
     transition: all 0.2s ease;
     margin-top: auto;
 }
 
 .music-button-link:hover{
-    background: #1e1e1e;
-    color: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: var(--bg-overlay);
+    color: var(--text-light);
+    box-shadow: var(--shadow-strong);
     transform: translateY(-5px);
 }

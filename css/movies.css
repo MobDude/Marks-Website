@@ -10,23 +10,23 @@
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    background: #1e1e1e;
-    color: #f2f2f2;
+    background: var(--bg-surface);
+    color: var(--text-light);
     padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-medium);
     transition: all 0.2s ease;
 }
 
 .movie-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow-strong);
 }
 
 .movie-poster {
     width: 120px;
     height: auto;
-    border-radius: 8px;
+    border-radius: var(--radius);
     flex-shrink: 0;
 }
 
@@ -57,18 +57,18 @@
     display: flex;
     flex-direction: column;
     padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-medium);
     gap: 25px;
 
 }
 
 .stats-card{
-    background: #1e1e1e;
-    color: #f2f2f2;
+    background: var(--bg-surface);
+    color: var(--text-light);
     padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-medium);
     transition: transform 0.2s ease;
 }
 
@@ -83,10 +83,10 @@
 .movie-filters {
     margin-bottom: 10px;
     padding: 20px;
-    border-radius: 16px;
-    background: #1e1e1e;
-    color: #f2f2f2;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border-radius: var(--radius);
+    background: var(--bg-surface);
+    color: var(--text-light);
+    box-shadow: var(--shadow-medium);
 }
 
 .filter-label {
@@ -106,9 +106,9 @@
     padding: 6px 14px;
     border-radius: 999px;
 
-    border: 1px solid #444;
-    background: #2a2a2a;
-    color: #f2f2f2;
+    border: 1px solid var(--border-light);
+    background: var(--bg-surface);
+    color: var(--text-light);
 
     cursor: pointer;
     font-size: 0.9rem;
@@ -117,13 +117,13 @@
 }
 
 .star-filter button:hover {
-    background: #3a3a3a;
+    background: var(--bg-overlay);
 }
 
 .star-filter button.active {
-    background: #9968E6;
-    border-color: #9968E6;
-    color: white;
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: var(--text-light);
 }
 
 #movie-container {
@@ -147,19 +147,19 @@
     padding: 5px 10px;
     border-radius: 8px;
     border: none;
-    background: #2a2a2a;
-    color: white;
+    background: var(--bg-surface);
+    color: var(--text-light);
 }
 
 #sort-direction {
     padding: 5px 10px;
     border-radius: 8px;
     border: none;
-    background: #2a2a2a;
-    color: white;
+    background: var(--bg-surface);
+    color: var(--text-light);
     cursor: pointer;
 }
 
 #sort-direction:hover {
-    background: #3a3a3a;
+    background: var(--bg-overlay);
 }

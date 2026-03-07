@@ -1,0 +1,165 @@
+/*Movies*/
+.movie-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.movie-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: #1e1e1e;
+    color: #f2f2f2;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.movie-poster {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.movie-info {
+    flex: 1;
+}
+
+.stars {
+    color: gold;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.movie-layout{
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.movie-stats{
+    flex: 0 0 400px;
+    position: sticky;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    gap: 25px;
+
+}
+
+.stats-card{
+    background: #1e1e1e;
+    color: #f2f2f2;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.stats-card:hover{
+    transform: translateY(-3px);
+}
+
+.stats-card ol{
+    padding-left: 20px;
+}
+
+.movie-filters {
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 16px;
+    background: #1e1e1e;
+    color: #f2f2f2;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.filter-label {
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.star-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.star-filter button {
+    padding: 6px 14px;
+    border-radius: 999px;
+
+    border: 1px solid #444;
+    background: #2a2a2a;
+    color: #f2f2f2;
+
+    cursor: pointer;
+    font-size: 0.9rem;
+
+    transition: all 0.2s ease;
+}
+
+.star-filter button:hover {
+    background: #3a3a3a;
+}
+
+.star-filter button.active {
+    background: #9968E6;
+    border-color: #9968E6;
+    color: white;
+}
+
+#movie-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sort-controls {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-controls label {
+    font-weight: 600;
+}
+
+.sort-controls select {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    background: #2a2a2a;
+    color: white;
+}
+
+#sort-direction {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    background: #2a2a2a;
+    color: white;
+    cursor: pointer;
+}
+
+#sort-direction:hover {
+    background: #3a3a3a;
+}

@@ -1,0 +1,33 @@
+/* Global styles */
+
+*{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #9968E6, #B5E668);
+    background-attachment: fixed;
+    color: #333333;
+}
+
+ul{
+    margin-left: 20px;
+    list-style-position: inside;
+}
+
+a{
+    color: #333;
+    text-decoration: none;
+}
+
+hr{
+    margin: 20px 0;
+    border: 0;
+    height: 1px;
+    background: #333333;
+}

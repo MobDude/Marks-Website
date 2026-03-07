@@ -1,0 +1,14 @@
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li {
+    margin-bottom: 15px;
+}
+
+.social-icons img{
+    vertical-align: middle;
+    margin-right: 8px;
+}

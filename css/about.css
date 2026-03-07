@@ -1,0 +1,42 @@
+/*About and contact*/
+.profile-pic {
+
+    float: left;
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+
+.about-card{
+    background: #1e1e1e;
+    color: #f2f2f2;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+    max-width: 1250px;
+    margin: 40px auto;
+}
+
+.about-lists{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.about-list-card{
+    background: #1e1e1e;
+    color: #f2f2f2;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+    flex: 1;
+    max-width: 400px;
+}

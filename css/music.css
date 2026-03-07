@@ -1,0 +1,96 @@
+/* MUSIC CARD */
+.music-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+
+    background: #1e1e1e;
+    color: #f2f2f2;
+
+    padding: 20px;
+    border-radius: 16px;
+
+    width: 1000px;
+    margin: 40px auto;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Notes section */
+.music-notes {
+    max-width: 300px;
+    background: #2a2a2a;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.music-notes h4 {
+    margin-top: 0;
+}
+
+.genre-container{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    width: 160px;
+}
+
+.genre-chip{
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.genre-chip.progressive {
+    background: #f5c542;
+}
+
+.genre-chip.metal {
+    background: #8a2be2;
+}
+
+.genre-chip.ost{
+    background: #239e6f;
+}
+
+.genre-chip.progressive{
+    background: #f5c542;
+}
+
+.genre-chip.pop{
+    background: #ff69b4;
+}
+
+.genre-chip.alternative{
+    background: #1e90ff;
+}
+
+.genre-chip.folk{
+    background: #228b22;
+}
+
+.genre-chip.experimental{
+    background: #0300c2;
+}
+
+.genre-chip.rock{
+    background: #8b4513;
+}
+
+.genre-chip.dance{
+    background: #ff0000;
+}
+
+.genre-chip.hiphop{
+    background: #800080;
+}
+
+.genre-chip.rap{
+    background: #4653a0;
+}

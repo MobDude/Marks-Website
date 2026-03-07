@@ -1,14 +1,43 @@
+/* Social icons list */
 .social-icons {
     list-style: none;
     padding: 0;
     margin: 0;
+    color: var(--accent-primary); /* follows theme */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* spacing between items */
 }
 
-.social-icons li {
-    margin-bottom: 15px;
+/* Each icon link */
+.social-icons li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.social-icons img{
-    vertical-align: middle;
-    margin-right: 8px;
+/* Icon spacing and sizing */
+.social-icons svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    flex-shrink: 0; /* prevents shrinking on smaller screens */
+    transition: transform 0.2s ease;
+}
+
+/* Hover effects */
+.social-icons li a:hover {
+    color: var(--link-hover); /* theme-aware hover color */
+}
+
+.social-icons li a:hover svg {
+    transform: scale(1.1); /* subtle icon pop */
+}
+
+/* Optional: soften icon for muted state */
+.social-icons li a:active svg {
+    transform: scale(0.95);
 }

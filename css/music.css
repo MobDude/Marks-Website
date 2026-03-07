@@ -59,8 +59,8 @@
     background: #239e6f;
 }
 
-.genre-chip.progressive{
-    background: #f5c542;
+.genre-chip.indie{
+    background: #0c4935;
 }
 
 .genre-chip.pop{
@@ -93,4 +93,8 @@
 
 .genre-chip.rap{
     background: #4653a0;
+}
+
+.genre-chip.electronic{
+    background: #b1c500;
 }

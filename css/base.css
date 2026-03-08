@@ -52,6 +52,7 @@ hr{
     /* Links */
     --link-color: #f3eaea;
     --link-hover: #ffffff;
+    --shine-color: rgba(255,255,255,0.55);
 
     /* Accent */
     --accent-primary: #ff4b4b;
@@ -84,6 +85,7 @@ body.default{
     /* Links */
     --link-color: #f3eaea;
     --link-hover: #ffffff;
+    --shine-color: rgba(255,120,120,0.25);
 
     /* Accent */
     --accent-primary: #ff4b4b;
@@ -117,6 +119,7 @@ body.light{
     /* Links */
     --link-color: #1f2933;
     --link-hover: #000000;
+    --shine-color: rgba(0,0,0,0.1);
 
     /* Accent */
     --accent-primary: #3b82f6;
@@ -149,6 +152,7 @@ body.cherry{
     /* Links */
     --link-color: #7f1d1d;
     --link-hover: #e11d48;
+    --shine-color: rgba(225,29,72,0.18);
 
     /* Accent */
     --accent-primary: #e11d48;
@@ -181,6 +185,7 @@ body.dark{
     /* Links */
     --link-color: #e6e6e6;
     --link-hover: #ffffff;
+    --shine-color: rgba(255,255,255,0.45);
 
     /* Accent */
     --accent-primary: #4f9cff;
@@ -213,6 +218,7 @@ body.midnight{
     /* Links */
     --link-color: #e2e8f0;
     --link-hover: #ffffff;
+    --shine-color: rgba(56,189,248,0.35);
 
     /* Accent */
     --accent-primary: #38bdf8;

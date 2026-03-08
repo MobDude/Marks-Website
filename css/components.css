@@ -48,9 +48,44 @@
     margin-top: auto;
 }
 
-.button-link:hover{
+.button-link:hover,.button-link-shine:hover{
     background: var(--bg-surface);
     color: var(--text-light);
+}
+
+.button-link-shine{
+    display: inline-block;
+    padding: 6px 12px; 
+    border-radius: var(--radius); 
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin-top: auto;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.shine{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 0%, var(--shine-color) 45%, var(--shine-color) 55%, transparent 100%);
+    transform: skewX(-30deg);
+    animation: shine 4s ease-in-out infinite;
+    animation-delay: 8s;
+}
+
+@keyframes shine {
+    0% { left: -75%; opacity: 0; }
+    20% { opacity: 0.6; }
+    50% { left: 125%; opacity: 0.6; }
+    60% { opacity: 0; }
+    100% { left: 125%; opacity: 0; }
 }
 
 /* Under Construction Banner*/

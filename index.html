@@ -55,43 +55,10 @@
             <div class="card">
                 <h2>Explore</h2>
                 <p>Movies, adventures, opinions, and more!</p>
-                <a href="explore.html" class="button-link" 
-                    style="
-                        position: relative;
-                        overflow: hidden;
-                        padding: 8px 18px; 
-                        border-radius: 6px; 
-                        font-weight: 600; 
-                        text-decoration: none; 
-                        display: inline-block; 
-                        border: 2px solid var(--border-light);
-                        background: var(--bg-surface);
-                        color: var(--text-light);
-                    ">
+                <a href="explore.html" class="button-link-shine" >
                     Explore
-                    <span style="
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: -75%;
-                        width: 50%;
-                        height: 100%;
-                        background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.6), rgba(255,255,255,0.2));
-                        transform: skewX(-20deg);
-                        animation: shine 4s ease-in-out infinite;
-                        animation-delay: 3s;
-                    "></span>
+                    <span class ="shine"></span>
                 </a>
-
-                <style>
-                    @keyframes shine {
-                        0% { left: -75%; opacity: 0; }
-                        20% { opacity: 0.6; }
-                        50% { left: 125%; opacity: 0.6; }
-                        60% { opacity: 0; }
-                        100% { left: 125%; opacity: 0; }
-                    }
-                </style>
             </div>
 
             <div class="card">

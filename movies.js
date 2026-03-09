@@ -1,5 +1,21 @@
 const movies = [
     {
+        title: "Glass Onion: A Knives Out Mystery",
+        year: 2022,
+        rating: 9.00,
+        minutes: 139,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vDGr1YdrlfbU9wxTOdpf3zChmv9.jpg",
+        comment: "This movie is another really good murder mystery. This one is set during covid which is kind of a throwback. Anyways, it is nearly as good as the first one, and is a great watch."
+    },
+    {
+        title: "Knives Out",
+        year: 2019,
+        rating: 9.29,
+        minutes: 130,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
+        comment: "An incredible murder mystery movie. It basically follows the basic idea, rich father is killed with inheritance at stake. The movie has a couple of twists and all of them are good."
+    },
+    {
         title: "labyrinth",
         year: 1986,
         rating: 6.9,

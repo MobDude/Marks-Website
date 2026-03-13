@@ -1,5 +1,13 @@
 const movies = [
     {
+        title: "The VelociPastor",
+        year: 2017,
+        rating: 8.5,
+        minutes: 70,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/trSmNw63luh84MBy5XLH0UiN1BC.jpg",
+        comment: "An hilarious movie that doesn't take itself seriously. There are so many good bits in this, such as 'So your parents died, Doug. It's what parents do. They die on you'."
+    },
+    {
         title: "Glass Onion: A Knives Out Mystery",
         year: 2022,
         rating: 9.00,

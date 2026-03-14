@@ -99,6 +99,38 @@
     background: #b1c500;
 }
 
+.genre-chip.orchestral{
+    background: #2b3342;
+}
+
+.genre-chip.blues{
+    background: #2e198b;
+}
+
+.genre-chip.country{
+    background: #7a3608;
+}
+
+.genre-chip.rnb{
+    background: #0a1d38;
+}
+
+.genre-chip.lofi{
+    background: #81d881;
+}
+
+.genre-chip.comedy{
+    background: #c6d351;
+}
+
+.genre-chip.funk{
+    background: #077004;
+}
+
+.genre-chip.punk{
+    background: #660e2c;
+}
+
 .music-button-link{
     padding: 6px 12px;
     display: inline-block;

@@ -1,13 +1,13 @@
 const movies = [
-{
-title: "Ace Ventura: Pet Detective",
-year: 1994,
-rating: 6.2,
-minutes: 86,
-poster: "https://www.themoviedb.org/collection/3167-ace-ventura-collection",
-comment: "One of Jim Carrey earlier movies, it has the same kind of comedy and expression as you can find in many of his other films. Unfortunately I don't think this one aged very well."
+    {
+    title: "Ace Ventura: Pet Detective",
+    year: 1994,
+    rating: 6.2,
+    minutes: 86,
+    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pqiRuETmuSybfnVZ7qyeoXhQyN1.jpg",
+    comment: "One of Jim Carrey earlier movies, it has the same kind of comedy and expression as you can find in many of his other films. Unfortunately I don't think this one aged very well."
 
-},
+    },
     {
         title: "The VelociPastor",
         year: 2017,

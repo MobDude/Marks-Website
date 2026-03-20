@@ -1,5 +1,13 @@
 const movies = [
     {
+     title: "The Rocky Horror Picture Show",
+     year: 1975,
+     rating: 2,
+     minutes: 100,
+     poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
+     comment: "Honestly this movie was really hard to finish for me. There seems to be no cohesive plot that I can follow. There are so many loose ends and things that go un addressed. I also find that the dialogue and in some cases the singing leave something to be desired."   
+    },
+    {
     title: "Ace Ventura: Pet Detective",
     year: 1994,
     rating: 6.2,

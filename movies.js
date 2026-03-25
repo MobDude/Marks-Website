@@ -10,10 +10,10 @@ const movies = [
     {
         title: "Star Wars: Episode I: The Phantom Menace",
         year: 1999,
-        rating: 5.9
+        rating: 5.9,
         minutes: 135,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/6wkfovpn7Eq8dYNKaG5PY3q2oq6.jpg",
-        comment: "I think this movie is ok. It has a few good scenes, but also a good number of bad ones. Alot of the acting is not great, and at times I found myself really bored. Maybe I'm just not a fan of Star Wars though."
+        comment: "I think this movie is ok. It has a few good scenes, but also a good number of bad ones. A lot of the acting is not great, and at times I found myself really bored. Maybe I'm just not a fan of Star Wars though."
     },
     {
         title: "The Rocky Horror Picture Show",

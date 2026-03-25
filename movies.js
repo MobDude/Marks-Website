@@ -1,19 +1,35 @@
 const movies = [
     {
-     title: "The Rocky Horror Picture Show",
-     year: 1975,
-     rating: 2,
-     minutes: 100,
-     poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
-     comment: "Honestly this movie was really hard to finish for me. There seems to be no cohesive plot that I can follow. There are so many loose ends and things that go un addressed. I also find that the dialogue and in some cases the singing leave something to be desired."   
+        title: "Shutter Island",
+        year: 2012,
+        rating: 9.0,
+        minutes: 138,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/nrmXQ0zcZUL8jFLrakWc90IR8z9.jpg",
+        comment: "A really great movie that had me feeling a little insane myself at times. The ending is open ended, but I feel it also has enough there to be satisfying."
     },
     {
-    title: "Ace Ventura: Pet Detective",
-    year: 1994,
-    rating: 6.2,
-    minutes: 86,
-    poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pqiRuETmuSybfnVZ7qyeoXhQyN1.jpg",
-    comment: "One of Jim Carrey earlier movies, it has the same kind of comedy and expression as you can find in many of his other films. Unfortunately I don't think this one aged very well."
+        title: "Star Wars: Episode I: The Phantom Menace",
+        year: 1999,
+        rating: 5.9
+        minutes: 135,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/6wkfovpn7Eq8dYNKaG5PY3q2oq6.jpg",
+        comment: "I think this movie is ok. It has a few good scenes, but also a good number of bad ones. Alot of the acting is not great, and at times I found myself really bored. Maybe I'm just not a fan of Star Wars though."
+    },
+    {
+        title: "The Rocky Horror Picture Show",
+        year: 1975,
+        rating: 2,
+        minutes: 100,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
+        comment: "Honestly this movie was really hard to finish for me. There seems to be no cohesive plot that I can follow. There are so many loose ends and things that go un addressed. I also find that the dialogue and in some cases the singing leave something to be desired."   
+    },
+    {
+        title: "Ace Ventura: Pet Detective",
+        year: 1994,
+        rating: 6.2,
+        minutes: 86,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pqiRuETmuSybfnVZ7qyeoXhQyN1.jpg",
+        comment: "One of Jim Carrey earlier movies, it has the same kind of comedy and expression as you can find in many of his other films. Unfortunately I don't think this one aged very well."
 
     },
     {

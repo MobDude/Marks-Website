@@ -41,7 +41,8 @@
 }
 
 .adventure-date{
-    font-size: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
     color: var(--text-muted);
     margin-bottom: 10px;
 }
@@ -58,7 +59,8 @@
 
 .journal-content p{
     margin-bottom: 20px;
-    font-size: 10px;
+    font-size: 20px;
+    letter-spacing: 1.5px;
     line-height: 1.7;
 }
 
@@ -75,7 +77,7 @@
 
 .image-caption{
     margin-top: 8px;
-    font-size: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
     color: var(--text-muted);
-    font-style: italic;
 }

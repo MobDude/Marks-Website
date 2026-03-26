@@ -36,7 +36,7 @@
 
 .stars {
     color: gold;
-    font-size: 1.2rem;
+    font-size: 20px;
     margin-bottom: 8px;
 }
 
@@ -91,8 +91,9 @@
 
 .filter-label {
     display: block;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 20px;
     margin-bottom: 12px;
 }
 
@@ -111,7 +112,7 @@
     color: var(--text-light);
 
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 10px;
 
     transition: all 0.2s ease;
 }
@@ -140,7 +141,8 @@
 }
 
 .sort-controls label {
-    font-weight: 600;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .sort-controls select {

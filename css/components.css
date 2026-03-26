@@ -44,6 +44,7 @@
     border: 1px solid var(--border-light);
     color: var(--text-muted);
     font-weight: bold;
+    letter-spacing: 2px;
     transition: all 0.2s ease;
     margin-top: auto;
 }
@@ -60,6 +61,7 @@
     border: 1px solid var(--border-light);
     color: var(--text-muted);
     font-weight: bold;
+    letter-spacing: 2px;
     transition: all 0.2s ease;
     margin-top: auto;
 
@@ -97,7 +99,8 @@
     border: 2px solid rgba(255, 193, 7, 0.6);
     border-radius: var(--radius);
     text-align: center;
-    font-weight: 600;
+    font-weight: bold;
+    letter-spacing: 2px;
     backdrop-filter: blur(5px);
 
 }

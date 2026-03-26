@@ -1,7 +1,11 @@
 /* Global styles */
+@font-face {
+        font-family: MS_PAIN;
+        src: url('mspaint.ttf') format('truetype');
+} 
 
 *{
-    font-family: Arial, sans-serif;
+    font-family: MS_PAIN, Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,16 +17,44 @@ body{
     background: var(--bg-main);
     background-attachment: fixed;
     color: var(--text-main);
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+    letter-spacing: 2px;
+    font-size: 75px;
+}
+h2{
+    letter-spacing: 2px;
+    font-size: 35px;
+}
+h3{
+    letter-spacing: 2px;
+}
+
+p{
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+select{
+    letter-spacing: 1px;
+    font-size: 20px;
 }
 
 ul{
     margin-left: 20px;
     list-style-position: inside;
+    letter-spacing: 1px;
+    font-size: 20px;
 }
 
 a{
     color: var(--link-color);
     text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 20px;
 }
 
 a:hover{

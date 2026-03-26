@@ -13,14 +13,14 @@
 
 .project-image-caption{
     margin-top: 8px;
-    font-size: 0.9rem;
+    font-size: 20px;
     color: var(--text-muted);
     font-style: italic;
 }
 
 .project-content{
     margin-bottom: 20px;
-    font-size: 1.05rem;
+    font-size: 20px;
     line-height: 1.7;
     display: flex;
     flex-wrap: wrap;

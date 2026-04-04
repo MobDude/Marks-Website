@@ -1,5 +1,38 @@
 const movies = [
     {
+        title: "Conclave",
+        year: 2024,
+        rating: 9.0,
+        minutes: 120,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vYEyxF1UT779RiEalpMjUT6kfdf.jpg",
+        comment: "A captivating political drama that delves into the intricate world of Vatican politics. The film masterfully portrays the tension and intrigue surrounding the election of a new pope, with compelling performances and a gripping storyline that keeps viewers on the edge of their seats. The ending did feel a little rushed however."
+    },
+    {
+        title: "Crimson Peak",
+        year: 2015,
+        rating: 8.3,
+        minutes: 119,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/f9TOb5anVwZeSbYjU1qNxPk3KUk.jpg",
+        comment: "This is a great mix of thriller, horror, mystery and romance. The story is pretty good, and the characters are all interesting. The cinematography is really good, and the use of color is really well done. The only thing I don't love about this movie is that it has a pretty slow start, but it definitely picks up after that."
+
+    },
+    {
+        title: "Dead Poets Society",
+        year: 1989,
+        rating: 8.4,
+        minutes: 128,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/erzbMlcNHOdx24AXOcn2ZKA7R1q.jpg",
+        comment: "Why is it that every movie that has Robin Williams in it is so good? This is a really great movie. The acting is fantastic, and the message of the movie is really powerful. I would definitely recommend this movie to anyone."
+    },
+    {
+        title: "The Snow Queen",
+        year: 1957,
+        rating: 4.8,
+        minutes: 68,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/ptCK2qAyGEmQBys3cImY6o6qAyp.jpg",
+        comment: "This movie has that VHS movie feel to it. The story is pretty simple. It basically is just one thing happening after another, so it can be hard to follow or stay invested in it. "
+    },
+    {
         title: "Shutter Island",
         year: 2012,
         rating: 9.0,

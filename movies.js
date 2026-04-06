@@ -1,5 +1,30 @@
 const movies = [
     {
+        title: "Left Behind",
+        year: 2014,
+        rating: 1.7,
+        minutes: 110,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/b9Q2WR62yB5Aq0hd6kyRFS9cc3Y.jpg",
+        comment: "I went into this expecting a disaster movie with biblical proportions, and was really disappointed. The moveie drags on so much. It takes over half an hour for the main plot point to happen, and even when it does, there is nothing interesting about it. Really just boring. "
+        
+    },
+    {
+        title: "Gods Not Dead",
+        year: 2014,
+        rating: 0.6,
+        minutes: 113,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/yKUzBolWrwyByevBtDPfy3kIumv.jpg",
+        comment: "This is a movie I remember watching when I was younger, and I wanted to watch it again now that I am older and my views and beliefs have changed. Yeah this is a bad movie. The movie is full of is full of stereotypes and straw man arguments, opting to create a weak debate rather than honestly explore philosophical questions. "
+    },
+    {
+        title: "Pacific Rim",
+        year: 2013,
+        rating: 7.5,
+        minutes: 131,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/8wo4eN8dWKaKlxhSvBz19uvj8gA.jpg",
+        comment: "A fun movie, especially if you want to dig giant robots fighting giant monsters. The story is pretty simple, but it works well. The CGI and graphics hold up pretty well too."
+    },
+    {
         title: "Conclave",
         year: 2024,
         rating: 9.0,

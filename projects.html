@@ -49,7 +49,80 @@
 
         <!--Project list with cards for each project -->
         <section class="project-list">
-            
+
+            <!--Real-Time Fire Fighting Drone Simulator-->
+            <div class="project-card">
+                <h2>Real-Time Fire Fighting Drone Simulator</h2>
+                <p>A distributed system simulation of autonomous firefighting drones operating in real time. The system models coordination, communication, and physical behavior across multiple independent processes.</p>
+
+                <p>
+                    The architecture is composed of three core components:
+                </p>
+
+                <ul>
+                    <li>Scheduler: Central coordinator responsible for task assignment, state tracking, and synchronization</li>
+                    <li>Drone Subsystem: Simulates drone behavior including movement, resource management, and faults</li>
+                    <li>Fire Incident Subsystem: Generates and manages fire events over simulated time</li>
+                </ul>
+
+                <div class="project-image">
+                    <img src="Images/projects/GUI_PLACEHOLDER.gif" alt="The GUI its showing drones fires, and status.">
+                    <p class="project-image-caption">The GUI its showing drones fires, and status.</p>
+                </div>
+
+                <p>
+                    Each component runs as an independent process and communicates via UDP, while the Scheduler acts as a synchronized monitor using Java threads.
+                </p>
+
+                <div class="image-row">
+                    <div class="image-item">
+                        <img src="Images/projects/DroneReady.png" alt="The Drone in its Ready State">
+                        <p class="project-image-caption">The Drone in its Ready State.</p>
+                    </div>
+                    <div class="image-item">
+                        <img src="Images/projects/DroneEnRoute.png" alt="The Drone in its EnRoute State">
+                        <p class="project-image-caption">The Drone in its EnRoute State.</p>
+                    </div>
+                    <div class="image-item">
+                        <img src="Images/projects/DroneDropping.png" alt="The Drone in its Dropping State">
+                        <p class="project-image-caption">The Drone in its Dropping State.</p>
+                    </div>
+                    <div class="image-item">
+                        <img src="Images/projects/DroneReturning.png" alt="The Drone in its Returning State">
+                        <p class="project-image-caption">The Drone in its Returning State.</p>
+                    </div>
+                </div>
+
+                <div class="image-row">
+                    <div class="image-item">
+                        <img src="Images/projects/DroneSensorHold.png" alt="The Drone in its SensorHold State">
+                        <p class="project-image-caption">The Drone in its SensorHold State.</p>
+                    </div>
+                    <div class="image-item">
+                        <img src="Images/projects/DroneStuck.png" alt="The Drone in its Stuck State">
+                        <p class="project-image-caption">The Drone in its Stuck State.</p>
+                    </div>
+                    <div class="image-item">
+                        <img src="Images/projects/DroneOFF.png" alt="The Drone in its OFF State">
+                        <p class="project-image-caption">The Drone in its OFF State.</p>
+                    </div>
+                </div>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Distributed Architecture:</strong> Independent processes communicating over UDP</li>
+                    <li><strong>Thread-Safe Scheduler:</strong> Monitor-based synchronization using wait/notify</li>
+                    <li><strong>Drone Simulation:</strong> State machine, physics-based movement, and resource constraints (water and battery)</li>
+                    <li><strong>Real-Time GUI:</strong> Live visualization of drones, fires, and system state</li>
+                    <li><strong>Event Simulation:</strong> Time-driven fire generation from CSV input</li>
+                    <li><strong>Fault Handling:</strong> Detection and recovery mechanisms for drone failures</li>
+                    <li><strong>Logging & Metrics:</strong> Simulation logging with performance analysis (response time, completion time, utilization)</li>
+                </ul>
+                <br>
+                <a href="https://github.com/MobDude/Firefighting-Drone-Swarm-A1-7" class="button-link" target="_blank">View on Github</a>
+            </div>
+
+            <!--Discord Movie Bot-->
             <div class="project-card">
                 <h2>Discord Movie Bot</h2>
                 <p>A Discord bot that helps friends organize movie nights  together. Features include viewing the movie list, 
@@ -83,6 +156,7 @@
                 <a href="https://github.com/MobDude/Discord_MovieBot" class="button-link" target="_blank">View on Github</a>
             </div>
 
+            <!--Website-->
             <div class="project-card">
                 <h2>This Website</h2>
                 <p>The personal website you are currently on! A fully custom site built with HTML and CSS.</p>

@@ -25,3 +25,20 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.image-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px
+}
+
+.image-item {
+    flex: 0 1 200px;
+    text-align: center;
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+}

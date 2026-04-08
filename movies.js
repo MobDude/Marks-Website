@@ -1,11 +1,19 @@
 const movies = [
     {
+        title: "Promare",
+        year: 2019,
+        rating: 4.8,
+        minutes: 111,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/cCVRivpiVUJ4Wn6gHm8pLXppXla.jpg",
+        comment: "This movie had a lot of potential. The animation was really stylized and good, but that's really all I can give it. The story was pretty mid, and drags on a bit. I found myself uninvested in the characters and plot, which I think impacted the movie in a big way."
+    },
+    {
         title: "Left Behind",
         year: 2014,
         rating: 1.7,
         minutes: 110,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/b9Q2WR62yB5Aq0hd6kyRFS9cc3Y.jpg",
-        comment: "I went into this expecting a disaster movie with biblical proportions, and was really disappointed. The moveie drags on so much. It takes over half an hour for the main plot point to happen, and even when it does, there is nothing interesting about it. Really just boring. "
+        comment: "I went into this expecting a disaster movie with biblical proportions, and was really disappointed. The movie drags on so much. It takes over half an hour for the main plot point to happen, and even when it does, there is nothing interesting about it. Really just boring. "
         
     },
     {
@@ -104,7 +112,7 @@ const movies = [
         rating: 9.00,
         minutes: 139,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vDGr1YdrlfbU9wxTOdpf3zChmv9.jpg",
-        comment: "This movie is another really good murder mystery. This one is set during covid which is kind of a throwback. Anyways, it is nearly as good as the first one, and is a great watch."
+        comment: "This movie is another really good murder mystery. This one is set during Covid-19 which is kind of a throwback. Anyways, it is nearly as good as the first one, and is a great watch."
     },
     {
         title: "Knives Out",

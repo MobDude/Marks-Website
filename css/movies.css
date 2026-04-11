@@ -99,20 +99,20 @@
 
 .star-filter {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     flex-wrap: wrap;
 }
 
 .star-filter button {
-    padding: 6px 14px;
+    padding: 6px 4px;
     border-radius: 999px;
 
     border: 1px solid var(--border-light);
     background: var(--bg-surface);
     color: var(--text-light);
-
+    font-size: calc(20px * var(--font-scale));
+    letter-spacing: var(--letter-spacing);
     cursor: pointer;
-    font-size: 10px;
 
     transition: all 0.2s ease;
 }
@@ -123,7 +123,7 @@
 
 .star-filter button.active {
     background: var(--accent-primary);
-    border-color: var(--accent-primary);
+    background-color: rgb(from var(--accent-primary) r g b / 0.2);
     color: var(--text-light);
 }
 

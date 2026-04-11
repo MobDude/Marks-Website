@@ -972,17 +972,21 @@ function updateMovies() {
 }
 
 function generateStars(rating) {
+    const totalStars = 5;
+    const fullStars = Math.floor(rating / 2);
+    const halfStar = (rating % 2) >= 1;
     let stars = "";
-    const rounded = Math.round((rating / 2) * 2) / 2; 
-    for (let i = 1; i <= 5; i++) {
-        if (rounded >= i){
-            stars += "★";
-        } else if (rounded + 0.5 ===i) {
-            stars += "⯨";
-        } else {
-            stars += "☆";
-        }
+    for (let i = 0; i < fullStars; i++) {
+        stars += createStarSVG("full");
     }
+    if (halfStar) {
+        stars += createStarSVG("half");
+    }
+    const remaining = totalStars - fullStars - (halfStar ? 1 : 0);
+    for (let i = 0; i < remaining; i++) {
+        stars += createStarSVG("empty");
+    }
+
     return stars;
 }
 
@@ -1054,10 +1058,43 @@ function getStarRating(movie) {
     return Math.round(stars * 2) / 2;
 }
 
+function createStarSVG(type = "full") {
+    const id = Math.random().toString(36).slice(2);
+
+    if (type === "half") {
+        return `
+        <svg viewBox="0 0 24 24" class="star half">
+            <defs>
+                <linearGradient id="half-grad-${id}">
+                    <stop offset="50%" stop-color="currentColor"/>
+                    <stop offset="50%" stop-color="transparent"/>
+                </linearGradient>
+            </defs>
+            <path fill="url(#half-grad-${id})" stroke="currentColor" stroke-width="1"
+                d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 16.8 5.8 20l1.6-6.7L2.2 8.9l6.9-.6z"/>
+        </svg>`;
+    }
+
+    if (type === "empty") {
+        return `
+        <svg viewBox="0 0 24 24" class="star empty">
+            <path fill="none" stroke="currentColor" stroke-width="1.5"
+                d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 16.8 5.8 20l1.6-6.7L2.2 8.9l6.9-.6z"/>
+        </svg>`;
+    }
+
+    return `
+    <svg viewBox="0 0 24 24" class="star full">
+        <path fill="currentColor"
+            d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 16.8 5.8 20l1.6-6.7L2.2 8.9l6.9-.6z"/>
+    </svg>`;
+}
+
 const filterButtons = document.querySelectorAll(".star-filter button");
 
 const sortSelect = document.getElementById("sort-select");
 const sortDirection = document.getElementById("sort-direction");
+sortDirection.innerHTML = getSortIcon(sortDescending);
 
 sortSelect.addEventListener("change", () => {
     currentSort = sortSelect.value;
@@ -1067,7 +1104,7 @@ sortSelect.addEventListener("change", () => {
 sortDirection.addEventListener("click", () => {
     sortDescending = !sortDescending;
 
-    sortDirection.textContent = sortDescending ? "⬆" : "⬇";
+    sortDirection.innerHTML = getSortIcon(sortDescending);
 
     updateMovies();
 });
@@ -1084,5 +1121,29 @@ filterButtons.forEach(btn => {
     });
 });
 
+filterButtons.forEach(btn => {
+    const stars = Number(btn.dataset.stars);
+
+    // Convert stars (out of 5) → rating (out of 10)
+    const ratingEquivalent = stars * 2;
+
+    btn.innerHTML = generateStars(ratingEquivalent);
+});
+
+function getSortIcon(descending) {
+    if (descending) {
+        return `
+        <svg viewBox="0 0 24 24" class="sort-icon">
+            <path fill="currentColor" d="M12 4l-6 6h4v8h4v-8h4z"/>
+        </svg>`;
+    } else {
+        return `
+        <svg viewBox="0 0 24 24" class="sort-icon">
+            <path fill="currentColor" d="M12 20l6-6h-4V6h-4v8H6z"/>
+        </svg>`;
+    }
+}
+
 updateMovies();
 calculateStats(movies);
+

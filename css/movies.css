@@ -165,3 +165,33 @@
 #sort-direction:hover {
     background: var(--bg-overlay);
 }
+
+.star {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+.star.full {
+    color: gold;
+}
+
+.star.half {
+    color: gold;
+}
+.star.empty {
+    color: gold;
+    opacity: 0.25;
+}
+
+.sort-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+#sort-direction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

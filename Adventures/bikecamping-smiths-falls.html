@@ -26,14 +26,21 @@
                     <a href="../contact.html">Contact</a>
                 </nav>
 
-                <select id="theme-selector">
-                    <option value="default">Default</option>
-                    <option value="light">Light</option>
-                    <option value="cherry">Cherry</option>
-                    <option value="dark">Dark</option>
-                    <option value="midnight">Midnight</option>
-                </select>
-                
+                <div class="header-controls">
+                    <label class="font-toggle">
+                        <input type="checkbox" id="font-toggle-checkbox">Custom Font
+                    </label>
+
+                    <label for="theme-selector">Theme:</label>
+                    <select id="theme-selector">
+                        <option value="default">Default</option>
+                        <option value="light">Light</option>
+                        <option value="cherry">Cherry</option>
+                        <option value="dark">Dark</option>
+                        <option value="midnight">Midnight</option>
+                    </select>
+                </div>
+
             </div>
         </header>
 
@@ -108,6 +115,6 @@
                 </p>
             </div>
         </section>
-        <script src="/theme.js"></script>
+        <script src="../theme.js"></script>
     </body>
 </html>

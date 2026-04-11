@@ -8,7 +8,24 @@ header{
     position: sticky;
     top: 0;
     z-index: 1000;
-    font-size: 50px;
+    font-size: calc(50px * var(--font-scale));
+    line-height: var(--line-height);
+}
+
+.header-controls {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.font-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: calc(20px * var(--font-scale));
+    line-height: var(--line-height);
+    cursor: pointer;
 }
 
 nav{
@@ -60,22 +77,24 @@ nav a:hover::after{
 
 .hero{
     text-align: center;
-    margin: 60px 0px;
+    margin: 60px 0;
 }
 
 .hero h1{
-    font-size: 75px;
+    font-size: calc(75px * var(--font-scale));
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing-h1);
     font-weight: bold;
     margin-bottom: 15px;
-    letter-spacing: 5px;
 }
 
 .hero p{
-    font-size: 25px;
+    font-size: calc(25px * var(--font-scale));
+    line-height: var(--line-height);
     opacity: 0.85;
     max-width: 600px;
     margin: 0 auto;
-    letter-spacing: 1px;
+    letter-spacing: var(--letter-spacing);
 }
 
 /* Layout sections */

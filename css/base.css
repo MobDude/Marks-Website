@@ -5,7 +5,6 @@
 } 
 
 *{
-    font-family: MS_PAIN, Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,47 +13,53 @@
 body{
     min-height: 100vh;
     line-height: 1.6;
+    letter-spacing: var(--letter-spacing);
+    font-family: var(--main-font);
     background: var(--bg-main);
     background-attachment: fixed;
     color: var(--text-main);
+    transition: font-size 0.2s ease, letter-spacing 0.2s ease, line-height 0.3s ease;
+}
+
+body.retro-font {
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
-}
 
+    --main-font: MS_PAIN, Arial, sans-serif;
+    --font-scale: 0.9;
+    --line-height: 1.8;
+
+    --letter-spacing: 0.08em;
+    --letter-spacing-h1: 0.12em;
+}
 h1{
-    letter-spacing: 2px;
-    font-size: 75px;
+    font-size: calc(75px * var(--font-scale));
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing-h1);
 }
+
 h2{
-    letter-spacing: 2px;
-    font-size: 35px;
-}
-h3{
-    letter-spacing: 2px;
+    font-size: calc(35px * var(--font-scale));
+    line-height: var(--line-height);
 }
 
-p{
-    letter-spacing: 1px;
-    font-size: 20px;
-}
-
-select{
-    letter-spacing: 1px;
-    font-size: 20px;
+p, select, label{
+    font-size: calc(20px * var(--font-scale));
+    line-height: var(--line-height);
 }
 
 ul{
     margin-left: 20px;
     list-style-position: inside;
-    letter-spacing: 1px;
-    font-size: 20px;
+    font-size: calc(20px * var(--font-scale));
+    line-height: var(--line-height);
 }
 
 a{
     color: var(--link-color);
     text-decoration: none;
-    letter-spacing: 1px;
-    font-size: 20px;
+    font-size: calc(20px * var(--font-scale));
+    line-height: var(--line-height);
 }
 
 a:hover{
@@ -69,6 +74,14 @@ hr{
 }
 
 :root{
+    /* Font */
+    --main-font: Arial, sans-serif;
+    --font-scale: 0.69;
+    --line-height: 2.3;
+
+    /* Spacing */
+    --letter-spacing: 0em;
+    --letter-spacing-h1: 0.05em;
 
     /* Backgrounds */
     --bg-main: linear-gradient(135deg, #3f0101, #000000);
@@ -265,4 +278,11 @@ body.midnight{
     --shadow-medium: 0 10px 25px rgba(0,0,0,0.5);
     --shadow-strong: 0 14px 40px rgba(0,0,0,0.65);
 
+}
+
+input,
+select,
+button,
+textarea {
+    font-family: inherit;
 }

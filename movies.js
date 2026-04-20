@@ -1,5 +1,54 @@
 const movies = [
     {
+        title: "Oppenheimer",
+        year: 2023,
+        rating: 9.2,
+        minutes: 180,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+        comment: "A movie with incredible cinematography, an amazing soundtrack, and a story that draws you in. I wish I had been able to see it in theatres."
+    },
+    {
+        title: "Goat Story",
+        year: 2008,
+        rating: 1.5,
+        minutes: 82,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/83jloHLWUEpdMehn5x6BdZSmD8C.jpg",
+        comment: "This movie is bizarre, and not made for children. It is strangely sexual, and the animation style is somewhat off putting. It has a few funny moments from the absurdity, but overall I don't recommend this movie to anyone."
+
+    },
+    {
+        title: "12 Angry Men",
+        year: 1957,
+        rating: 9.3,
+        minutes: 97,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/zhG3vKWyDRaZYoaww1UVAi29T9h.jpg",
+        comment: "The dialogue was really good in this movie. It really feels like they just put a camera in a jury room. I would recommend this movie for sure."
+    },
+    {
+        title: "Perfect Blue",
+        year: 1998,
+        rating: 8.8,
+        minutes: 81,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/6WTiOCfDPP8XV4jqfloiVWf7KHq.jpg",
+        comment: "This movie had a lot going on, and while I can't say I fully understand it, I think it was still pretty good. Its very dark with alot of sexual violence and themes of insanity. Really good if you are a fan of psychological thrillers."
+    },
+    {
+        title: "Joshua and the Promised Land",
+        year: 2004,
+        rating: 0.1,
+        minutes: 55,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/nyv2rXXdTrtAUpCEqRqFpYTtmiV.jpg",
+        comment: "This movie is really bad. Its just a really boring and poorly animated retelling of a bible story. Nothing interesting or of value was added, making for an agonizingly boring watch."
+    },
+    {
+        title: "Barnyard",
+        year: 2006,
+        rating: 6.4,
+        minutes: 90,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/qB9jFInwUEb2VLhMeKQX17Vdrnp.jpg",
+        comment: "Some people really seem to love this movie, but honestly I thought it was just your average family or kids movie."
+    },
+    {
         title: "Promare",
         year: 2019,
         rating: 4.8,

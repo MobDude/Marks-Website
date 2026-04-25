@@ -1,5 +1,21 @@
 const movies = [
     {
+        title: "Bullet Train",
+        year: 2022,
+        rating: 9.3,
+        minutes: 126,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/j8szC8OgrejDQjjMKSVXyaAjw3V.jpg",
+        comment: "I love this movie so much. I love the jokes, the action, the details, and lemon. It's such an unserious movie too. They gave a whole flashback of a waterbottle."
+    },
+    {
+        title: "The Shining",
+        year: 1980,
+        rating: 9.4,
+        minutes: 140,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/uAR0AWqhQL1hQa69UDEbb2rE5Wx.jpg",
+        comment: "It's a great movie, even if it isn't what Steven King had in mind. It's a staple for a reason."
+    },
+    {
         title: "Oppenheimer",
         year: 2023,
         rating: 9.2,

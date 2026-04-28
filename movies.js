@@ -1,5 +1,21 @@
 const movies = [
     {
+        title: "Old",
+        year: "2021",
+        rating: 5,
+        minutes: 108,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vclShucpUmPhdAOmKgf3B3Z4POD.jpg",
+        comment: "This movie has alot of interesting ideas, but the execution holds it back so much. Both the writing and the acting are really bad. For most of the movie they avoid showing anything of interest."
+    },
+    {
+        title: "Uncut Gems",
+        year: 2019,
+        rating: 3.6,
+        minutes: 135,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/6XN1vxHc7kUSqNWtaQKN45J5x2v.jpg",
+        comment: "This movie is to me the epitome of overstimulation. There are always at least two voices talking over each other usually yelling, plus background noises. This continues nearly nonstop for 2 hours. Beyond that, the plot feels like it drags on too long, and I don't seem to care for any character at all."
+    },
+    {
         title: "Bullet Train",
         year: 2022,
         rating: 9.3,

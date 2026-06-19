@@ -1,5 +1,61 @@
 const movies = [
     {
+        title: "Aliens",
+        year: "1986",
+        rating: 8.1,
+        minutes: 154,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/r1x5JGpyqZU8PYhbs4UcrO1Xb6x.jpg",
+        comment: ""
+    },
+    {
+        title: "Alien",
+        year: "1979",
+        rating: 8.9,
+        minutes: 117,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg",
+        comment: ""
+    },
+    {
+        title: "The Room",
+        year: "2003",
+        rating: 2.1,
+        minutes: 99,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/9QscHN4pXj6Ja1k7e1ZT4vWDGnr.jpg",
+        comment: "An infamously bad movie. The acting is bad, the writing is bad, and the plot is bad. At least we can quote the \"I did not hit her, I did not. Oh hi Mark!\""
+    },
+    {
+        title: "Project Hail Mary",
+        year: "2026",
+        rating: 9.2,
+        minutes: 156,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
+        comment: "A really cool sci-fi movie based off a really cool sci-fi book. I love the attention to detail and the effort that was made to make the science believable. Plus the Rocky was cute. "
+    },
+    {
+        title: "Another Round",
+        year: "2020",
+        rating: 8.7,
+        minutes: 116,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/aDcIt4NHURLKnAEu7gow51Yd00Q.jpg",
+        comment: "A really well done movie tackling alcohol addiction and its place in society."
+    },
+    {
+        title: "Rango",
+        year: "2011",
+        rating: 9,
+        minutes: 107,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/A5MP1guV8pbruieG0tnpPIbaJtt.jpg",
+        comment: ""
+    },
+    {
+        title: "Avatar Aang: The Last Airbender",
+        year: "2026",
+        rating: 9,
+        minutes: 99,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/29Jdsak3SrwGds5k1t43kH6Khed.jpg",
+        comment: "I thought this movie was awesome. The don't make the mistake of undoing the character development in the show, and deliver a new and interesting story. On top of that, the animation is spectacular."
+    },
+    {
         title: "Old",
         year: "2021",
         rating: 5,

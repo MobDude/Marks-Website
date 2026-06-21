@@ -1,5 +1,21 @@
 const movies = [
     {
+        title: "The Muppet Movie",
+        year: "1979",
+        rating: 8.1,
+        minutes: 97,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/mfj8yR2vO5BMkaTMu1wvKQLUTsL.jpg",
+        comment: "A fun movie with genuinely impressive filmmaking tricks."
+    },
+    {
+        title: "The Nice Guys",
+        year: "2016",
+        rating: 8.7,
+        minutes: 114,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/clq4So9spa9cXk3MZy2iMdqkxP2.jpg",
+        comment: ""
+    },
+    {
         title: "Aliens",
         year: "1986",
         rating: 8.1,

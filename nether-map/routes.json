@@ -1,0 +1,99 @@
+[
+  {
+    "start": "PapiCo",
+    "end": "MVC Post",
+    "color": "#e53935"
+  },
+  {
+    "start": "MVC Post",
+    "end": "Intersection B",
+    "color": "#e53935",
+    "via": [
+      {
+        "x": 572,
+        "z": -1786
+      }
+    ]
+  },
+  {
+    "start": "Intersection B",
+    "end": "Intersection A EW",
+    "color": "#1e88e5"
+  },
+  {
+    "start": "Intersection B",
+    "end": "Intersection C",
+    "color": "#e53935"
+  },
+  {
+    "start": "Intersection A EW",
+    "end": "TeaTree",
+    "color": "#1e88e5"
+  },
+  {
+    "start": "Intersection A EW",
+    "end": "SugarBoom",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection C",
+    "end": "Intersection D",
+    "color": "#e53935"
+  },
+  {
+    "start": "Intersection C",
+    "end": "NamiLuxe",
+    "color": "#43a047"
+  },
+  {
+    "start": "Intersection D",
+    "end": "DrRock",
+    "color": "#e56d8a"
+  },
+  {
+    "start": "Intersection E",
+    "end": "Jasmine & Lotus",
+    "color": "#e53935",
+    "via": [
+      {
+        "x": 572,
+        "z": 2495
+      }
+    ]
+  },
+  {
+    "start": "Intersection D",
+    "end": "To MCverseCity",
+    "color": "#e53935"
+  },
+  {
+    "start": "To MCverseCity",
+    "end": "Intersection E",
+    "color": "#e53935"
+  },
+  {
+    "start": "Intersection E",
+    "end": "MobDude",
+    "color": "#9768ee"
+  },
+  {
+    "start": "MobDude",
+    "end": "Intersection F",
+    "color": "#9768ee"
+  },
+  {
+    "start": "Intersection F",
+    "end": "E2",
+    "color": "#f0ce15"
+  },
+  {
+    "start": "Intersection F",
+    "end": "E1",
+    "color": "#9768ee"
+  },
+  {
+    "start": "Jasmine & Lotus",
+    "end": "E3",
+    "color": "#e53935"
+  }
+]

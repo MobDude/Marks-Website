@@ -1,0 +1,192 @@
+[
+  {
+    "name": "E3",
+    "x": 1911,
+    "z": 2494,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 1931,
+    "labelZ": 2474
+  },
+  {
+    "name": "E1",
+    "x": -1360,
+    "z": 269,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": 249
+  },
+  {
+    "name": "E2",
+    "x": -1944,
+    "z": 456,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1924,
+    "labelZ": 436
+  },
+  {
+    "name": "Intersection F",
+    "x": -1360,
+    "z": 456,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": 436
+  },
+  {
+    "name": "To MCverseCity",
+    "x": 574,
+    "z": 0,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 594,
+    "labelZ": -20
+  },
+  {
+    "name": "MobDude",
+    "x": -1343,
+    "z": 1385,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -1323,
+    "labelZ": 1365
+  },
+  {
+    "name": "Jasmine & Lotus",
+    "x": 710,
+    "z": 2495,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 730,
+    "labelZ": 2475
+  },
+  {
+    "name": "Intersection E",
+    "x": 570,
+    "z": 1385,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 590,
+    "labelZ": 1365
+  },
+  {
+    "name": "DrRock",
+    "x": 413,
+    "z": -344,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 433,
+    "labelZ": -364
+  },
+  {
+    "name": "Intersection D",
+    "x": 573,
+    "z": -344,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 593,
+    "labelZ": -364
+  },
+  {
+    "name": "NamiLuxe",
+    "x": 1732,
+    "z": -1140,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 1752,
+    "labelZ": -1160
+  },
+  {
+    "name": "Intersection C",
+    "x": 572,
+    "z": -1139,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 592,
+    "labelZ": -1159
+  },
+  {
+    "name": "SugarBoom",
+    "x": -176,
+    "z": -1989,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -156,
+    "labelZ": -2009
+  },
+  {
+    "name": "TeaTree",
+    "x": -486,
+    "z": -1536,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -466,
+    "labelZ": -1556
+  },
+  {
+    "name": "Intersection A EW",
+    "x": -176,
+    "z": -1537,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -156,
+    "labelZ": -1557
+  },
+  {
+    "name": "Intersection B",
+    "x": 573,
+    "z": -1539,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 593,
+    "labelZ": -1559
+  },
+  {
+    "name": "Intersection E",
+    "x": 570,
+    "z": 1385,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 590,
+    "labelZ": 1365
+  },
+  {
+    "name": "MVC Post",
+    "x": 575,
+    "z": -1786,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 595,
+    "labelZ": -1806
+  },
+  {
+    "name": "PapiCo",
+    "x": 575,
+    "z": -2276,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 595,
+    "labelZ": -2296
+  }
+]

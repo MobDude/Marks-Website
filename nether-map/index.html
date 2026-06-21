@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCVerse Highway 61 Map</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="map-shell">
+    <header class="top-bar">
+      <div>
+        <h1>Nether Ice Highway Map</h1>
+        <p>A transit map using Minecraft Nether X/Z coordinates.</p>
+      </div>
+      <div class="controls" aria-label="Map controls">
+        <button type="button" id="zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
+        <button type="button" id="zoom-out" title="Zoom out" aria-label="Zoom out">-</button>
+        <button type="button" id="reset-view">Reset</button>
+        <label class="grid-toggle">
+          <input type="checkbox" id="grid-toggle" checked>
+          Grid
+        </label>
+      </div>
+    </header>
+
+    <section class="map-wrap" aria-label="Interactive Nether map">
+      <svg id="map" role="img" aria-labelledby="map-title map-desc">
+        <title id="map-title">MCVerse Highway 61 Map</title>
+        <desc id="map-desc">A transit map of MCVerse Highway 61 using Minecraft Nether X/Z coordinates.</desc>
+        <defs>
+          <filter id="station-shadow" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.18"></feDropShadow>
+          </filter>
+        </defs>
+        <g id="viewport">
+          <g id="grid-layer"></g>
+          <g id="route-layer"></g>
+          <g id="station-layer"></g>
+          <g id="label-layer"></g>
+        </g>
+      </svg>
+
+      <aside id="station-card" class="station-card" aria-live="polite">
+        <h2>Select a station</h2>
+        <dl>
+          <div>
+            <dt>Nether</dt>
+            <dd id="card-nether">X 0, Z 0</dd>
+          </div>
+          <div>
+            <dt>Overworld</dt>
+            <dd id="card-overworld">X 0, Z 0</dd>
+          </div>
+        </dl>
+        <p id="card-description">Hover or Click a station to view details.</p>
+      </aside>
+
+      <div id="scale-legend" class="scale-legend" aria-live="polite">
+        <div class="scale-line" id="scale-line"></div>
+        <strong id="scale-distance">100 Nether blocks</strong>
+        <span id="grid-size">Grid: 100 x 100 Nether blocks</span>
+        <span id="overworld-scale">Overworld: 800 blocks</span>
+      </div>
+
+      <div id="tooltip" class="tooltip" hidden></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

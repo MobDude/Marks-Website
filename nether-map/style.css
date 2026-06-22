@@ -31,7 +31,7 @@ input {
 }
 
 .map-shell {
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   background: #ffffff;
 }
@@ -122,9 +122,10 @@ input {
 .map-wrap {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: #fff;
+  touch-action: none;
 }
 
 #map {

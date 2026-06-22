@@ -28,6 +28,7 @@ let stationByName = new Map();
 let transform = { x: 0, y: 0, scale: 1 };
 let defaultTransform = { x: 0, y: 0, scale: 1 };
 let drag = null;
+let pinch = null;
 
 init();
 
@@ -279,6 +280,10 @@ function bindControls() {
   svg.addEventListener("pointermove", pan);
   svg.addEventListener("pointerup", endPan);
   svg.addEventListener("pointercancel", endPan);
+  svg.addEventListener("touchstart", handleTouchStart, { passive: false });
+  svg.addEventListener("touchmove", handleTouchMove, { passive: false });
+  svg.addEventListener("touchend", handleTouchEnd);
+  svg.addEventListener("touchcancel", handleTouchEnd);
   window.addEventListener("resize", setupInitialView);
 }
 
@@ -309,6 +314,82 @@ function handleWheel(event) {
   event.preventDefault();
   const factor = event.deltaY < 0 ? 1.12 : 0.88;
   zoomAtPoint(factor, event.clientX, event.clientY);
+}
+
+function handleTouchStart(e) {
+  if (e.touches.length === 2) {
+    e.preventDefault();
+
+    const [a, b] = e.touches;
+
+    pinch = {
+      startDist: getDistance(a, b),
+      startScale: transform.scale,
+      center: getCenter(a, b)
+    };
+
+    drag = null; // stop pan while pinching
+  }
+
+  if (e.touches.length === 1 && !pinch) {
+    const t = e.touches[0];
+
+    drag = {
+      startX: t.clientX,
+      startY: t.clientY,
+      originX: transform.x,
+      originY: transform.y
+    };
+  }
+}
+
+function handleTouchMove(e) {
+  if (e.touches.length === 2 && pinch) {
+    e.preventDefault();
+
+    const [a, b] = e.touches;
+
+    const dist = getDistance(a, b);
+    const factor = dist / pinch.startDist;
+
+    const nextScale = clamp(
+        pinch.startScale * factor,
+        MIN_ZOOM,
+        MAX_ZOOM
+    );
+
+    const rect = svg.getBoundingClientRect();
+    const cx = pinch.center.x - rect.left;
+    const cy = pinch.center.y - rect.top;
+
+    const actualFactor = nextScale / transform.scale;
+
+    transform.x = cx - (cx - transform.x) * actualFactor;
+    transform.y = cy - (cy - transform.y) * actualFactor;
+    transform.scale = nextScale;
+
+    applyTransform();
+  }
+
+  if (e.touches.length === 1 && drag && !pinch) {
+    const t = e.touches[0];
+
+    transform.x = drag.originX + (t.clientX - drag.startX);
+    transform.y = drag.originY + (t.clientY - drag.startY);
+
+    applyTransform();
+  }
+}
+
+function handleTouchEnd() {
+  if (pinch && event?.touches?.length < 2) {
+    pinch = null;
+  }
+
+  if (event?.touches?.length === 0) {
+    drag = null;
+    pinch = null;
+  }
 }
 
 function zoomAtCenter(factor) {
@@ -462,4 +543,15 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function getDistance(a, b) {
+  return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+}
+
+function getCenter(a, b) {
+  return {
+    x: (a.clientX + b.clientX) / 2,
+    y: (a.clientY + b.clientY) / 2
+  };
 }

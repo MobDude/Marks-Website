@@ -18,8 +18,8 @@ const cardOverworld = document.getElementById("card-overworld");
 const cardDescription = document.getElementById("card-description");
 
 const SVG_NS = "http://www.w3.org/2000/svg";
-const MIN_ZOOM = 0.2;
-const MAX_ZOOM = 32;
+let MIN_ZOOM = 0.05;
+const MAX_ZOOM = 4;
 const GRID_STEPS = [1, 5, 10, 25, 50, 100, 250, 500, 1000];
 const VIEW_PADDING = 180;
 
@@ -301,7 +301,7 @@ function setupInitialView() {
     y: (height - boundsHeight * scale) / 2 - bounds.minZ * scale,
     scale
   };
-
+  MIN_ZOOM = scale * 0.25;
   resetView();
 }
 

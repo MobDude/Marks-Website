@@ -221,9 +221,15 @@ function drawStations() {
     const label = createSvgElement("text", {
       x: station.labelX ?? station.x + 24,
       y: station.labelZ ?? station.z - 18,
-      class: "station-label"
+      class: "station-label",
+      "font-size": 18
     });
+
     label.textContent = station.name;
+
+    //save a reference so it can be updated when zooming.
+    station.labelElement = label;
+
     labelLayer.appendChild(label);
   });
 }
@@ -450,6 +456,8 @@ function applyTransform() {
     "transform",
     `translate(${transform.x} ${transform.y}) scale(${transform.scale})`
   );
+
+  updateStationLabels();
   drawGrid();
 }
 
@@ -554,4 +562,19 @@ function getCenter(a, b) {
     x: (a.clientX + b.clientX) / 2,
     y: (a.clientY + b.clientY) / 2
   };
+}
+
+function updateStationLabels() {
+  const baseSize = 10; // The targeted screen-space font size in pixels
+
+  // Invert the map scale so the text dimensions match screen pixels perfectly
+  const screenConstantFontSize = baseSize / transform.scale;
+
+  stations.forEach((station) => {
+    const label = station.labelElement;
+    if (!label) return;
+
+    // Apply the inverse size to override the external CSS stylesheet
+    label.style.fontSize = `${screenConstantFontSize}px`;
+  });
 }

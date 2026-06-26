@@ -181,14 +181,15 @@ input {
 }
 
 .station-label {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 800;
   paint-order: stroke;
   stroke: #fff;
   stroke-width: 5;
   stroke-linejoin: round;
   fill: #111;
-  pointer-events: none;
+  user-select: none;
+  vector-effect: non-scaling-stroke;
 }
 
 .grid-line {

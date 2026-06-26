@@ -83,11 +83,26 @@
   },
   {
     "start": "Intersection F",
+    "end": "Intersection G",
+    "color": "#9768ee"
+  },
+  {
+    "start": "Intersection F",
+    "end": "Intersection H",
+    "color": "#9768ee"
+  },
+  {
+    "start": "Intersection H",
+    "end": "Junicx",
+    "color": "#9768ee"
+  },
+  {
+    "start": "Intersection G",
     "end": "E2",
     "color": "#f0ce15"
   },
   {
-    "start": "Intersection F",
+    "start": "Intersection G",
     "end": "E1",
     "color": "#9768ee"
   },
@@ -95,5 +110,28 @@
     "start": "Jasmine & Lotus",
     "end": "E3",
     "color": "#e53935"
+  },
+  {
+    "start": "NamiLuxe",
+    "end": "NamiLuxe",
+    "color": "#43a047",
+    "via": [
+      {
+        "x": 1736,
+        "z": -1154
+      },
+      {
+        "x": 1818,
+        "z": -1154
+      },
+      {
+        "x": 1818,
+        "z": -1126
+      },
+      {
+        "x": 1736,
+        "z": -1126
+      }
+    ]
   }
 ]

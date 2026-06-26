@@ -1,12 +1,12 @@
 [
   {
     "name": "E3",
-    "x": 1911,
+    "x": 2460,
     "z": 2494,
     "description": "",
     "color": "#000000",
     "major": false,
-    "labelX": 1931,
+    "labelX": 2480,
     "labelZ": 2474
   },
   {
@@ -21,16 +21,16 @@
   },
   {
     "name": "E2",
-    "x": -2363,
+    "x": -2508,
     "z": 456,
     "description": "",
     "color": "#000000",
     "major": false,
-    "labelX": -2343,
+    "labelX": -2488,
     "labelZ": 436
   },
   {
-    "name": "Intersection F",
+    "name": "Intersection G",
     "x": -1360,
     "z": 456,
     "description": "",
@@ -101,12 +101,12 @@
   },
   {
     "name": "NamiLuxe",
-    "x": 1732,
+    "x": 1736,
     "z": -1140,
     "description": "",
     "color": "#000000",
     "major": true,
-    "labelX": 1752,
+    "labelX": 1756,
     "labelZ": -1160
   },
   {
@@ -188,5 +188,35 @@
     "major": true,
     "labelX": 595,
     "labelZ": -2296
+  },
+  {
+    "name": "Intersection F",
+    "x": -1360,
+    "z": 1385,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": 1365
+  },
+  {
+    "name": "Intersection H",
+    "x": -1360,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": 1425
+  },
+  {
+    "name": "Junicx",
+    "x": -1696,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -1676,
+    "labelZ": 1425
   }
 ]

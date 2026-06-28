@@ -17,7 +17,7 @@
   },
   {
     "start": "Intersection B",
-    "end": "Intersection A EW",
+    "end": "Intersection A",
     "color": "#1e88e5"
   },
   {
@@ -26,12 +26,12 @@
     "color": "#e53935"
   },
   {
-    "start": "Intersection A EW",
+    "start": "Intersection A",
     "end": "TeaTree",
     "color": "#1e88e5"
   },
   {
-    "start": "Intersection A EW",
+    "start": "Intersection A",
     "end": "SugarBoom",
     "color": "#df8600"
   },
@@ -78,16 +78,11 @@
   },
   {
     "start": "MobDude",
-    "end": "Intersection F",
-    "color": "#9768ee"
-  },
-  {
-    "start": "Intersection F",
     "end": "Intersection G",
     "color": "#9768ee"
   },
   {
-    "start": "Intersection F",
+    "start": "MobDude",
     "end": "Intersection H",
     "color": "#9768ee"
   },

@@ -50,16 +50,6 @@
     "labelZ": -20
   },
   {
-    "name": "MobDude",
-    "x": -1343,
-    "z": 1385,
-    "description": "",
-    "color": "#000000",
-    "major": true,
-    "labelX": -1323,
-    "labelZ": 1365
-  },
-  {
     "name": "Jasmine & Lotus",
     "x": 710,
     "z": 2495,
@@ -140,7 +130,7 @@
     "labelZ": -1556
   },
   {
-    "name": "Intersection A EW",
+    "name": "Intersection A",
     "x": -176,
     "z": -1537,
     "description": "",
@@ -190,12 +180,12 @@
     "labelZ": -2296
   },
   {
-    "name": "Intersection F",
+    "name": "MobDude",
     "x": -1360,
     "z": 1385,
     "description": "",
     "color": "#000000",
-    "major": false,
+    "major": true,
     "labelX": -1340,
     "labelZ": 1365
   },

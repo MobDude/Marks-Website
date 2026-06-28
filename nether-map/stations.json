@@ -112,7 +112,7 @@
   {
     "name": "Intersection C",
     "x": 572,
-    "z": -1139,
+    "z": -1140,
     "description": "",
     "color": "#000000",
     "major": false,
@@ -218,5 +218,15 @@
     "major": true,
     "labelX": -1676,
     "labelZ": 1425
+  },
+  {
+    "name": "The Sanctum",
+    "x": 1826,
+    "z": -1150,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 1846,
+    "labelZ": -1170
   }
 ]

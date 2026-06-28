@@ -2,12 +2,12 @@
   {
     "start": "PapiCo",
     "end": "MVC Post",
-    "color": "#e53935"
+    "color": "#df8600"
   },
   {
     "start": "MVC Post",
     "end": "Intersection B",
-    "color": "#e53935",
+    "color": "#df8600",
     "via": [
       {
         "x": 572,
@@ -18,42 +18,42 @@
   {
     "start": "Intersection B",
     "end": "Intersection A",
-    "color": "#1e88e5"
+    "color": "#67BED9"
   },
   {
     "start": "Intersection B",
     "end": "Intersection C",
-    "color": "#e53935"
+    "color": "#df8600"
   },
   {
     "start": "Intersection A",
     "end": "TeaTree",
-    "color": "#1e88e5"
+    "color": "#67BED9"
   },
   {
     "start": "Intersection A",
     "end": "SugarBoom",
-    "color": "#df8600"
+    "color": "#67BED9"
   },
   {
     "start": "Intersection C",
     "end": "Intersection D",
-    "color": "#e53935"
+    "color": "#df8600"
   },
   {
     "start": "Intersection C",
     "end": "NamiLuxe",
-    "color": "#43a047"
+    "color": "#df8600"
   },
   {
     "start": "Intersection D",
     "end": "DrRock",
-    "color": "#e56d8a"
+    "color": "#df8600"
   },
   {
     "start": "Intersection E",
     "end": "Jasmine & Lotus",
-    "color": "#e53935",
+    "color": "#df8600",
     "via": [
       {
         "x": 572,
@@ -64,52 +64,52 @@
   {
     "start": "Intersection D",
     "end": "To MCverseCity",
-    "color": "#e53935"
+    "color": "#df8600"
   },
   {
     "start": "To MCverseCity",
     "end": "Intersection E",
-    "color": "#e53935"
+    "color": "#df8600"
   },
   {
     "start": "Intersection E",
     "end": "MobDude",
-    "color": "#9768ee"
+    "color": "#df8600"
   },
   {
     "start": "MobDude",
     "end": "Intersection G",
-    "color": "#9768ee"
+    "color": "#B3321E"
   },
   {
     "start": "MobDude",
-    "end": "Intersection H",
-    "color": "#9768ee"
+    "end": "Intersection F",
+    "color": "#B3321E"
   },
   {
-    "start": "Intersection H",
+    "start": "Intersection F",
     "end": "Junicx",
-    "color": "#9768ee"
+    "color": "#B3321E"
   },
   {
     "start": "Intersection G",
     "end": "E2",
-    "color": "#f0ce15"
+    "color": "#B3321E"
   },
   {
     "start": "Intersection G",
     "end": "E1",
-    "color": "#9768ee"
+    "color": "#B3321E"
   },
   {
     "start": "Jasmine & Lotus",
     "end": "E3",
-    "color": "#e53935"
+    "color": "#FFAEC9"
   },
   {
     "start": "NamiLuxe",
     "end": "NamiLuxe",
-    "color": "#43a047",
+    "color": "#df8600",
     "via": [
       {
         "x": 1736,

@@ -23,6 +23,14 @@ const MAX_ZOOM = 4;
 const GRID_STEPS = [1, 5, 10, 25, 50, 100, 250, 500, 1000];
 const VIEW_PADDING = 180;
 
+const LINE_NAMES = {
+  "#df8600": "Ice Track 61",
+  "#67BED9": "Trans Siberian",
+  "#B3321E": "The Meridian Line",
+  "#FFAEC9": "The Bullet Line",
+  "#e53935": "Default Route" // Fallback color
+};
+
 let stations = [];
 let stationByName = new Map();
 let transform = { x: 0, y: 0, scale: 1 };
@@ -49,6 +57,7 @@ async function init() {
 
     drawRoutes(routes);
     drawStations();
+    generateLineLegend(routes);
     setupInitialView();
     bindControls();
   } catch (error) {
@@ -576,5 +585,37 @@ function updateStationLabels() {
 
     // Apply the inverse size to override the external CSS stylesheet
     label.style.fontSize = `${screenConstantFontSize}px`;
+  });
+}
+
+function generateLineLegend(routes) {
+  const legendList = document.getElementById("legend-list");
+  if (!legendList) return;
+
+  // Extract all unique line colors found across the dataset
+  const uniqueColors = [...new Set(routes.map(r => r.color || "#e53935"))];
+
+  legendList.innerHTML = ""; // Clear existing placeholder nodes
+
+  uniqueColors.forEach(color => {
+    const canonicalColor = color.toLowerCase();
+
+    // Attempt matching key from the mapping or fallback gracefully
+    const matchingKey = Object.keys(LINE_NAMES).find(k => k.toLowerCase() === canonicalColor);
+    const lineName = matchingKey ? LINE_NAMES[matchingKey] : `Line (${color})`;
+
+    const li = document.createElement("li");
+    li.className = "legend-item";
+
+    const swatch = document.createElement("div");
+    swatch.className = "legend-color-swatch";
+    swatch.style.backgroundColor = color;
+
+    const text = document.createElement("span");
+    text.textContent = lineName;
+
+    li.appendChild(swatch);
+    li.appendChild(text);
+    legendList.appendChild(li);
   });
 }

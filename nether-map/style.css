@@ -325,25 +325,158 @@ input {
   color: #d7dce2;
 }
 
+
+.line-legend {
+  position: absolute;
+  right: 16px;
+  bottom: 190px;
+  width: min(240px, calc(100% - 32px));
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #111;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.line-legend h3 {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.line-legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.legend-color-swatch {
+  width: 24px;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
 @media (max-width: 720px) {
+  /* Hide the top-left title banner entirely */
+  .top-bar > div:first-child {
+    display: none;
+  }
+
+  /* Reposition the zoom controls slightly */
   .top-bar {
-    align-items: flex-start;
-    flex-direction: column;
+    top: 10px;
+    right: 10px;
+    left: auto; /* Don't stretch across the screen */
+    width: auto;
   }
 
-  .controls {
-    justify-content: flex-start;
+  /* Make the buttons more compact */
+  .controls button,
+  .grid-toggle {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    box-shadow: 1.5px 1.5px 0 #111;
+  }
+  .controls button {
+    min-width: 34px;
   }
 
+  /* Compress the station detail card */
   .station-card {
     right: 10px;
     bottom: 10px;
     width: calc(100% - 20px);
+    padding: 10px 12px;
+    box-shadow: 2px 2px 0 #111; /* Lighter accent shadow */
   }
 
+  .station-card h2 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+
+  .station-card dl {
+    margin-bottom: 6px;
+    gap: 6px;
+  }
+
+  .station-card p {
+    font-size: 0.82rem;
+  }
+
+  /*Shift and downsize the Legend */
+  .line-legend {
+    right: 10px;
+    bottom: auto;
+    top: 50px; /* Float it below the zoom controls instead of stacking at the bottom */
+    width: 180px;
+    padding: 8px 10px;
+    box-shadow: 2px 2px 0 #111;
+  }
+
+  .line-legend h3 {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .legend-item {
+    font-size: 0.78rem;
+    gap: 6px;
+  }
+
+  .legend-color-swatch {
+    width: 18px;
+    height: 6px;
+  }
+
+  /* Shift the Scale Line Window up so it sits cleanly above the station card */
   .scale-legend {
     left: 10px;
-    bottom: 170px;
-    width: min(260px, calc(100% - 20px));
+    bottom: 150px; /* Sits directly on top of the compressed station card */
+    width: calc(100% - 20px);
+    padding: 8px 12px;
+    box-shadow: 2px 2px 0 #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  /* Format scale items horizontally on mobile to maximize map visibility */
+  .scale-line {
+    margin-bottom: 0;
+    width: 80px !important; /* Force a shorter, low-profile line */
+    height: 8px;
+  }
+
+  .scale-legend strong,
+  .scale-legend span {
+    display: inline-block;
+    font-size: 0.75rem;
+    margin-top: 0;
+  }
+
+  /* Hide the redundant grid size text on tiny screens to save space */
+  #grid-size {
+    display: none;
   }
 }

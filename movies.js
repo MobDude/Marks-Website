@@ -1,5 +1,13 @@
 const movies = [
     {
+        title: "I Swear",
+        year: "2025",
+        rating: 8.9,
+        minutes: 121,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vUwyhNWBKkSwK8ELvEeBRwV724h.jpg",
+        comment: "This movie does what I can only assume is an immaculate job of showing what life with tourettes is like for many. It is really well written and will probably make you cry."
+    },
+    {
         title: "The Muppet Movie",
         year: "1979",
         rating: 8.1,

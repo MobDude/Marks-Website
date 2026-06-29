@@ -1,12 +1,12 @@
 [
   {
     "name": "E3",
-    "x": 2460,
+    "x": 2694,
     "z": 2494,
     "description": "",
     "color": "#000000",
     "major": false,
-    "labelX": 2480,
+    "labelX": 2714,
     "labelZ": 2474
   },
   {
@@ -218,5 +218,15 @@
     "major": true,
     "labelX": 1846,
     "labelZ": -1170
+  },
+  {
+    "name": "ITZA",
+    "x": 2694,
+    "z": 2367,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 2714,
+    "labelZ": 2347
   }
 ]

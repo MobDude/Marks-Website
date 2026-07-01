@@ -228,5 +228,15 @@
     "major": true,
     "labelX": 2714,
     "labelZ": 2347
+  },
+  {
+    "name": "E4",
+    "x": -1615,
+    "z": -1536,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1595,
+    "labelZ": -1556
   }
 ]

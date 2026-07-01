@@ -133,5 +133,10 @@
     "start": "E3",
     "end": "ITZA",
     "color": "#FFAEC9"
+  },
+  {
+    "start": "TeaTree",
+    "end": "E4",
+    "color": "#67BED9"
   }
 ]

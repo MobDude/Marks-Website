@@ -12,12 +12,12 @@
   {
     "name": "E1",
     "x": -1360,
-    "z": 269,
+    "z": -331,
     "description": "",
     "color": "#000000",
     "major": false,
     "labelX": -1340,
-    "labelZ": 249
+    "labelZ": -351
   },
   {
     "name": "E2",

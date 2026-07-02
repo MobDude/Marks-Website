@@ -10,14 +10,14 @@
     "labelZ": 2474
   },
   {
-    "name": "E1",
+    "name": "Intersection I",
     "x": -1360,
-    "z": -963,
+    "z": -1536,
     "description": "",
     "color": "#000000",
     "major": false,
     "labelX": -1340,
-    "labelZ": -983
+    "labelZ": -1556
   },
   {
     "name": "E2",
@@ -231,12 +231,12 @@
   },
   {
     "name": "E4",
-    "x": -1615,
+    "x": -2879,
     "z": -1536,
     "description": "",
     "color": "#000000",
     "major": false,
-    "labelX": -1595,
+    "labelX": -2859,
     "labelZ": -1556
   }
 ]

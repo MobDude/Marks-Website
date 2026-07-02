@@ -1,0 +1,593 @@
+:root {
+  --ink: #161616;
+  --muted: #5c6470;
+  --panel: #ffffff;
+  --line-shadow: rgba(0, 0, 0, 0.16);
+  --grid-major: #d2d6dc;
+  --grid-minor: #eceff3;
+  --accent: #0b6bcb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  overflow: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.map-shell {
+  height: 100dvh;
+  position: relative;
+  background: #ffffff;
+}
+
+.top-bar {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.top-bar > div {
+  pointer-events: auto;
+}
+
+.top-bar > div:first-child {
+  max-width: min(460px, calc(100vw - 28px));
+  padding: 12px 14px;
+  border: 2px solid #111;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 4px 4px 0 #111;
+}
+
+.top-bar h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  line-height: 1.1;
+}
+
+.top-bar p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.controls button,
+.grid-toggle {
+  min-height: 38px;
+  border: 2px solid #111;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #111;
+}
+
+.controls button {
+  min-width: 38px;
+}
+
+.controls button:hover,
+.grid-toggle:hover {
+  background: #f3f3f3;
+}
+
+.controls button:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #111;
+}
+
+.grid-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.map-wrap {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: #fff;
+  touch-action: none;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  background: #fff;
+}
+
+#map.dragging {
+  cursor: grabbing;
+}
+
+.route-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 18;
+  paint-order: stroke;
+  filter: drop-shadow(0 3px 0 var(--line-shadow));
+}
+
+.route-outline {
+  fill: none;
+  stroke: #111;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 24;
+}
+
+.station-hit {
+  cursor: pointer;
+  fill: transparent;
+}
+
+.station-node {
+  fill: #fff;
+  stroke: #111;
+  stroke-width: 4;
+  filter: url(#station-shadow);
+}
+
+.station-node.major {
+  stroke-width: 5;
+}
+
+.station-ring {
+  fill: none;
+  stroke-width: 6;
+}
+
+.station-label {
+  font-size: 24px;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  fill: #111;
+  user-select: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.grid-line {
+  stroke: var(--grid-minor);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.grid-line.major {
+  stroke: var(--grid-major);
+  stroke-width: 1.5;
+}
+
+.grid-axis {
+  stroke: #9aa2af;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.grid-label {
+  fill: #68707c;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.station-card {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: min(320px, calc(100% - 32px));
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #111;
+  pointer-events: none;
+}
+
+.scale-legend {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: min(300px, calc(100% - 32px));
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #111;
+  pointer-events: none;
+}
+
+.scale-line {
+  width: 120px;
+  height: 12px;
+  margin-bottom: 8px;
+  border-left: 3px solid #111;
+  border-right: 3px solid #111;
+  border-bottom: 3px solid #111;
+}
+
+.scale-legend strong,
+.scale-legend span {
+  display: block;
+}
+
+.scale-legend strong {
+  font-size: 0.95rem;
+}
+
+.scale-legend span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.station-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.station-card dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.station-card dt {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.station-card dd {
+  margin: 2px 0 0;
+  font-weight: 800;
+}
+
+.station-card p {
+  margin: 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 5;
+  max-width: 280px;
+  padding: 10px 12px;
+  background: #111;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  pointer-events: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.tooltip strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.98rem;
+}
+
+.tooltip span {
+  display: block;
+  color: #d7dce2;
+}
+
+
+.line-legend {
+  position: absolute;
+  right: 16px;
+  bottom: 190px;
+  width: min(240px, calc(100% - 32px));
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #111;
+  pointer-events: auto;
+  z-index: 2;
+  
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.line-legend h3 {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.line-legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.legend-color-swatch {
+  width: 24px;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.legend-node {
+  background: #fff;
+  border: 2.5px solid #111;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-node.major {
+  width: 16px;
+  height: 16px;
+  border-width: 3.5px;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #111; /* Simulates the outer ring */
+  margin: 4px; /* Give the double ring room to breathe */
+}
+
+.legend-node.minor {
+  width: 12px;
+  height: 12px;
+  margin-left: 6px; /* Balance visually with the major icon */
+  margin-right: 6px;
+}
+
+.legend-divider {
+  height: 2px;
+  background: var(--grid-minor);
+  margin: 6px 0;
+}
+
+/* The state where the panel is tucked away */
+.line-legend.is-collapsed {
+  /* Shifts the panel exactly its full width plus its right-margin off-screen */
+  transform: translateX(calc(100% + 16px));
+}
+
+/* The Tab Button sticking out on the left side of the panel */
+.legend-tab {
+  position: absolute;
+  left: -40px; /* Pulls it outside the container boundary */
+  top: 12px;
+  width: 40px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.94);
+  border-left: 2px solid #111;
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.15); /* Match neubrutalism aesthetic */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+/* Rotate the text vertically inside the tab */
+.legend-tab span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.legend-tab:hover {
+  background: #f3f3f3;
+}
+
+@media (max-width: 720px) {
+  /* Hide the top-left title banner entirely */
+  .top-bar > div:first-child {
+    display: none;
+  }
+
+  /* Reposition the zoom controls slightly */
+  .top-bar {
+    top: 10px;
+    right: 10px;
+    left: auto; /* Don't stretch across the screen */
+    width: auto;
+  }
+
+  /* Make the buttons more compact */
+  .controls button,
+  .grid-toggle {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    box-shadow: 1.5px 1.5px 0 #111;
+  }
+  .controls button {
+    min-width: 34px;
+  }
+
+  /* Compress the station detail card */
+  .station-card {
+    right: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+    padding: 10px 12px;
+    box-shadow: 2px 2px 0 #111; /* Lighter accent shadow */
+  }
+
+  .station-card h2 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+
+  .station-card dl {
+    margin-bottom: 6px;
+    gap: 6px;
+  }
+
+  .station-card p {
+    font-size: 0.82rem;
+  }
+
+  /*Shift and downsize the Legend */
+  .line-legend {
+    right: 10px;
+    bottom: auto;
+    top: 50px; /* Float it below the zoom controls instead of stacking at the bottom */
+    width: 180px;
+    padding: 8px 10px;
+    box-shadow: 2px 2px 0 #111;
+  }
+
+  .line-legend h3 {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .legend-item {
+    font-size: 0.78rem;
+    gap: 6px;
+  }
+
+  .legend-color-swatch {
+    width: 18px;
+    height: 6px;
+  }
+
+  /* Shift the Scale Line Window up so it sits cleanly above the station card */
+  .scale-legend {
+    left: 10px;
+    bottom: 150px; /* Sits directly on top of the compressed station card */
+    width: calc(100% - 20px);
+    padding: 8px 12px;
+    box-shadow: 2px 2px 0 #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  /* Format scale items horizontally on mobile to maximize map visibility */
+  .scale-line {
+    margin-bottom: 0;
+    width: 80px !important; /* Force a shorter, low-profile line */
+    height: 8px;
+  }
+
+  .scale-legend strong,
+  .scale-legend span {
+    display: inline-block;
+    font-size: 0.75rem;
+    margin-top: 0;
+  }
+
+  /* Hide the redundant grid size text on tiny screens to save space */
+  #grid-size {
+    display: none;
+  }
+
+  .line-legend {
+    right: 10px;
+    top: 50px;
+    bottom: auto;
+    width: 200px;
+  }
+
+  .legend-node.major {
+    width: 12px;
+    height: 12px;
+    border-width: 2.5px;
+    box-shadow: 0 0 0 1.5px #fff, 0 0 0 2.5px #111;
+    margin: 3px;
+  }
+
+  .legend-node.minor {
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .legend-divider {
+    margin: 4px 0;
+  }
+
+  .line-legend.is-collapsed {
+    /* Adjust translate calculations for mobile margins */
+    transform: translateX(calc(100% + 10px));
+  }
+
+  .legend-tab {
+    height: 70px;
+    left: -34px;
+    width: 34px;
+    top: 8px;
+  }
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "start": "PapiCo",
+    "end": "MVC Post",
+    "color": "#df8600"
+  },
+  {
+    "start": "MVC Post",
+    "end": "Intersection B",
+    "color": "#df8600",
+    "via": [
+      {
+        "x": 572,
+        "z": -1786
+      }
+    ]
+  },
+  {
+    "start": "Intersection B",
+    "end": "Intersection A",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection B",
+    "end": "Intersection C",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection A",
+    "end": "TeaTree",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection A",
+    "end": "SugarBoom",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection C",
+    "end": "Intersection D",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection C",
+    "end": "NamiLuxe",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection D",
+    "end": "DrRock",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection E",
+    "end": "Jasmine & Lotus",
+    "color": "#df8600",
+    "via": [
+      {
+        "x": 572,
+        "z": 2495
+      }
+    ]
+  },
+  {
+    "start": "Intersection D",
+    "end": "To MCverseCity",
+    "color": "#df8600"
+  },
+  {
+    "start": "To MCverseCity",
+    "end": "Intersection E",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection E",
+    "end": "MobDude",
+    "color": "#df8600"
+  },
+  {
+    "start": "MobDude",
+    "end": "Intersection G",
+    "color": "#B3321E"
+  },
+  {
+    "start": "MobDude",
+    "end": "Intersection F",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection F",
+    "end": "Junicx",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection G",
+    "end": "E2",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection G",
+    "end": "Intersection I",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Jasmine & Lotus",
+    "end": "E3",
+    "color": "#FFAEC9"
+  },
+  {
+    "start": "NamiLuxe",
+    "end": "NamiLuxe",
+    "color": "#df8600",
+    "via": [
+      {
+        "x": 1736,
+        "z": -1154
+      },
+      {
+        "x": 1818,
+        "z": -1154
+      },
+      {
+        "x": 1818,
+        "z": -1126
+      },
+      {
+        "x": 1736,
+        "z": -1126
+      }
+    ]
+  },
+  {
+    "start": "E3",
+    "end": "ITZA",
+    "color": "#FFAEC9"
+  },
+  {
+    "start": "TeaTree",
+    "end": "E4",
+    "color": "#67BED9"
+  }
+]

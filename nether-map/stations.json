@@ -1,0 +1,242 @@
+[
+  {
+    "name": "E3",
+    "x": 2694,
+    "z": 2494,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 2714,
+    "labelZ": 2474
+  },
+  {
+    "name": "Intersection I",
+    "x": -1360,
+    "z": -1536,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": -1556
+  },
+  {
+    "name": "E2",
+    "x": -2508,
+    "z": 456,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2488,
+    "labelZ": 436
+  },
+  {
+    "name": "Intersection G",
+    "x": -1360,
+    "z": 456,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": 436
+  },
+  {
+    "name": "To MCverseCity",
+    "x": 574,
+    "z": 0,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 594,
+    "labelZ": -20
+  },
+  {
+    "name": "Jasmine & Lotus",
+    "x": 710,
+    "z": 2495,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 730,
+    "labelZ": 2475
+  },
+  {
+    "name": "Intersection E",
+    "x": 570,
+    "z": 1385,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 590,
+    "labelZ": 1365
+  },
+  {
+    "name": "DrRock",
+    "x": 413,
+    "z": -344,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 433,
+    "labelZ": -364
+  },
+  {
+    "name": "Intersection D",
+    "x": 573,
+    "z": -344,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 593,
+    "labelZ": -364
+  },
+  {
+    "name": "NamiLuxe",
+    "x": 1736,
+    "z": -1140,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 1756,
+    "labelZ": -1160
+  },
+  {
+    "name": "Intersection C",
+    "x": 572,
+    "z": -1140,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 592,
+    "labelZ": -1159
+  },
+  {
+    "name": "SugarBoom",
+    "x": -176,
+    "z": -1989,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -156,
+    "labelZ": -2009
+  },
+  {
+    "name": "TeaTree",
+    "x": -486,
+    "z": -1536,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -466,
+    "labelZ": -1556
+  },
+  {
+    "name": "Intersection A",
+    "x": -176,
+    "z": -1537,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -156,
+    "labelZ": -1557
+  },
+  {
+    "name": "Intersection B",
+    "x": 573,
+    "z": -1539,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 593,
+    "labelZ": -1559
+  },
+  {
+    "name": "Intersection E",
+    "x": 570,
+    "z": 1385,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 590,
+    "labelZ": 1365
+  },
+  {
+    "name": "MVC Post",
+    "x": 575,
+    "z": -1786,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 595,
+    "labelZ": -1806
+  },
+  {
+    "name": "PapiCo",
+    "x": 575,
+    "z": -2276,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 595,
+    "labelZ": -2296
+  },
+  {
+    "name": "MobDude",
+    "x": -1360,
+    "z": 1385,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -1340,
+    "labelZ": 1365
+  },
+  {
+    "name": "Intersection F",
+    "x": -1360,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": 1425
+  },
+  {
+    "name": "Junicx",
+    "x": -1696,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -1676,
+    "labelZ": 1425
+  },
+  {
+    "name": "The Sanctum",
+    "x": 1826,
+    "z": -1150,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 1846,
+    "labelZ": -1170
+  },
+  {
+    "name": "ITZA",
+    "x": 2694,
+    "z": 2367,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 2714,
+    "labelZ": 2347
+  },
+  {
+    "name": "E4",
+    "x": -2879,
+    "z": -1536,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2859,
+    "labelZ": -1556
+  }
+]

@@ -226,20 +226,23 @@ function drawStations() {
     });
 
     stationLayer.appendChild(group);
+    if (station.major){
+      const label = createSvgElement("text", {
+        x: station.labelX ?? station.x + 24,
+        y: station.labelZ ?? station.z - 18,
+        class: "station-label",
+        "font-size": 18
+      });
 
-    const label = createSvgElement("text", {
-      x: station.labelX ?? station.x + 24,
-      y: station.labelZ ?? station.z - 18,
-      class: "station-label",
-      "font-size": 18
-    });
+      label.textContent = station.name;
 
-    label.textContent = station.name;
+      //save a reference so it can be updated when zooming.
+      station.labelElement = label;
 
-    //save a reference so it can be updated when zooming.
-    station.labelElement = label;
-
-    labelLayer.appendChild(label);
+      labelLayer.appendChild(label);
+    } else{
+      station.labelElement = null;
+    }
   });
 }
 
@@ -289,6 +292,15 @@ function bindControls() {
     gridLayer.style.display = gridToggle.checked ? "" : "none";
     scaleLegend.style.display = gridToggle.checked ? "" : "none";
   });
+
+  const legendPanel = document.getElementById("line-legend");
+  const legendTab = document.getElementById("legend-toggle-tab");
+
+  if (legendTab && legendPanel) {
+    legendTab.addEventListener("click", () => {
+      legendPanel.classList.toggle("is-collapsed");
+    });
+  }
 
   svg.addEventListener("wheel", handleWheel, { passive: false });
   svg.addEventListener("pointerdown", startPan);
@@ -592,10 +604,37 @@ function generateLineLegend(routes) {
   const legendList = document.getElementById("legend-list");
   if (!legendList) return;
 
+  legendList.innerHTML = ""; // Clear existing placeholder nodes
+
+  // --- Add Major Station to Legend ---
+  const majorLi = document.createElement("li");
+  majorLi.className = "legend-item";
+  const majorSwatch = document.createElement("div");
+  majorSwatch.className = "legend-node major"; // Styled like your map node
+  const majorText = document.createElement("span");
+  majorText.textContent = "Station";
+  majorLi.appendChild(majorSwatch);
+  majorLi.appendChild(majorText);
+  legendList.appendChild(majorLi);
+
+  // --- Add Minor Station to Legend ---
+  const minorLi = document.createElement("li");
+  minorLi.className = "legend-item";
+  const minorSwatch = document.createElement("div");
+  minorSwatch.className = "legend-node minor"; // Styled like your map node
+  const minorText = document.createElement("span");
+  minorText.textContent = "Intersection";
+  minorLi.appendChild(minorSwatch);
+  minorLi.appendChild(minorText);
+  legendList.appendChild(minorLi);
+
+  // --- Separator Line ---
+  const divider = document.createElement("li");
+  divider.className = "legend-divider";
+  legendList.appendChild(divider);
+
   // Extract all unique line colors found across the dataset
   const uniqueColors = [...new Set(routes.map(r => r.color || "#e53935"))];
-
-  legendList.innerHTML = ""; // Clear existing placeholder nodes
 
   uniqueColors.forEach(color => {
     const canonicalColor = color.toLowerCase();

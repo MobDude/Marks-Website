@@ -238,5 +238,25 @@
     "major": false,
     "labelX": -2859,
     "labelZ": -1556
+  },
+  {
+    "name": "Intersection L",
+    "x": -2876,
+    "z": -1536,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2856,
+    "labelZ": -1556
+  },
+  {
+    "name": "E6",
+    "x": -2876,
+    "z": -550,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2856,
+    "labelZ": -1570
   }
 ]

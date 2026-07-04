@@ -136,7 +136,17 @@
   },
   {
     "start": "TeaTree",
+    "end": "Intersection L",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection L",
     "end": "E4",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection L",
+    "end": "E6",
     "color": "#67BED9"
   }
 ]

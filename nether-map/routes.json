@@ -166,7 +166,22 @@
   },
   {
     "start": "Intersection J",
-    "end": "EcS",
+    "end": "Temp",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Sugar Isle",
+    "end": "Intersection K",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection K",
+    "end": "E5",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection K",
+    "end": "IceTown",
     "color": "#B3321E"
   }
 ]

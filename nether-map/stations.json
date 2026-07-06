@@ -251,12 +251,12 @@
   },
   {
     "name": "E5",
-    "x": -1746,
+    "x": -2590,
     "z": 1435,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": -1766,
+    "labelX": -2570,
     "labelZ": 1415
   },
   {
@@ -280,12 +280,12 @@
     "labelZ": 1835
   },
   {
-    "name": "EcS",
+    "name": "Temp",
     "x": -1498,
     "z": 1855,
     "description": "",
     "color": "#000000",
-    "major": true,
+    "major": false,
     "labelX": -1478,
     "labelZ": 1815
   },
@@ -308,5 +308,25 @@
     "major": true,
     "labelX": -2718,
     "labelZ": -991
+  },
+  {
+    "name": "Intersection K",
+    "x": -2571,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2551,
+    "labelZ": 1415
+  },
+  {
+    "name": "IceTown",
+    "x": -2571,
+    "z": 1305,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -2551,
+    "labelZ": 1285
   }
 ]

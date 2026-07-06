@@ -218,18 +218,6 @@ input {
   pointer-events: none;
 }
 
-.station-card {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  width: min(320px, calc(100% - 32px));
-  padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.94);
-  border: 2px solid #111;
-  border-radius: 8px;
-  box-shadow: 4px 4px 0 #111;
-  pointer-events: none;
-}
 
 .scale-legend {
   position: absolute;
@@ -269,37 +257,6 @@ input {
   font-weight: 700;
 }
 
-.station-card h2 {
-  margin: 0 0 10px;
-  font-size: 1.05rem;
-}
-
-.station-card dl {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 0 0 10px;
-}
-
-.station-card dt {
-  color: var(--muted);
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.station-card dd {
-  margin: 2px 0 0;
-  font-weight: 800;
-}
-
-.station-card p {
-  margin: 0;
-  color: #333;
-  line-height: 1.4;
-}
-
 .tooltip {
   position: fixed;
   z-index: 5;
@@ -325,11 +282,22 @@ input {
   color: #d7dce2;
 }
 
+.tooltip span.tooltip-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Adjust this number to show 1, 2, or 3 lines before clipping */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*color: #a5b4fc; /* Optional: gives the description a slight tint to separate it from coordinates */
+  margin-top: 6px;
+  border-top: 1px solid #333;
+  padding-top: 4px;
+}
 
 .line-legend {
   position: absolute;
   right: 16px;
-  bottom: 190px;
+  bottom: 16px; /* Moved down to the bottom corner */
   width: min(240px, calc(100% - 32px));
   padding: 12px 14px;
   background: rgba(255, 255, 255, 0.94);
@@ -338,7 +306,7 @@ input {
   box-shadow: 4px 4px 0 #111;
   pointer-events: auto;
   z-index: 2;
-  
+
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -445,6 +413,137 @@ input {
   background: #f3f3f3;
 }
 
+/* Modal Overlay Styling */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay:not([hidden]) {
+  display: flex;
+}
+
+/* Container Box */
+.modal-window {
+  position: relative;
+  width: min(540px, calc(100% - 32px));
+  background: #ffffff;
+  border: 3px solid #111;
+  border-radius: 12px;
+  box-shadow: 8px 8px 0 #111;
+  padding: 24px;
+  animation: modalSlideUp 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Close Button styling matching the neubrutalist UI */
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #111;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0 #111;
+}
+
+.modal-close-btn:hover {
+  background: #f3f3f3;
+}
+
+.modal-close-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #111;
+}
+
+/* Content Elements */
+.modal-content h2 {
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #111;
+  padding-bottom: 8px;
+}
+
+.modal-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.meta-block strong {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.meta-block span {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.modal-divider {
+  border: 0;
+  height: 2px;
+  background: #111;
+  margin: 16px 0;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+#modal-description,
+.tooltip-desc {
+  white-space: pre-line; /* Tells the browser to break lines on raw \n characters */
+}
+
+/* Photo Placeholder Box */
+.modal-photos-placeholder {
+  background: #f3f4f6;
+  border: 2px dashed #9aa2af;
+  border-radius: 8px;
+  padding: 32px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Intro Animation */
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 720px) {
   /* Hide the top-left title banner entirely */
   .top-bar > div:first-child {
@@ -469,29 +568,6 @@ input {
   }
   .controls button {
     min-width: 34px;
-  }
-
-  /* Compress the station detail card */
-  .station-card {
-    right: 10px;
-    bottom: 10px;
-    width: calc(100% - 20px);
-    padding: 10px 12px;
-    box-shadow: 2px 2px 0 #111; /* Lighter accent shadow */
-  }
-
-  .station-card h2 {
-    font-size: 0.95rem;
-    margin-bottom: 6px;
-  }
-
-  .station-card dl {
-    margin-bottom: 6px;
-    gap: 6px;
-  }
-
-  .station-card p {
-    font-size: 0.82rem;
   }
 
   /*Shift and downsize the Legend */
@@ -519,10 +595,10 @@ input {
     height: 6px;
   }
 
-  /* Shift the Scale Line Window up so it sits cleanly above the station card */
+
   .scale-legend {
     left: 10px;
-    bottom: 150px; /* Sits directly on top of the compressed station card */
+    bottom: 16px; 
     width: calc(100% - 20px);
     padding: 8px 12px;
     box-shadow: 2px 2px 0 #111;
@@ -589,5 +665,18 @@ input {
     left: -34px;
     width: 34px;
     top: 8px;
+  }
+}
+
+@media (hover: none) {
+  #tooltip,
+  .tooltip {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .modal-overlay {
+    display: none !important;
   }
 }

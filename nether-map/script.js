@@ -5,7 +5,7 @@ const routeLayer = document.getElementById("route-layer");
 const stationLayer = document.getElementById("station-layer");
 const labelLayer = document.getElementById("label-layer");
 const tooltip = document.getElementById("tooltip");
-const stationCard = document.getElementById("station-card");
+// const stationCard = document.getElementById("station-card");
 const gridToggle = document.getElementById("grid-toggle");
 const scaleLegend = document.getElementById("scale-legend");
 const scaleLine = document.getElementById("scale-line");
@@ -13,9 +13,16 @@ const scaleDistance = document.getElementById("scale-distance");
 const gridSize = document.getElementById("grid-size");
 const overworldScale = document.getElementById("overworld-scale");
 
-const cardNether = document.getElementById("card-nether");
-const cardOverworld = document.getElementById("card-overworld");
-const cardDescription = document.getElementById("card-description");
+// const cardNether = document.getElementById("card-nether");
+// const cardOverworld = document.getElementById("card-overworld");
+// const cardDescription = document.getElementById("card-description");
+
+const stationModal = document.getElementById("station-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalNether = document.getElementById("modal-nether");
+const modalOverworld = document.getElementById("modal-overworld");
+const modalDescription = document.getElementById("modal-description");
+const modalClose = document.getElementById("modal-close");
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 let MIN_ZOOM = 0.05;
@@ -61,8 +68,7 @@ async function init() {
     setupInitialView();
     bindControls();
   } catch (error) {
-    stationCard.querySelector("h2").textContent = "Map data unavailable";
-    cardDescription.textContent = error.message;
+    console.error("Map data unavailable:", error.message);
   }
 }
 
@@ -223,6 +229,7 @@ function drawStations() {
     group.addEventListener("click", (event) => {
       event.stopPropagation();
       showStation(station, event);
+      openStationModal(station); 
     });
 
     stationLayer.appendChild(group);
@@ -250,17 +257,21 @@ function showStation(station, event) {
   const overworldX = station.x * 8;
   const overworldZ = station.z * 8;
 
-  stationCard.querySelector("h2").textContent = station.name;
-  cardNether.textContent = `X ${station.x}, Z ${station.z}`;
-  cardOverworld.textContent = `X ${overworldX}, Z ${overworldZ}`;
-  cardDescription.textContent = station.description || "No description provided.";
-
+  // stationCard.querySelector("h2").textContent = station.name;
+  // cardNether.textContent = `X ${station.x}, Z ${station.z}`;
+  // cardOverworld.textContent = `X ${overworldX}, Z ${overworldZ}`;
+  // cardDescription.textContent = station.description || "No description provided.";
+  
+  const descriptionHtml = station.description
+      ? `<span class="tooltip-desc">${escapeHtml(station.description)}</span>`
+      : '';
+  
   tooltip.hidden = false;
   tooltip.innerHTML = `
     <strong>${escapeHtml(station.name)}</strong>
     <span>Nether: X ${station.x}, Z ${station.z}</span>
     <span>Overworld: X ${overworldX}, Z ${overworldZ}</span>
-    <span>${escapeHtml(station.description || "No description provided.")}</span>
+    ${descriptionHtml}
   `;
   moveTooltip(event);
 }
@@ -312,6 +323,12 @@ function bindControls() {
   svg.addEventListener("touchend", handleTouchEnd);
   svg.addEventListener("touchcancel", handleTouchEnd);
   window.addEventListener("resize", setupInitialView);
+
+  modalClose.addEventListener("click", closeStationModal);
+  // Also close if clicking outside the modal window container
+  stationModal.addEventListener("click", (e) => {
+    if (e.target === stationModal) closeStationModal();
+  });
 }
 
 function setupInitialView() {
@@ -657,4 +674,23 @@ function generateLineLegend(routes) {
     li.appendChild(text);
     legendList.appendChild(li);
   });
+}
+
+function openStationModal(station) {
+  // Only activate on desktop devices
+  if (window.matchMedia("(hover: hover)").matches) {
+    const overworldX = station.x * 8;
+    const overworldZ = station.z * 8;
+
+    modalTitle.textContent = station.name;
+    modalNether.textContent = `X ${station.x}, Z ${station.z}`;
+    modalOverworld.textContent = `X ${overworldX}, Z ${overworldZ}`;
+    modalDescription.textContent = station.description || "No description provided.";
+
+    stationModal.hidden = false;
+  }
+}
+
+function closeStationModal() {
+  stationModal.hidden = true;
 }

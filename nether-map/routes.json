@@ -73,22 +73,22 @@
   },
   {
     "start": "Intersection E",
-    "end": "MobDude",
+    "end": "Rust Bucket",
     "color": "#df8600"
   },
   {
-    "start": "MobDude",
+    "start": "Rust Bucket",
     "end": "Intersection G",
     "color": "#B3321E"
   },
   {
-    "start": "MobDude",
+    "start": "Rust Bucket",
     "end": "Intersection F",
     "color": "#B3321E"
   },
   {
     "start": "Intersection F",
-    "end": "Junicx",
+    "end": "Sugar Isle",
     "color": "#B3321E"
   },
   {
@@ -103,7 +103,7 @@
   },
   {
     "start": "Jasmine & Lotus",
-    "end": "E3",
+    "end": "Intersection H",
     "color": "#FFAEC9"
   },
   {
@@ -136,7 +136,68 @@
   },
   {
     "start": "TeaTree",
+    "end": "Intersection L",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection L",
     "end": "E4",
     "color": "#67BED9"
+  },
+  {
+    "start": "Intersection L",
+    "end": "E6",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection M",
+    "end": "Rome",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection F",
+    "end": "Intersection J",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection J",
+    "end": "E1",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection J",
+    "end": "Temp",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Sugar Isle",
+    "end": "Intersection K",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection K",
+    "end": "E5",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection K",
+    "end": "IceTown",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection H",
+    "end": "AmazonLily",
+    "color": "#FFAEC9",
+    "via": [
+      {
+        "x": 1944,
+        "z": 2337
+      }
+    ]
+  },
+  {
+    "start": "Intersection H",
+    "end": "E3",
+    "color": "#FFAEC9"
   }
 ]

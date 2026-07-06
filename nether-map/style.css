@@ -325,6 +325,17 @@ input {
   color: #d7dce2;
 }
 
+.tooltip span.tooltip-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Adjust this number to show 1, 2, or 3 lines before clipping */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*color: #a5b4fc; /* Optional: gives the description a slight tint to separate it from coordinates */
+  margin-top: 6px;
+  border-top: 1px solid #333;
+  padding-top: 4px;
+}
 
 .line-legend {
   position: absolute;
@@ -589,5 +600,14 @@ input {
     left: -34px;
     width: 34px;
     top: 8px;
+  }
+}
+
+@media (hover: none) {
+  #tooltip,
+  .tooltip {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 }

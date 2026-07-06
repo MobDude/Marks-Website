@@ -254,13 +254,17 @@ function showStation(station, event) {
   cardNether.textContent = `X ${station.x}, Z ${station.z}`;
   cardOverworld.textContent = `X ${overworldX}, Z ${overworldZ}`;
   cardDescription.textContent = station.description || "No description provided.";
-
+  
+  const descriptionHtml = station.description
+      ? `<span class="tooltip-desc">${escapeHtml(station.description)}</span>`
+      : '';
+  
   tooltip.hidden = false;
   tooltip.innerHTML = `
     <strong>${escapeHtml(station.name)}</strong>
     <span>Nether: X ${station.x}, Z ${station.z}</span>
     <span>Overworld: X ${overworldX}, Z ${overworldZ}</span>
-    <span>${escapeHtml(station.description || "No description provided.")}</span>
+    ${descriptionHtml}
   `;
   moveTooltip(event);
 }

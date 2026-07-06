@@ -73,22 +73,22 @@
   },
   {
     "start": "Intersection E",
-    "end": "MobDude",
+    "end": "Rust Bucket",
     "color": "#df8600"
   },
   {
-    "start": "MobDude",
+    "start": "Rust Bucket",
     "end": "Intersection G",
     "color": "#B3321E"
   },
   {
-    "start": "MobDude",
+    "start": "Rust Bucket",
     "end": "Intersection F",
     "color": "#B3321E"
   },
   {
     "start": "Intersection F",
-    "end": "Junicx",
+    "end": "Sugar Isle",
     "color": "#B3321E"
   },
   {

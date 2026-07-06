@@ -73,7 +73,7 @@
     "name": "DrRock",
     "x": 413,
     "z": -344,
-    "description": "",
+    "description": "After exploring my first cave I started on this base directly above it. Not a castle, more akin to the fortified bastile houses on the Scottish borders. Please fly around or enjoy the view from the top of the tower. Do not feed the golems or water the crystal tree, they are well cared for.\n\n In the caves below find the rare clay basin biome infested with mutant worm corals. To reach this underground lake dare to take the plunge from the platform by the eastern door. From the lake, meet some charming villagers or step away to another dimension.\n\nIf you like a technical build check out my inventions:\n\nVertical Block Sorter: Taking up most of the base tower, a team of copper golems work - faster than hopper speed - sorting blocks into useful categories.\nNovel Iron Farm: Combining a villager trading hall and 2-cell iron farm, using a zombie lure rather than water streams to capture iron golems.",
     "color": "#000000",
     "major": true,
     "labelX": 433,
@@ -170,7 +170,7 @@
     "labelZ": -2296
   },
   {
-    "name": "MobDude",
+    "name": "Rust Bucket",
     "x": -1360,
     "z": 1385,
     "description": "This warp primarily acts as MobDude's base, but also features a firework rocket shop, a hog racing track with a soundtrack (WIP), and soon a mace parkour.",
@@ -190,10 +190,10 @@
     "labelZ": 1425
   },
   {
-    "name": "Junicx",
+    "name": "Sugar Isle",
     "x": -1696,
     "z": 1435,
-    "description": "",
+    "description": "The heart of five Isles. Feel free to roam around this hand-crafted island!",
     "color": "#000000",
     "major": true,
     "labelX": -1676,
@@ -213,7 +213,7 @@
     "name": "ITZA",
     "x": 2694,
     "z": 2367,
-    "description": "",
+    "description": "Welcome to the city of Tzitzulco (ITZA)! Explore temples, a stave church, a military complex, and other fun city features. Try to find the underground dwarven mines. But, be careful not to venture into the lava, for this is the City of the Molten God.",
     "color": "#000000",
     "major": true,
     "labelX": 2714,

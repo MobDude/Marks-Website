@@ -328,5 +328,25 @@
     "major": true,
     "labelX": -2551,
     "labelZ": 1285
+  },
+  {
+    "name": "Intersection H",
+    "x": 1944,
+    "z": 2494,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 1964,
+    "labelZ": 2474
+  },
+  {
+    "name": "AmazonLily",
+    "x": 1959,
+    "z": 2337,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 1979,
+    "labelZ": 2317
   }
 ]

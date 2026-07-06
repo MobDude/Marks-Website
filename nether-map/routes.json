@@ -103,7 +103,7 @@
   },
   {
     "start": "Jasmine & Lotus",
-    "end": "E3",
+    "end": "Intersection H",
     "color": "#FFAEC9"
   },
   {
@@ -183,5 +183,21 @@
     "start": "Intersection K",
     "end": "IceTown",
     "color": "#B3321E"
+  },
+  {
+    "start": "Intersection H",
+    "end": "AmazonLily",
+    "color": "#FFAEC9",
+    "via": [
+      {
+        "x": 1944,
+        "z": 2337
+      }
+    ]
+  },
+  {
+    "start": "Intersection H",
+    "end": "E3",
+    "color": "#FFAEC9"
   }
 ]

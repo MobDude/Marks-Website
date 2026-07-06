@@ -148,5 +148,25 @@
     "start": "Intersection L",
     "end": "E6",
     "color": "#67BED9"
+  },
+  {
+    "start": "Intersection M",
+    "end": "Rome",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection F",
+    "end": "Intersection J",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection J",
+    "end": "E1",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection J",
+    "end": "EcS",
+    "color": "#B3321E"
   }
 ]

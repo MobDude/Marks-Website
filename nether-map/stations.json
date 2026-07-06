@@ -150,16 +150,6 @@
     "labelZ": -1559
   },
   {
-    "name": "Intersection E",
-    "x": 570,
-    "z": 1385,
-    "description": "",
-    "color": "#000000",
-    "major": false,
-    "labelX": 590,
-    "labelZ": 1365
-  },
-  {
     "name": "MVC Post",
     "x": 575,
     "z": -1786,
@@ -258,5 +248,65 @@
     "major": false,
     "labelX": -2856,
     "labelZ": -1570
+  },
+  {
+    "name": "E5",
+    "x": -1746,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1766,
+    "labelZ": 1415
+  },
+  {
+    "name": "E1",
+    "x": -1360,
+    "z": 1882,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": 1862
+  },
+  {
+    "name": "Intersection J",
+    "x": -1360,
+    "z": 1855,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": 1835
+  },
+  {
+    "name": "EcS",
+    "x": -1498,
+    "z": 1855,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -1478,
+    "labelZ": 1815
+  },
+  {
+    "name": "Intersection M",
+    "x": -2876,
+    "z": -971,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2856,
+    "labelZ": -991
+  },
+  {
+    "name": "Rome",
+    "x": -2738,
+    "z": -971,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -2718,
+    "labelZ": -991
   }
 ]

@@ -242,21 +242,21 @@
   {
     "name": "E6",
     "x": -2876,
-    "z": -550,
+    "z": -482,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
     "labelX": -2856,
-    "labelZ": -1570
+    "labelZ": -502
   },
   {
     "name": "E5",
-    "x": -2590,
+    "x": -2966,
     "z": 1435,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": -2570,
+    "labelX": -2946,
     "labelZ": 1415
   },
   {
@@ -348,5 +348,25 @@
     "major": true,
     "labelX": 1979,
     "labelZ": 2317
+  },
+  {
+    "name": "Intersection N",
+    "x": -2948,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2928,
+    "labelZ": 1415
+  },
+  {
+    "name": "JimHex",
+    "x": -2948,
+    "z": 1532,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -2928,
+    "labelZ": 1512
   }
 ]

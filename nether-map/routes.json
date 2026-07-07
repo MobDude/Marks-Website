@@ -176,7 +176,7 @@
   },
   {
     "start": "Intersection K",
-    "end": "E5",
+    "end": "Intersection N",
     "color": "#B3321E"
   },
   {
@@ -199,5 +199,15 @@
     "start": "Intersection H",
     "end": "E3",
     "color": "#FFAEC9"
+  },
+  {
+    "start": "Intersection N",
+    "end": "E5",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection N",
+    "end": "JimHex",
+    "color": "#B3321E"
   }
 ]

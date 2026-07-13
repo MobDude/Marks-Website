@@ -242,12 +242,12 @@
   {
     "name": "E6",
     "x": -2876,
-    "z": -482,
+    "z": -540,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
     "labelX": -2856,
-    "labelZ": -502
+    "labelZ": -520
   },
   {
     "name": "E5",
@@ -280,12 +280,12 @@
     "labelZ": 1835
   },
   {
-    "name": "Temp",
+    "name": "EcS",
     "x": -1498,
     "z": 1855,
     "description": "",
     "color": "#000000",
-    "major": false,
+    "major": true,
     "labelX": -1478,
     "labelZ": 1815
   },
@@ -368,5 +368,35 @@
     "major": true,
     "labelX": -2928,
     "labelZ": 1512
+  },
+  {
+    "name": "KingsMere",
+    "x": -3356,
+    "z": 1243,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -3336,
+    "labelZ": 1223
+  },
+  {
+    "name": "Intersection O",
+    "x": -2877,
+    "z": -548,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2857,
+    "labelZ": -528
+  },
+  {
+    "name": "Abandoned",
+    "x": -3035,
+    "z": -548,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -3015,
+    "labelZ": -528
   }
 ]

@@ -38,6 +38,8 @@ const LINE_NAMES = {
   "#e53935": "Default Route" // Fallback color
 };
 
+const boundaryLayer = document.getElementById("boundary-layer");
+
 let stations = [];
 let stationByName = new Map();
 let transform = { x: 0, y: 0, scale: 1 };
@@ -64,6 +66,7 @@ async function init() {
 
     drawRoutes(routes);
     drawStations();
+    drawMapBoundary();
     generateLineLegend(routes);
     setupInitialView();
     bindControls();
@@ -645,6 +648,17 @@ function generateLineLegend(routes) {
   minorLi.appendChild(minorText);
   legendList.appendChild(minorLi);
 
+  // --- Add Map Boundary to Legend ---
+  const boundaryLi = document.createElement("li");
+  boundaryLi.className = "legend-item";
+  const boundarySwatch = document.createElement("div");
+  boundarySwatch.className = "legend-boundary-swatch"; 
+  const boundaryText = document.createElement("span");
+  boundaryText.textContent = "Wild TP Border";
+  boundaryLi.appendChild(boundarySwatch);
+  boundaryLi.appendChild(boundaryText);
+  legendList.appendChild(boundaryLi);
+  
   // --- Separator Line ---
   const divider = document.createElement("li");
   divider.className = "legend-divider";
@@ -693,4 +707,18 @@ function openStationModal(station) {
 
 function closeStationModal() {
   stationModal.hidden = true;
+}
+
+function drawMapBoundary() {
+  boundaryLayer.replaceChildren();
+
+  const boundary = createSvgElement("rect", {
+    x: -6250,
+    y: -1875,
+    width: 12500,
+    height: 3750,
+    class: "map-boundary"
+  });
+
+  boundaryLayer.appendChild(boundary);
 }

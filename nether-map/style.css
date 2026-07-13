@@ -343,6 +343,14 @@ input {
   flex-shrink: 0;
 }
 
+.legend-boundary-swatch {
+  width: 24px;
+  height: 0;
+  border-top: 3px dashed #32CD32;
+  flex-shrink: 0;
+  margin: 0 4px; 
+}
+
 .legend-node {
   background: #fff;
   border: 2.5px solid #111;
@@ -542,6 +550,14 @@ input {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.map-boundary {
+  fill: none;
+  stroke: #32CD32;       /* Match your dominant dark ink color */
+  stroke-width: 20;       /* Make it prominent but thinner than routes */
+  stroke-dasharray: 12 8; /* Gives it a clean, dashed "world border" mapping look */
+  pointer-events: none;
 }
 
 @media (max-width: 720px) {

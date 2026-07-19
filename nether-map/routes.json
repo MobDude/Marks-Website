@@ -235,5 +235,10 @@
     "start": "Intersection O",
     "end": "E6",
     "color": "#67BED9"
+  },
+  {
+    "start": "Intersection P",
+    "end": "CIRCUIT",
+    "color": "#B3321E"
   }
 ]

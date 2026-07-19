@@ -398,5 +398,25 @@
     "major": true,
     "labelX": -3015,
     "labelZ": -568
+  },
+  {
+    "name": "Intersection P",
+    "x": -1360,
+    "z": -67,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": -87
+  },
+  {
+    "name": "CIRCUIT",
+    "x": -472,
+    "z": -67,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -452,
+    "labelZ": -87
   }
 ]

@@ -691,22 +691,51 @@ function generateLineLegend(routes) {
 }
 
 function openStationModal(station) {
-  // Only activate on desktop devices
-  if (window.matchMedia("(hover: hover)").matches) {
-    const overworldX = station.x * 8;
-    const overworldZ = station.z * 8;
+  // 1. Populate text fields securely using your active DOM references
+  modalTitle.textContent = station.name;
 
-    modalTitle.textContent = station.name;
-    modalNether.textContent = `X ${station.x}, Z ${station.z}`;
-    modalOverworld.textContent = `X ${overworldX}, Z ${overworldZ}`;
-    modalDescription.textContent = station.description || "No description provided.";
+  const overworldX = station.x * 8;
+  const overworldZ = station.z * 8;
+  modalNether.textContent = `X ${station.x}, Z ${station.z}`;
+  modalOverworld.textContent = `X ${overworldX}, Z ${overworldZ}`;
 
-    stationModal.hidden = false;
+  // Formats text breaks securely and handles bold regex transformations
+  if (station.description) {
+    let safeDesc = escapeHtml(station.description);
+    safeDesc = safeDesc.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    safeDesc = safeDesc.replaceAll('\n', '<br>');
+    modalDescription.innerHTML = safeDesc;
+  } else {
+    modalDescription.textContent = "No description provided.";
   }
+
+  // 2. Clear out any lingering mobile transition overrides and display the overlay container
+  const modalContent = stationModal.querySelector(".modal-content");
+  if (modalContent) {
+    modalContent.style.transform = "";
+  }
+
+  stationModal.hidden = false;
 }
 
 function closeStationModal() {
-  stationModal.hidden = true;
+  // If the window is small (mobile layout), match the CSS bottom-sheet exit delay
+  if (window.innerWidth <= 720) {
+    const modalContent = stationModal.querySelector(".modal-window");
+    if (modalContent) {
+      modalContent.style.transform = "translateY(100%)";
+    }
+
+    setTimeout(() => {
+      stationModal.hidden = true;
+      if (modalContent) {
+        modalContent.style.transform = ""; // Reset fallback state styles
+      }
+    }, 300); // Wait for the smooth CSS slide animation to complete
+  } else {
+    // Normal immediate desktop close sequence
+    stationModal.hidden = true;
+  }
 }
 
 function drawMapBoundary() {
@@ -721,4 +750,58 @@ function drawMapBoundary() {
   });
 
   boundaryLayer.appendChild(boundary);
+}
+
+// --- Touch Swipe-to-Close Logic ---
+let touchStartY = 0;
+let touchCurrentY = 0;
+let isDraggingModal = false;
+
+// Target the window container frame
+const modalWindow = document.querySelector(".modal-window");
+
+if (modalWindow) {
+  modalWindow.addEventListener("touchstart", (e) => {
+    // Only allow swiping down if the user triggers it near the top header area
+    // or if the internal content pane hasn't been scrolled down yet.
+    const modalContent = modalWindow.querySelector(".modal-content");
+    if (modalContent && modalContent.scrollTop > 0) return;
+
+    touchStartY = e.touches[0].clientY;
+    isDraggingModal = true;
+    modalWindow.classList.add("is-dragging");
+  }, { passive: true });
+
+  modalWindow.addEventListener("touchmove", (e) => {
+    if (!isDraggingModal) return;
+
+    touchCurrentY = e.touches[0].clientY;
+    const deltaY = touchCurrentY - touchStartY;
+
+    // Only allow downward dragging (positive Y offsets)
+    if (deltaY > 0) {
+      modalWindow.style.transform = `translateY(${deltaY}px)`;
+    }
+  }, { passive: true });
+
+  modalWindow.addEventListener("touchend", () => {
+    if (!isDraggingModal) return;
+
+    isDraggingModal = false;
+    modalWindow.classList.remove("is-dragging");
+
+    const deltaY = touchCurrentY - touchStartY;
+
+    // Threshold: If dragged down more than 120px, slide out and close
+    if (deltaY > 120) {
+      closeStationModal();
+    } else {
+      // Otherwise, snap back up smoothly to its default position
+      modalWindow.style.transform = "translateY(0)";
+    }
+
+    // Reset trackers
+    touchStartY = 0;
+    touchCurrentY = 0;
+  });
 }

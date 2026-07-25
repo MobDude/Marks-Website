@@ -240,5 +240,15 @@
     "start": "Intersection P",
     "end": "CIRCUIT",
     "color": "#B3321E"
+  },
+  {
+    "start": "Intersection Q",
+    "end": "LeHe",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection R",
+    "end": "Riverside",
+    "color": "#B3321E"
   }
 ]

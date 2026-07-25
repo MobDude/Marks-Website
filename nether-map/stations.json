@@ -21,12 +21,12 @@
   },
   {
     "name": "E2",
-    "x": -2508,
+    "x": -2844,
     "z": 456,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": -2488,
+    "labelX": -2864,
     "labelZ": 436
   },
   {
@@ -418,5 +418,45 @@
     "major": true,
     "labelX": -452,
     "labelZ": -87
+  },
+  {
+    "name": "LeHe",
+    "x": -1482,
+    "z": -1814,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -1462,
+    "labelZ": -1834
+  },
+  {
+    "name": "Riverside",
+    "x": -2840,
+    "z": 572,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -2820,
+    "labelZ": 552
+  },
+  {
+    "name": "Intersection Q",
+    "x": -1482,
+    "z": -1536,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1462,
+    "labelZ": -1556
+  },
+  {
+    "name": "Intersection R",
+    "x": -2840,
+    "z": 456,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2820,
+    "labelZ": 436
   }
 ]

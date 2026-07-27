@@ -754,6 +754,7 @@ html.export-mode body {
 /* Hide interactive UI elements and overlays */
 html.export-mode .top-bar,
 html.export-mode .controls,
+html.export-mode .line-legend,
 html.export-mode .modal-overlay,
 html.export-mode #tooltip,
 html.export-mode .legend-tab {
@@ -761,7 +762,6 @@ html.export-mode .legend-tab {
 }
 
 /* Force legends to remain visible and clean */
-html.export-mode .line-legend,
 html.export-mode .scale-legend {
   display: block !important;
   opacity: 1 !important;
@@ -771,12 +771,6 @@ html.export-mode .scale-legend {
   border: 2px solid #111;
   z-index: 10;
 }
-
-/* Ensure collapsed state doesn't hide the legend in export mode */
-html.export-mode .line-legend.is-collapsed {
-  transform: none !important;
-}
-
 /* Boost vector contrast for low-res item frame rendering */
 html.export-mode .route-line {
   stroke-width: 20px;
@@ -785,4 +779,119 @@ html.export-mode .route-line {
 html.export-mode .station-label {
   font-size: 28px;
   stroke-width: 6px;
+}
+
+
+/* DEDICATED LEGEND MAP (128x128 ITEM FRAME) */
+html.export-legend body {
+  background: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* Hide interactive UI elements and the SVG map */
+html.export-legend .top-bar,
+html.export-legend .controls,
+html.export-legend .scale-legend,
+html.export-legend .modal-overlay,
+html.export-legend #tooltip,
+html.export-legend .legend-tab,
+html.export-legend #map {
+  display: none !important;
+}
+
+/* Reset map shell & wrap so they don't apply weird offsets */
+html.export-legend .map-shell,
+html.export-legend .map-wrap {
+  width: 100% !important;
+  height: 100% !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #ffffff !important;
+}
+
+/* Force legend box to stretch to full viewport width/height */
+html.export-legend #line-legend,
+html.export-legend .line-legend {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 8% 10% !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+  opacity: 1 !important;
+  z-index: 99999 !important;
+}
+
+/* Header style for 128px rendering */
+html.export-legend .line-legend h3 {
+  font-size: clamp(14px, 4vw, 22px) !important;
+  font-weight: 900 !important;
+  text-align: center !important;
+  margin: 0 0 8px 0 !important;
+  padding-bottom: 6px !important;
+  border-bottom: 3px solid #111 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* List container layout */
+html.export-legend .line-legend ul,
+html.export-legend #legend-list {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-evenly !important;
+  flex-grow: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* List item text & swatch alignment */
+html.export-legend .legend-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: clamp(11px, 3.2vw, 18px) !important;
+  font-weight: 800 !important;
+  color: #111 !important;
+  line-height: 1.2 !important;
+}
+
+/* Make swatches bold and visible */
+html.export-legend .legend-color-swatch {
+  width: clamp(20px, 6vw, 36px) !important;
+  height: clamp(8px, 2.2vw, 14px) !important;
+  border-radius: 4px !important;
+  flex-shrink: 0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+html.export-legend .legend-node {
+  flex-shrink: 0 !important;
+}
+
+html.export-legend .legend-divider {
+  margin: 4px 0 !important;
+  height: 2px !important;
+  background: #d2d6dc !important;
 }

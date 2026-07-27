@@ -809,7 +809,11 @@ function getCenter(a, b) {
 // Enables export mode CSS overrides if ?export=minecraft or ?print is in the URL
 function handleExportMode() {
   const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get("export") === "minecraft" || urlParams.has("print")) {
+  const exportType = urlParams.get("export");
+
+  if (exportType === "legend") {
+    document.documentElement.classList.add("export-legend");
+  } else if (exportType === "minecraft" || urlParams.has("print")) {
     document.documentElement.classList.add("export-mode");
   }
 }

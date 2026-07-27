@@ -8,6 +8,7 @@
   --accent: #0b6bcb;
 }
 
+/* Base page setup */
 * {
   box-sizing: border-box;
 }
@@ -30,6 +31,7 @@ input {
   font: inherit;
 }
 
+/* Full-screen map layout */
 .map-shell {
   height: 100dvh;
   position: relative;
@@ -49,6 +51,7 @@ input {
   pointer-events: none;
 }
 
+/* Panels opt back into pointer events so the map remains draggable behind them. */
 .top-bar > div {
   pointer-events: auto;
 }
@@ -119,6 +122,7 @@ input {
   accent-color: var(--accent);
 }
 
+/* SVG map layers */
 .map-wrap {
   position: relative;
   width: 100vw;
@@ -142,6 +146,7 @@ input {
   cursor: grabbing;
 }
 
+/* Routes are drawn twice: a black outline path below a colored line path. */
 .route-line {
   fill: none;
   stroke-linecap: round;
@@ -159,6 +164,7 @@ input {
   stroke-width: 24;
 }
 
+/* Invisible hit target keeps stations comfortable on touch screens. */
 .station-hit {
   cursor: pointer;
   fill: transparent;
@@ -218,7 +224,7 @@ input {
   pointer-events: none;
 }
 
-
+/* Map overlays */
 .scale-legend {
   position: absolute;
   left: 16px;
@@ -284,11 +290,10 @@ input {
 
 .tooltip span.tooltip-desc {
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Adjust this number to show 1, 2, or 3 lines before clipping */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  /*color: #a5b4fc; /* Optional: gives the description a slight tint to separate it from coordinates */
   margin-top: 6px;
   border-top: 1px solid #333;
   padding-top: 4px;
@@ -297,7 +302,7 @@ input {
 .line-legend {
   position: absolute;
   right: 16px;
-  bottom: 16px; /* Moved down to the bottom corner */
+  bottom: 16px;
   width: min(240px, calc(100% - 32px));
   padding: 12px 14px;
   background: rgba(255, 255, 255, 0.94);
@@ -348,7 +353,7 @@ input {
   height: 0;
   border-top: 3px dashed #32CD32;
   flex-shrink: 0;
-  margin: 0 4px; 
+  margin: 0 4px;
 }
 
 .legend-node {
@@ -362,14 +367,14 @@ input {
   width: 16px;
   height: 16px;
   border-width: 3.5px;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #111; /* Simulates the outer ring */
-  margin: 4px; /* Give the double ring room to breathe */
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #111;
+  margin: 4px;
 }
 
 .legend-node.minor {
   width: 12px;
   height: 12px;
-  margin-left: 6px; /* Balance visually with the major icon */
+  margin-left: 6px;
   margin-right: 6px;
 }
 
@@ -379,16 +384,14 @@ input {
   margin: 6px 0;
 }
 
-/* The state where the panel is tucked away */
+/* The legend moves by its own width so the tab stays available off the right edge. */
 .line-legend.is-collapsed {
-  /* Shifts the panel exactly its full width plus its right-margin off-screen */
   transform: translateX(calc(100% + 16px));
 }
 
-/* The Tab Button sticking out on the left side of the panel */
 .legend-tab {
   position: absolute;
-  left: -40px; /* Pulls it outside the container boundary */
+  left: -40px;
   top: 12px;
   width: 40px;
   height: 90px;
@@ -398,7 +401,7 @@ input {
   border-bottom: 2px solid #111;
   border-right: none;
   border-radius: 6px 0 0 6px;
-  box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.15); /* Match neubrutalism aesthetic */
+  box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.15);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -406,7 +409,6 @@ input {
   pointer-events: auto;
 }
 
-/* Rotate the text vertically inside the tab */
 .legend-tab span {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -421,7 +423,7 @@ input {
   background: #f3f3f3;
 }
 
-/* Modal Overlay Styling */
+/* Station detail modal */
 .modal-overlay {
   position: absolute;
   top: 0;
@@ -440,7 +442,6 @@ input {
   display: flex;
 }
 
-/* Container Box */
 .modal-window {
   position: relative;
   width: min(540px, calc(100% - 32px));
@@ -452,7 +453,6 @@ input {
   animation: modalSlideUp 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Close Button styling matching the neubrutalist UI */
 .modal-close-btn {
   position: absolute;
   top: 14px;
@@ -480,7 +480,6 @@ input {
   box-shadow: 1px 1px 0 #111;
 }
 
-/* Content Elements */
 .modal-content h2 {
   margin: 0 0 16px;
   font-size: 1.6rem;
@@ -525,10 +524,9 @@ input {
 
 #modal-description,
 .tooltip-desc {
-  white-space: pre-line; /* Tells the browser to break lines on raw \n characters */
+  white-space: pre-line;
 }
 
-/* Photo Placeholder Box */
 .modal-photos-placeholder {
   background: #f3f4f6;
   border: 2px dashed #9aa2af;
@@ -540,7 +538,6 @@ input {
   font-size: 0.9rem;
 }
 
-/* Intro Animation */
 @keyframes modalSlideUp {
   from {
     transform: translateY(20px);
@@ -554,21 +551,18 @@ input {
 
 .map-boundary {
   fill: none;
-  stroke: #32CD32;       /* Match your dominant dark ink color */
-  stroke-width: 20;       /* Make it prominent but thinner than routes */
-  stroke-dasharray: 12 8; /* Gives it a clean, dashed "world border" mapping look */
+  stroke: #32CD32;
+  stroke-width: 20;
+  stroke-dasharray: 12 8;
   pointer-events: none;
 }
 
 @media (max-width: 720px) {
-  /* --- Global UI & Layout Elements --- */
-
-  /* Hide the top-left title banner entirely */
+  /* Mobile layout keeps controls visible while giving the map most of the screen. */
   .top-bar > div:first-child {
     display: none;
   }
 
-  /* Reposition the zoom controls slightly */
   .top-bar {
     top: 10px;
     right: 10px;
@@ -576,7 +570,6 @@ input {
     width: auto;
   }
 
-  /* Make the buttons more compact */
   .controls button,
   .grid-toggle {
     min-height: 34px;
@@ -588,7 +581,6 @@ input {
     min-width: 34px;
   }
 
-  /* Shift and downsize the Legend */
   .line-legend {
     right: 10px;
     bottom: auto;
@@ -674,10 +666,7 @@ input {
     display: none;
   }
 
-
-  /* --- Mobile Bottom Sheet Modal Layout --- */
-
-  /* Turn the dim overlay into a transparent background anchored to the base */
+  /* On mobile the station modal becomes a bottom sheet with drag-to-close support. */
   .modal-overlay {
     background: rgba(0, 0, 0, 0.15);
     align-items: flex-end;
@@ -686,49 +675,39 @@ input {
     overflow: hidden;
   }
 
-  /* Target .modal-window to match your HTML framework */
   .modal-window {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 20px;
-    border-radius: 24px 24px 0 0; /* Rounded top corners only */
+    border-radius: 24px 24px 0 0;
     border-left: none;
     border-right: none;
     border-bottom: none;
     border-top: 3px solid #111111;
-
-    /* Clean, upward neubrutalist border shadow replaces the looping side offsets */
     box-shadow: 0 -6px 0 #111111;
-
-    /* Expand up to 70% of viewport height */
     height: 90dvh;
     max-height: 90dvh;
     display: flex;
     flex-direction: column;
-    animation: none; /* Disable standard desktop pop animation */
-
-    /* Animation transition properties handled by JavaScript slider mechanics */
+    animation: none;
     transform: translateY(100%);
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  /* When the overlay parent is active, pop the bottom card into clear frame view */
   .modal-overlay:not([hidden]) .modal-window {
     transform: translateY(0);
   }
 
-  /* Restructure content inside the window to allow scrolling */
   .modal-content {
     display: flex;
     flex-direction: column;
     height: 100%;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* Kinetic scrolling on mobile devices */
-    padding-bottom: 24px; /* Room for virtual phone system home indicators */
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 24px;
   }
 
-  /* Reposition the close button to behave cleanly with relative text flows */
   .modal-close-btn {
     position: absolute;
     top: 16px;
@@ -737,28 +716,26 @@ input {
   }
 
   .modal-content h2 {
-    padding-right: 40px; /* Keep title from overlapping the close button */
+    padding-right: 40px;
     font-size: 1.5rem;
   }
 
-  /* The visual grab handle bar */
   .modal-drag-handle {
     width: 40px;
     height: 5px;
     background-color: #111111;
     border-radius: 3px;
-    margin: -8px auto 12px auto; /* Centers it and snuggles it near the top border */
+    margin: -8px auto 12px auto;
     cursor: grab;
     flex-shrink: 0;
   }
 
-  /* Active class used when javascript dynamically tracks a finger drag */
+  /* JavaScript removes transitions while tracking a finger drag. */
   .modal-window.is-dragging {
-    transition: none !important; /* Disables transitions so the card tracks your finger perfectly in real-time */
+    transition: none !important;
   }
 }
 
-/* --- Touch Device Specific Overrides --- */
 @media (hover: none) {
   #tooltip,
   .tooltip {

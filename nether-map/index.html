@@ -12,7 +12,7 @@
     <header class="top-bar">
       <div>
         <h1>Nether Ice Highway Map</h1>
-        <p>A Map of MCVerse's  Nether Ice Highway System at Y=61. <br> Updated: Jul. 25, 2026</p>
+        <p>A map of MCVerse's Nether Ice Highway System at Y=61.<br>Updated: Jul. 25, 2026</p>
       </div>
       <div class="controls" aria-label="Map controls">
         <button type="button" id="zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
@@ -35,6 +35,7 @@
           </filter>
         </defs>
         <g id="viewport">
+          <!-- Drawing order matters: grid and boundary sit below routes, stations, and labels. -->
           <g id="grid-layer"></g>
           <g id="boundary-layer"></g>
           <g id="route-layer"></g>
@@ -43,23 +44,15 @@
         </g>
       </svg>
 
-<!--      <aside id="station-card" class="station-card" aria-live="polite">-->
-<!--        <h2>Select a station</h2>-->
-<!--        <dl>-->
-<!--          <div>-->
-<!--            <dt>Nether</dt>-->
-<!--            <dd id="card-nether">X 0, Z 0</dd>-->
-<!--          </div>-->
-<!--          <div>-->
-<!--            <dt>Overworld</dt>-->
-<!--            <dd id="card-overworld">X 0, Z 0</dd>-->
-<!--          </div>-->
-<!--        </dl>-->
-<!--        <p id="card-description">Hover or Click a station to view details.</p>-->
-<!--      </aside>-->
-
       <aside id="line-legend" class="line-legend" aria-label="Route Legend">
-        <button type="button" id="legend-toggle-tab" class="legend-tab" aria-label="Toggle Legend">
+        <button
+          type="button"
+          id="legend-toggle-tab"
+          class="legend-tab"
+          aria-label="Toggle Legend"
+          aria-controls="legend-list"
+          aria-expanded="true"
+        >
           <span>Legend</span>
         </button>
 
@@ -75,7 +68,8 @@
       </div>
 
       <div id="tooltip" class="tooltip" hidden></div>
-      <!-- Desktop Detail Popup Modal -->
+
+      <!-- JavaScript fills this modal from stations.json when a station is clicked. -->
       <div id="station-modal" class="modal-overlay" hidden>
         <div class="modal-window">
           <div class="modal-drag-handle"></div>
@@ -95,7 +89,6 @@
             <hr class="modal-divider">
             <p id="modal-description">Full station description goes here...</p>
 
-            <!-- Placeholder for future photos section -->
             <div class="modal-photos-placeholder">
               <span>[ Photos section coming soon ]</span>
             </div>

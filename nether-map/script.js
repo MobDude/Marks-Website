@@ -63,6 +63,8 @@ init();
 
 /* Data loading */
 async function init() {
+  handleExportMode();
+
   try {
     const [stationResponse, routeResponse] = await Promise.all([
       fetch("stations.json"),
@@ -342,7 +344,23 @@ function setupInitialView() {
   };
 
   minZoom = scale * 0.25;
-  resetView();
+
+  // Read URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramX = urlParams.get("x");
+  const paramZ = urlParams.get("z");
+  const paramZoom = urlParams.get("zoom");
+
+  // If X and Z are provided in the URL, center on them; otherwise fall back to default
+  if (paramX !== null && paramZ !== null) {
+    const targetX = parseFloat(paramX);
+    const targetZ = parseFloat(paramZ);
+    const targetZoom = paramZoom ? parseFloat(paramZoom) : scale;
+
+    setViewportPosition(targetX, targetZ, targetZoom);
+  } else {
+    resetView();
+  }
 }
 
 function resetView() {
@@ -784,4 +802,31 @@ function getCenter(a, b) {
     x: (a.clientX + b.clientX) / 2,
     y: (a.clientY + b.clientY) / 2
   };
+}
+
+/* URL Query Parameter & Viewport Utilities */
+
+// Enables export mode CSS overrides if ?export=minecraft or ?print is in the URL
+function handleExportMode() {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("export") === "minecraft" || urlParams.has("print")) {
+    document.documentElement.classList.add("export-mode");
+  }
+}
+
+// Sets the map transform so (worldX, worldZ) lands in the center of the viewport
+function setViewportPosition(worldX, worldZ, customScale) {
+  const rect = svg.getBoundingClientRect();
+  const width = Math.max(rect.width, 1);
+  const height = Math.max(rect.height, 1);
+
+  // Clamp desired scale between minZoom and MAX_ZOOM
+  const scale = clamp(customScale || transform.scale, minZoom, MAX_ZOOM);
+
+  // Translate transform origin so target coordinates are centered
+  const x = (width / 2) - (worldX * scale);
+  const y = (height / 2) - (worldZ * scale);
+
+  transform = { x, y, scale };
+  applyTransform();
 }

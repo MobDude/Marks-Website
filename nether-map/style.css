@@ -745,3 +745,44 @@ input {
   }
 }
 
+/* MINECRAFT EXPORT / WEB TO PNG LAYOUT OVERRIDES */
+html.export-mode body {
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Hide interactive UI elements and overlays */
+html.export-mode .top-bar,
+html.export-mode .controls,
+html.export-mode .modal-overlay,
+html.export-mode #tooltip,
+html.export-mode .legend-tab {
+  display: none !important;
+}
+
+/* Force legends to remain visible and clean */
+html.export-mode .line-legend,
+html.export-mode .scale-legend {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 3px 3px 0 #111;
+  border: 2px solid #111;
+  z-index: 10;
+}
+
+/* Ensure collapsed state doesn't hide the legend in export mode */
+html.export-mode .line-legend.is-collapsed {
+  transform: none !important;
+}
+
+/* Boost vector contrast for low-res item frame rendering */
+html.export-mode .route-line {
+  stroke-width: 20px;
+}
+
+html.export-mode .station-label {
+  font-size: 28px;
+  stroke-width: 6px;
+}

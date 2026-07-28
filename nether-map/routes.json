@@ -52,14 +52,13 @@
   },
   {
     "start": "Intersection E",
+    "end": "Intersection S",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection S",
     "end": "Jasmine & Lotus",
-    "color": "#df8600",
-    "via": [
-      {
-        "x": 572,
-        "z": 2495
-      }
-    ]
+    "color": "#FFAEC9"
   },
   {
     "start": "Intersection D",
@@ -250,5 +249,16 @@
     "start": "Intersection R",
     "end": "Riverside",
     "color": "#B3321E"
+  },
+  {
+    "start": "Intersection S",
+    "end": "Mats1300",
+    "color": "#df8600",
+    "via": [
+      {
+        "x": 573,
+        "z": 2967
+      }
+    ]
   }
 ]

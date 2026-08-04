@@ -260,5 +260,15 @@
         "z": 2967
       }
     ]
+  },
+  {
+    "start": "Intersection T",
+    "end": "Hydropolis",
+    "color": "#df8600"
+  },
+  {
+    "start": "Hydropolis",
+    "end": "E7",
+    "color": "#df8600"
   }
 ]

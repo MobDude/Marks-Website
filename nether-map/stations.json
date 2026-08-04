@@ -241,8 +241,8 @@
   },
   {
     "name": "E6",
-    "x": -2876,
-    "z": -540,
+    "x": -2877,
+    "z": -510,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
@@ -478,5 +478,35 @@
     "major": true,
     "labelX": 837,
     "labelZ": 2947
+  },
+  {
+    "name": "Hydropolis",
+    "x": 1070,
+    "z": -374,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 1070,
+    "labelZ": -374
+  },
+  {
+    "name": "E7",
+    "x": 1074,
+    "z": -374,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 1074,
+    "labelZ": -374
+  },
+  {
+    "name": "Intersection T",
+    "x": 573,
+    "z": -374,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 573,
+    "labelZ": -374
   }
 ]

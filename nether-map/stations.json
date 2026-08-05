@@ -242,12 +242,12 @@
   {
     "name": "E6",
     "x": -2877,
-    "z": -510,
+    "z": 237,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
     "labelX": -2856,
-    "labelZ": -520
+    "labelZ": 217
   },
   {
     "name": "E5",
@@ -486,8 +486,8 @@
     "description": "",
     "color": "#000000",
     "major": true,
-    "labelX": 1070,
-    "labelZ": -374
+    "labelX": 1090,
+    "labelZ": -394
   },
   {
     "name": "E7",
@@ -496,8 +496,8 @@
     "description": "",
     "color": "#000000",
     "major": false,
-    "labelX": 1074,
-    "labelZ": -374
+    "labelX": 1094,
+    "labelZ": -394
   },
   {
     "name": "Intersection T",
@@ -506,7 +506,7 @@
     "description": "",
     "color": "#000000",
     "major": false,
-    "labelX": 573,
-    "labelZ": -374
+    "labelX": 593,
+    "labelZ": -394
   }
 ]

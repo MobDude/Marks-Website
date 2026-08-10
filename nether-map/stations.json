@@ -20,16 +20,6 @@
     "labelZ": -1556
   },
   {
-    "name": "E2",
-    "x": -2844,
-    "z": 456,
-    "description": "End of the Line.",
-    "color": "#000000",
-    "major": false,
-    "labelX": -2864,
-    "labelZ": 436
-  },
-  {
     "name": "Intersection G",
     "x": -1360,
     "z": 456,
@@ -220,16 +210,6 @@
     "labelZ": 2347
   },
   {
-    "name": "E4",
-    "x": -2879,
-    "z": -1536,
-    "description": "End of the Line.",
-    "color": "#000000",
-    "major": false,
-    "labelX": -2859,
-    "labelZ": -1556
-  },
-  {
     "name": "Intersection L",
     "x": -2876,
     "z": -1536,
@@ -242,12 +222,12 @@
   {
     "name": "E6",
     "x": -2877,
-    "z": 237,
+    "z": 706,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
     "labelX": -2856,
-    "labelZ": 217
+    "labelZ": 686
   },
   {
     "name": "E5",
@@ -281,13 +261,13 @@
   },
   {
     "name": "EcS",
-    "x": -1498,
+    "x": -1560,
     "z": 1855,
     "description": "",
     "color": "#000000",
     "major": true,
-    "labelX": -1478,
-    "labelZ": 1815
+    "labelX": -1540,
+    "labelZ": 1835
   },
   {
     "name": "Intersection M",
@@ -508,5 +488,35 @@
     "major": false,
     "labelX": 593,
     "labelZ": -394
+  },
+  {
+    "name": "Intersection U",
+    "x": -2877,
+    "z": 573,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2877,
+    "labelZ": 573
+  },
+  {
+    "name": "Intersection V",
+    "x": -2877,
+    "z": 456,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2877,
+    "labelZ": 456
+  },
+  {
+    "name": "E2",
+    "x": -3126,
+    "z": -1542,
+    "description": "End of the Line.",
+    "color": "#000000",
+    "major": false,
+    "labelX": -3106,
+    "labelZ": -1562
   }
 ]

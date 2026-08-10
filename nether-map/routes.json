@@ -92,8 +92,18 @@
   },
   {
     "start": "Intersection G",
-    "end": "E2",
+    "end": "Intersection R",
     "color": "#B3321E"
+  },
+  {
+    "start": "Intersection R",
+    "end": "Intersection V",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection U",
+    "end": "Riverside",
+    "color": "#67BED9"
   },
   {
     "start": "Intersection G",
@@ -136,11 +146,6 @@
   {
     "start": "TeaTree",
     "end": "Intersection L",
-    "color": "#67BED9"
-  },
-  {
-    "start": "Intersection L",
-    "end": "E4",
     "color": "#67BED9"
   },
   {
@@ -270,5 +275,16 @@
     "start": "Hydropolis",
     "end": "E7",
     "color": "#df8600"
+  },
+  {
+    "start": "Intersection L",
+    "end": "E2",
+    "color": "#67BED9",
+    "via": [
+      {
+        "x": -2881,
+        "z": -1542
+      }
+    ]
   }
 ]

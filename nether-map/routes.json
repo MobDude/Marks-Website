@@ -217,13 +217,7 @@
   {
     "start": "E5",
     "end": "KingsMere",
-    "color": "#B3321E",
-    "via": [
-      {
-        "x": -2966,
-        "z": 1244
-      }
-    ]
+    "color": "#B3321E"
   },
   {
     "start": "Intersection M",
@@ -284,6 +278,17 @@
       {
         "x": -2881,
         "z": -1542
+      }
+    ]
+  },
+  {
+    "start": "IceTown",
+    "end": "SogeRonin",
+    "color": "#B3321E",
+    "via": [
+      {
+        "x": -2571,
+        "z": 1219
       }
     ]
   }

@@ -231,12 +231,12 @@
   },
   {
     "name": "E5",
-    "x": -2966,
+    "x": -3356,
     "z": 1435,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": -2946,
+    "labelX": -3336,
     "labelZ": 1415
   },
   {
@@ -518,5 +518,15 @@
     "major": false,
     "labelX": -3234,
     "labelZ": -1562
+  },
+  {
+    "name": "SogeRonin",
+    "x": -2620,
+    "z": 1219,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -2600,
+    "labelZ": 1199
   }
 ]

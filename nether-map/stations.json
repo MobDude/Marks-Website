@@ -511,12 +511,12 @@
   },
   {
     "name": "E2",
-    "x": -3126,
+    "x": -3254,
     "z": -1542,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": -3106,
+    "labelX": -3234,
     "labelZ": -1562
   }
 ]

@@ -30,12 +30,12 @@
     "labelZ": 436
   },
   {
-    "name": "To MCverseCity",
+    "name": "Intersection W",
     "x": 574,
     "z": 0,
     "description": "",
     "color": "#000000",
-    "major": true,
+    "major": false,
     "labelX": 594,
     "labelZ": -20
   },
@@ -528,5 +528,35 @@
     "major": true,
     "labelX": -2600,
     "labelZ": 1199
+  },
+  {
+    "name": ".Elmsvuur32",
+    "x": 422,
+    "z": 900,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 442,
+    "labelZ": 880
+  },
+  {
+    "name": "MCVerse City",
+    "x": 725,
+    "z": 0,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 745,
+    "labelZ": -20
+  },
+  {
+    "name": "Intersection X",
+    "x": 573,
+    "z": 900,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 593,
+    "labelZ": 880
   }
 ]

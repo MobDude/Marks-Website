@@ -62,11 +62,11 @@
   },
   {
     "start": "Intersection D",
-    "end": "To MCverseCity",
+    "end": "Intersection W",
     "color": "#df8600"
   },
   {
-    "start": "To MCverseCity",
+    "start": "Intersection W",
     "end": "Intersection E",
     "color": "#df8600"
   },
@@ -291,5 +291,15 @@
         "z": 1219
       }
     ]
+  },
+  {
+    "start": "Intersection W",
+    "end": "MCVerse City",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection X",
+    "end": ".Elmsvuur32",
+    "color": "#df8600"
   }
 ]

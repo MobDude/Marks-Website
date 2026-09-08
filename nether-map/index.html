@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MCVerse Highway 61 Map</title>
-  <link rel="icon" href="I61-clean.png?v=1.1.0">
-  <link rel="stylesheet" href="style.css?v=1.1.0">
+  <link rel="icon" href="I61-clean.png?v=1.2.0">
+  <link rel="stylesheet" href="style.css?v=1.2.0">
 </head>
 <body>
   <main class="map-shell">
@@ -15,6 +15,7 @@
         <p>A map of MCVerse's Nether Ice Highway System at Y=61.<br>Updated: Sept. 2, 2026</p>
       </div>
       <div class="controls" aria-label="Map controls">
+        <button type="button" id="help" title="Help" aria-label="Help">?</button>
         <button type="button" id="zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
         <button type="button" id="zoom-out" title="Zoom out" aria-label="Zoom out">-</button>
         <button type="button" id="reset-view">Reset</button>
@@ -75,7 +76,7 @@
           <button type="button" id="modal-close" class="modal-close-btn" aria-label="Close details">&times;</button>
           <div class="modal-content">
             <h2 id="modal-title">Station Name</h2>
-            <div class="modal-meta">
+            <div class="modal-meta" id="modal-meta">
               <div class="meta-block">
                 <strong>Nether Coordinates</strong>
                 <span id="modal-nether">X 0, Z 0</span>
@@ -85,10 +86,10 @@
                 <span id="modal-overworld">X 0, Z 0</span>
               </div>
             </div>
-            <hr class="modal-divider">
-            <p id="modal-description">Full station description goes here...</p>
+            <hr class="modal-divider" id="modal-divider" />
+            <p id="modal-description"></p>
 
-            <div class="modal-photos-placeholder">
+            <div class="modal-photos-placeholder" id="modal-photos-placeholder">
               <span>[ Photos section coming soon ]</span>
             </div>
           </div>
@@ -96,7 +97,8 @@
       </div>
     </section>
   </main>
-
-  <script src="script.js?v=1.1.0"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="script.js?v=1.2.0"></script>
 </body>
 </html>

@@ -20,6 +20,7 @@ const modalTitle = document.getElementById("modal-title");
 const modalNether = document.getElementById("modal-nether");
 const modalOverworld = document.getElementById("modal-overworld");
 const modalDescription = document.getElementById("modal-description");
+const modalParagraph = document.getElementById("modal-paragraph");
 const modalClose = document.getElementById("modal-close");
 const modalWindow = document.querySelector(".modal-window");
 
@@ -32,7 +33,6 @@ const NETHER_TO_OVERWORLD_SCALE = 8;
 const MOBILE_BREAKPOINT = 720;
 const MOBILE_MODAL_CLOSE_DISTANCE = 120;
 
-// Minecraft Nether coordinates use X/Z; the SVG renders Z on the vertical axis.
 const WILD_TP_BOUNDARY = {
   x: -6250,
   z: -1875,
@@ -134,8 +134,8 @@ function buildRoutePath(start, end, route) {
     const points = [start, ...route.via, end];
 
     return points
-      .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x} ${point.z}`)
-      .join(" ");
+        .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x} ${point.z}`)
+        .join(" ");
   }
 
   return `M ${start.x} ${start.z} L ${end.x} ${end.z}`;
@@ -173,7 +173,6 @@ function drawStations() {
       class: `station-node${station.major ? " major" : ""}`
     }));
 
-    // The invisible hit area keeps stations easy to tap without changing their visual size.
     group.appendChild(createSvgElement("circle", {
       cx: station.x,
       cy: station.z,
@@ -290,6 +289,7 @@ function drawGrid() {
 
 /* Controls and map movement */
 function bindControls() {
+  document.getElementById("help").addEventListener("click", openHelpModal);
   document.getElementById("zoom-in").addEventListener("click", () => zoomAtCenter(1.6));
   document.getElementById("zoom-out").addEventListener("click", () => zoomAtCenter(0.625));
   document.getElementById("reset-view").addEventListener("click", resetView);
@@ -345,13 +345,11 @@ function setupInitialView() {
 
   minZoom = scale * 0.25;
 
-  // Read URL parameters
   const urlParams = new URLSearchParams(window.location.search);
   const paramX = urlParams.get("x");
   const paramZ = urlParams.get("z");
   const paramZoom = urlParams.get("zoom");
 
-  // If X and Z are provided in the URL, center on them; otherwise fall back to default
   if (paramX !== null && paramZ !== null) {
     const targetX = parseFloat(paramX);
     const targetZ = parseFloat(paramZ);
@@ -545,6 +543,13 @@ function moveTooltip(event) {
 }
 
 function openStationModal(station) {
+  
+  //reapply hidden parts
+  modalDescription.classList.remove("formatted-text");
+  document.getElementById("modal-meta").hidden = false;
+  document.getElementById("modal-divider").hidden = false;
+  document.getElementById("modal-photos-placeholder").hidden = false;
+  
   const overworldX = station.x * NETHER_TO_OVERWORLD_SCALE;
   const overworldZ = station.z * NETHER_TO_OVERWORLD_SCALE;
 
@@ -588,7 +593,6 @@ function bindModalSwipe() {
   modalWindow.addEventListener("touchstart", (event) => {
     const modalContent = modalWindow.querySelector(".modal-content");
 
-    // Let scrolled content keep normal touch scrolling; only drag from the top of the sheet.
     if (modalContent && modalContent.scrollTop > 0) {
       return;
     }
@@ -642,17 +646,17 @@ function generateLineLegend(routes) {
   }
 
   legendList.replaceChildren(
-    createLegendItem(createNodeSwatch("major"), "Station"),
-    createLegendItem(createNodeSwatch("minor"), "Intersection"),
-    createLegendItem(createElement("div", "legend-boundary-swatch"), "Wild TP Border"),
-    createElement("li", "legend-divider")
+      createLegendItem(createNodeSwatch("major"), "Station"),
+      createLegendItem(createNodeSwatch("minor"), "Intersection"),
+      createLegendItem(createElement("div", "legend-boundary-swatch"), "Wild TP Border"),
+      createElement("li", "legend-divider")
   );
 
   const uniqueColors = [...new Set(routes.map((route) => route.color || "#e53935"))];
 
   uniqueColors.forEach((color) => {
     const matchingKey = Object.keys(LINE_NAMES)
-      .find((key) => key.toLowerCase() === color.toLowerCase());
+        .find((key) => key.toLowerCase() === color.toLowerCase());
     const lineName = matchingKey ? LINE_NAMES[matchingKey] : `Line (${color})`;
     const swatch = createElement("div", "legend-color-swatch");
 
@@ -717,7 +721,7 @@ function getGridStep() {
   const minimumScreenGap = 24;
 
   return GRID_STEPS.find((step) => step * transform.scale >= minimumScreenGap)
-    || GRID_STEPS[GRID_STEPS.length - 1];
+      || GRID_STEPS[GRID_STEPS.length - 1];
 }
 
 function getMajorGridStep(gridStep) {
@@ -739,10 +743,10 @@ function isGridMultiple(value, step) {
 function updateScaleLegend(gridStep) {
   const targetWidth = 130;
   const distance = GRID_STEPS
-    .slice()
-    .reverse()
-    .find((step) => step * transform.scale <= targetWidth)
-    || GRID_STEPS[0];
+          .slice()
+          .reverse()
+          .find((step) => step * transform.scale <= targetWidth)
+      || GRID_STEPS[0];
   const lineWidth = clamp(distance * transform.scale, 28, 180);
 
   scaleLine.style.width = `${lineWidth}px`;
@@ -764,8 +768,8 @@ function updateStationLabels() {
 
 function formatStationDescription(description) {
   return escapeHtml(description)
-    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-    .replaceAll("\n", "<br>");
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+      .replaceAll("\n", "<br>");
 }
 
 function formatNumber(value) {
@@ -786,11 +790,11 @@ function clamp(value, min, max) {
 
 function escapeHtml(value) {
   return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
 }
 
 function getDistance(a, b) {
@@ -805,8 +809,6 @@ function getCenter(a, b) {
 }
 
 /* URL Query Parameter & Viewport Utilities */
-
-// Enables export mode CSS overrides if ?export=minecraft or ?print is in the URL
 function handleExportMode() {
   const urlParams = new URLSearchParams(window.location.search);
   const exportType = urlParams.get("export");
@@ -818,19 +820,59 @@ function handleExportMode() {
   }
 }
 
-// Sets the map transform so (worldX, worldZ) lands in the center of the viewport
 function setViewportPosition(worldX, worldZ, customScale) {
   const rect = svg.getBoundingClientRect();
   const width = Math.max(rect.width, 1);
   const height = Math.max(rect.height, 1);
 
-  // Clamp desired scale between minZoom and MAX_ZOOM
   const scale = clamp(customScale || transform.scale, minZoom, MAX_ZOOM);
 
-  // Translate transform origin so target coordinates are centered
   const x = (width / 2) - (worldX * scale);
   const y = (height / 2) - (worldZ * scale);
 
   transform = { x, y, scale };
   applyTransform();
+}
+
+function openHelpModal(){
+
+  modalTitle.textContent = "Map Help & Guide";
+  
+  const helpText = `While this site has been designed to be simple to use, you may still find yourself confused at times. So here's some help!
+
+The map can be panned by dragging the main viewing area, and zooming by either scrolling, or pinching. On the top right, you will notice that there are buttons for zooming in "+", and zooming out "-", as well as one to reset back to the default view in case you get lost in the void. Next to that is the button to show and hide the grid.
+
+The card on the top left displays the website title, a short description, and when the map was last updated. It is only visible on suitably large screens, so don't worry if you can't see it!
+
+On the bottom of your screen you will find the grid scale. Make sure the grid is enabled, otherwise it won't be visible! This will give you an idea of the distance you are looking at, both in the Nether, and in the Overworld. Handy!
+
+Finally, to the right you can find the map legend. It can be opened and closed by clicking on the tab. It displays the markers found on the map, as well as the names for each of the transit lines.
+
+While that is all that you will normally see, you can find out even more information by simply clicking on a station. This will open a window displaying the exact coordinates of the station, and, if available, a description and photos.
+
+If you have a station on the map, and want to update its details, simply upload the details to <a href="https://www.mcverse.city/warps" target="_blank" rel="noopener noreferrer">mcverse.city/warps</a>. I occasionally check in to update this. If you think I missed your changes, message me in game or on Discord and I'll do my best to get to it.
+
+If you have any questions, suggestions, or concerns, feel free to send me a message.`;
+
+  modalDescription.classList.add("formatted-text");
+  modalDescription.innerHTML=formatHelpText(helpText);
+  
+  //hide unneeded parts of modal
+  document.getElementById("modal-meta").hidden = true;
+  document.getElementById("modal-divider").hidden = true;
+  document.getElementById("modal-photos-placeholder").hidden = true;
+  
+  if (modalWindow) {
+    modalWindow.style.transform = "";
+  }
+  
+  stationModal.hidden = false;
+}
+
+function formatHelpText(text){
+  return text
+      .trim()
+      .split(/\n\s*\n/) // Split into separate paragraphs on empty lines
+      .map((paragraph) => `<p>${paragraph.replaceAll("\n", "<br>")}</p>`)
+      .join("");
 }

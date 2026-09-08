@@ -31,7 +31,6 @@ input {
   font: inherit;
 }
 
-/* Full-screen map layout */
 .map-shell {
   height: 100dvh;
   position: relative;
@@ -51,7 +50,6 @@ input {
   pointer-events: none;
 }
 
-/* Panels opt back into pointer events so the map remains draggable behind them. */
 .top-bar > div {
   pointer-events: auto;
 }
@@ -122,7 +120,6 @@ input {
   accent-color: var(--accent);
 }
 
-/* SVG map layers */
 .map-wrap {
   position: relative;
   width: 100vw;
@@ -146,7 +143,7 @@ input {
   cursor: grabbing;
 }
 
-/* Routes are drawn twice: a black outline path below a colored line path. */
+
 .route-line {
   fill: none;
   stroke-linecap: round;
@@ -164,7 +161,7 @@ input {
   stroke-width: 24;
 }
 
-/* Invisible hit target keeps stations comfortable on touch screens. */
+
 .station-hit {
   cursor: pointer;
   fill: transparent;
@@ -187,7 +184,6 @@ input {
 }
 
 .station-label {
-  font-size: 24px;
   font-weight: 800;
   paint-order: stroke;
   stroke: #fff;
@@ -384,7 +380,6 @@ input {
   margin: 6px 0;
 }
 
-/* The legend moves by its own width so the tab stays available off the right edge. */
 .line-legend.is-collapsed {
   transform: translateX(calc(100% + 16px));
 }
@@ -423,7 +418,7 @@ input {
   background: #f3f3f3;
 }
 
-/* Station detail modal */
+
 .modal-overlay {
   position: absolute;
   top: 0;
@@ -487,6 +482,10 @@ input {
   padding-bottom: 8px;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .modal-meta {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -520,6 +519,27 @@ input {
   line-height: 1.5;
   color: #222;
   margin-bottom: 20px;
+}
+
+.formatted-text p {
+  margin: 0 0 14px 0;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.formatted-text p:last-child {
+  margin-bottom: 0;
+}
+
+.formatted-text a {
+  color: var(--ink);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.formatted-text a:hover {
+  opacity: 0.8;
 }
 
 #modal-description,
@@ -558,7 +578,7 @@ input {
 }
 
 @media (max-width: 720px) {
-  /* Mobile layout keeps controls visible while giving the map most of the screen. */
+
   .top-bar > div:first-child {
     display: none;
   }
@@ -666,7 +686,6 @@ input {
     display: none;
   }
 
-  /* On mobile the station modal becomes a bottom sheet with drag-to-close support. */
   .modal-overlay {
     background: rgba(0, 0, 0, 0.15);
     align-items: flex-end;
@@ -730,7 +749,7 @@ input {
     flex-shrink: 0;
   }
 
-  /* JavaScript removes transitions while tracking a finger drag. */
+
   .modal-window.is-dragging {
     transition: none !important;
   }
@@ -745,13 +764,13 @@ input {
   }
 }
 
-/* MINECRAFT EXPORT / WEB TO PNG LAYOUT OVERRIDES */
+
 html.export-mode body {
   overflow: hidden;
   background: #ffffff;
 }
 
-/* Hide interactive UI elements and overlays */
+
 html.export-mode .top-bar,
 html.export-mode .controls,
 html.export-mode .line-legend,
@@ -761,7 +780,7 @@ html.export-mode .legend-tab {
   display: none !important;
 }
 
-/* Force legends to remain visible and clean */
+
 html.export-mode .scale-legend {
   display: block !important;
   opacity: 1 !important;
@@ -771,7 +790,7 @@ html.export-mode .scale-legend {
   border: 2px solid #111;
   z-index: 10;
 }
-/* Boost vector contrast for low-res item frame rendering */
+
 html.export-mode .route-line {
   stroke-width: 20px;
 }
@@ -782,7 +801,7 @@ html.export-mode .station-label {
 }
 
 
-/* DEDICATED LEGEND MAP (128x128 ITEM FRAME) */
+
 html.export-legend body {
   background: #ffffff !important;
   margin: 0 !important;
@@ -792,7 +811,7 @@ html.export-legend body {
   overflow: hidden !important;
 }
 
-/* Hide interactive UI elements and the SVG map */
+
 html.export-legend .top-bar,
 html.export-legend .controls,
 html.export-legend .scale-legend,
@@ -803,7 +822,7 @@ html.export-legend #map {
   display: none !important;
 }
 
-/* Reset map shell & wrap so they don't apply weird offsets */
+
 html.export-legend .map-shell,
 html.export-legend .map-wrap {
   width: 100% !important;
@@ -814,7 +833,7 @@ html.export-legend .map-wrap {
   background: #ffffff !important;
 }
 
-/* Force legend box to stretch to full viewport width/height */
+
 html.export-legend #line-legend,
 html.export-legend .line-legend {
   position: fixed !important;
@@ -842,7 +861,7 @@ html.export-legend .line-legend {
   z-index: 99999 !important;
 }
 
-/* Header style for 128px rendering */
+
 html.export-legend .line-legend h3 {
   font-size: clamp(14px, 4vw, 22px) !important;
   font-weight: 900 !important;
@@ -854,7 +873,7 @@ html.export-legend .line-legend h3 {
   letter-spacing: 0.05em !important;
 }
 
-/* List container layout */
+
 html.export-legend .line-legend ul,
 html.export-legend #legend-list {
   display: flex !important;
@@ -866,7 +885,7 @@ html.export-legend #legend-list {
   list-style: none !important;
 }
 
-/* List item text & swatch alignment */
+
 html.export-legend .legend-item {
   display: flex !important;
   align-items: center !important;
@@ -877,7 +896,7 @@ html.export-legend .legend-item {
   line-height: 1.2 !important;
 }
 
-/* Make swatches bold and visible */
+
 html.export-legend .legend-color-swatch {
   width: clamp(20px, 6vw, 36px) !important;
   height: clamp(8px, 2.2vw, 14px) !important;

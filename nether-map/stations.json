@@ -221,13 +221,13 @@
   },
   {
     "name": "E6",
-    "x": -2877,
-    "z": 706,
+    "x": -3166,
+    "z": 1262,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": -2856,
-    "labelZ": 686
+    "labelX": -3146,
+    "labelZ": 1242
   },
   {
     "name": "E5",

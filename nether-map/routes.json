@@ -232,7 +232,17 @@
   {
     "start": "Intersection O",
     "end": "E6",
-    "color": "#67BED9"
+    "color": "#67BED9",
+    "via": [
+      {
+        "x": -2887,
+        "z": 803
+      },
+      {
+        "x": -3166,
+        "z": 803
+      }
+    ]
   },
   {
     "start": "Intersection P",

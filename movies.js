@@ -1,8 +1,144 @@
 const movies = [
     {
+        title: "Stand By Me",
+        year: "1986",
+        rating: 7.92,
+        minutes: 89,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vz0w9BSehcqjDcJOjRaCk7fgJe7.jpg",
+        comment: ""
+    },
+    {
+        title: "Backrooms",
+        year: "2026",
+        rating: 8.5,
+        minutes: 111,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg",
+        comment: ""
+    },
+    {
+        title: "Hereditary",
+        year: "2018",
+        rating: 9.63,
+        minutes: 127,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/4GFPuL14eXi66V96xBWY73Y9PfR.jpg",
+        comment: ""
+    },
+    {
+        title: "Citizen Kane",
+        year: "1941",
+        rating: 7.75,
+        minutes: 119,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/sav0jxhqiH0bPr2vZFU0Kjt2nZL.jpg",
+        comment: ""
+    },
+    {
+        title: "Jesus Christ Vampire Hunter",
+        year: "2001",
+        rating: 3,
+        minutes: 85,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/iYAiPgkzaCAlMwQ7hyAr0h3D2uF.jpg",
+        comment: ""
+    },
+    {
+        title: "The Killer",
+        year: "1989",
+        rating: 6.38,
+        minutes: 109,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/8hTxlSqMAHBXAh1eB69ir0BXhzE.jpg",
+        comment: ""
+    },
+    {
+        title: "Sharkensas Women's Prison Massacre",
+        year: "2015",
+        rating: 1.1,
+        minutes: 94,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/kB7jXKuObdVq83JjAC9prIa2pM1.jpg",
+        comment: ""
+    },
+    {
+        title: "The Treasure of Sierra Madre",
+        year: "1948",
+        rating: 7.75,
+        minutes: 126,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pWcst7zVbi8Z8W6GFrdNE7HHRxL.jpg",
+        comment: ""
+    },
+    {
+        title: "Monsters, Inc.",
+        year: "2001",
+        rating: 8.7,
+        minutes: 92,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/wFSpyMsp7H0ttERbxY7Trlv8xry.jpg",
+        comment: ""
+    },
+    {
+        title: "Obsession",
+        year: "2025",
+        rating: 8.83,
+        minutes: 109,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+        comment: ""
+    },
+    {
+        title: "Soul",
+        year: "2020",
+        rating: 8.5,
+        minutes: 100,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/hm58Jw4Lw8OIeECIq5qyPYhAeRJ.jpg",
+        comment: ""
+    },
+    {
+        title: "The Autobots",
+        year: "2015",
+        rating: 0.63,
+        minutes: 85,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/2mmJxdbXuuNriS0YGRGooNi9Zc2.jpg",
+        comment: ""
+    },
+    {
+        title: "Green Book",
+        year: "2018",
+        rating: 8.9,
+        minutes: 129,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/7BsvSuDQuoqhWmU2fL7W2GOcZHU.jpg",
+        comment: ""
+    },
+    {
+        title: "Schindler's List",
+        year: "1993",
+        rating: 9.92,
+        minutes: 195,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+        comment: ""
+    },
+    {
+        title: "Hoodwinked Too! Hood vs. Evil",
+        year: "2011",
+        rating: 2.75,
+        minutes: 133,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/3ofAJDO8A7ulJwgMGKcwEOPNWV3.jpg",
+        comment: ""
+    },
+    {
+        title: "Hoodwinked!",
+        year: "2005",
+        rating: 5.86,
+        minutes: 102,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/kwPl1AKX4BLxrh5PCkrwYWeEV5I.jpg",
+        comment: ""
+    },
+    {
+        title: "I Swear",
+        year: "2025",
+        rating: 8.88,
+        minutes: 121,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vUwyhNWBKkSwK8ELvEeBRwV724h.jpg",
+        comment: "This movie does what I can only assume is an immaculate job of showing what life with tourettes is like for many. It is really well written and will probably make you cry."
+    },
+    {
         title: "The Muppet Movie",
         year: "1979",
-        rating: 8.1,
+        rating: 8.08,
         minutes: 97,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/mfj8yR2vO5BMkaTMu1wvKQLUTsL.jpg",
         comment: "A fun movie with genuinely impressive filmmaking tricks."
@@ -18,7 +154,7 @@ const movies = [
     {
         title: "Aliens",
         year: "1986",
-        rating: 8.1,
+        rating: 8.07,
         minutes: 154,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/r1x5JGpyqZU8PYhbs4UcrO1Xb6x.jpg",
         comment: ""
@@ -26,7 +162,7 @@ const movies = [
     {
         title: "Alien",
         year: "1979",
-        rating: 8.9,
+        rating: 8.86,
         minutes: 117,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg",
         comment: ""
@@ -34,7 +170,7 @@ const movies = [
     {
         title: "The Room",
         year: "2003",
-        rating: 2.1,
+        rating: 2.07,
         minutes: 99,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/9QscHN4pXj6Ja1k7e1ZT4vWDGnr.jpg",
         comment: "An infamously bad movie. The acting is bad, the writing is bad, and the plot is bad. At least we can quote the \"I did not hit her, I did not. Oh hi Mark!\""
@@ -42,7 +178,7 @@ const movies = [
     {
         title: "Project Hail Mary",
         year: "2026",
-        rating: 9.2,
+        rating: 9.19,
         minutes: 156,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
         comment: "A really cool sci-fi movie based off a really cool sci-fi book. I love the attention to detail and the effort that was made to make the science believable. Plus the Rocky was cute. "
@@ -66,7 +202,7 @@ const movies = [
     {
         title: "Avatar Aang: The Last Airbender",
         year: "2026",
-        rating: 9,
+        rating: 8.92,
         minutes: 99,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/29Jdsak3SrwGds5k1t43kH6Khed.jpg",
         comment: "I thought this movie was awesome. The don't make the mistake of undoing the character development in the show, and deliver a new and interesting story. On top of that, the animation is spectacular."
@@ -82,7 +218,7 @@ const movies = [
     {
         title: "Uncut Gems",
         year: 2019,
-        rating: 3.6,
+        rating: 3.58,
         minutes: 135,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/6XN1vxHc7kUSqNWtaQKN45J5x2v.jpg",
         comment: "This movie is to me the epitome of overstimulation. There are always at least two voices talking over each other usually yelling, plus background noises. This continues nearly nonstop for 2 hours. Beyond that, the plot feels like it drags on too long, and I don't seem to care for any character at all."
@@ -90,7 +226,7 @@ const movies = [
     {
         title: "Bullet Train",
         year: 2022,
-        rating: 9.3,
+        rating: 9.21,
         minutes: 126,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/j8szC8OgrejDQjjMKSVXyaAjw3V.jpg",
         comment: "I love this movie so much. I love the jokes, the action, the details, and lemon. It's such an unserious movie too. They gave a whole flashback of a waterbottle."
@@ -98,7 +234,7 @@ const movies = [
     {
         title: "The Shining",
         year: 1980,
-        rating: 9.4,
+        rating: 9.29,
         minutes: 140,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/uAR0AWqhQL1hQa69UDEbb2rE5Wx.jpg",
         comment: "It's a great movie, even if it isn't what Steven King had in mind. It's a staple for a reason."
@@ -106,7 +242,7 @@ const movies = [
     {
         title: "Oppenheimer",
         year: 2023,
-        rating: 9.2,
+        rating: 9.29,
         minutes: 180,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
         comment: "A movie with incredible cinematography, an amazing soundtrack, and a story that draws you in. I wish I had been able to see it in theatres."
@@ -114,7 +250,7 @@ const movies = [
     {
         title: "Goat Story",
         year: 2008,
-        rating: 1.5,
+        rating: 1.8,
         minutes: 82,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/83jloHLWUEpdMehn5x6BdZSmD8C.jpg",
         comment: "This movie is bizarre, and not made for children. It is strangely sexual, and the animation style is somewhat off putting. It has a few funny moments from the absurdity, but overall I don't recommend this movie to anyone."
@@ -123,7 +259,7 @@ const movies = [
     {
         title: "12 Angry Men",
         year: 1957,
-        rating: 9.3,
+        rating: 9.2,
         minutes: 97,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/zhG3vKWyDRaZYoaww1UVAi29T9h.jpg",
         comment: "The dialogue was really good in this movie. It really feels like they just put a camera in a jury room. I would recommend this movie for sure."
@@ -131,7 +267,7 @@ const movies = [
     {
         title: "Perfect Blue",
         year: 1998,
-        rating: 8.8,
+        rating: 8.83,
         minutes: 81,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/6WTiOCfDPP8XV4jqfloiVWf7KHq.jpg",
         comment: "This movie had a lot going on, and while I can't say I fully understand it, I think it was still pretty good. Its very dark with alot of sexual violence and themes of insanity. Really good if you are a fan of psychological thrillers."
@@ -139,7 +275,7 @@ const movies = [
     {
         title: "Joshua and the Promised Land",
         year: 2004,
-        rating: 0.1,
+        rating: 0.14,
         minutes: 55,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/nyv2rXXdTrtAUpCEqRqFpYTtmiV.jpg",
         comment: "This movie is really bad. Its just a really boring and poorly animated retelling of a bible story. Nothing interesting or of value was added, making for an agonizingly boring watch."
@@ -147,7 +283,7 @@ const movies = [
     {
         title: "Barnyard",
         year: 2006,
-        rating: 6.4,
+        rating: 6.36,
         minutes: 90,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/qB9jFInwUEb2VLhMeKQX17Vdrnp.jpg",
         comment: "Some people really seem to love this movie, but honestly I thought it was just your average family or kids movie."
@@ -155,7 +291,7 @@ const movies = [
     {
         title: "Promare",
         year: 2019,
-        rating: 4.8,
+        rating: 5.13,
         minutes: 111,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/cCVRivpiVUJ4Wn6gHm8pLXppXla.jpg",
         comment: "This movie had a lot of potential. The animation was really stylized and good, but that's really all I can give it. The story was pretty mid, and drags on a bit. I found myself uninvested in the characters and plot, which I think impacted the movie in a big way."
@@ -163,7 +299,7 @@ const movies = [
     {
         title: "Left Behind",
         year: 2014,
-        rating: 1.7,
+        rating: 0.6,
         minutes: 110,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/b9Q2WR62yB5Aq0hd6kyRFS9cc3Y.jpg",
         comment: "I went into this expecting a disaster movie with biblical proportions, and was really disappointed. The movie drags on so much. It takes over half an hour for the main plot point to happen, and even when it does, there is nothing interesting about it. Really just boring. "
@@ -172,7 +308,7 @@ const movies = [
     {
         title: "Gods Not Dead",
         year: 2014,
-        rating: 0.6,
+        rating: 1.7,
         minutes: 113,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/yKUzBolWrwyByevBtDPfy3kIumv.jpg",
         comment: "This is a movie I remember watching when I was younger, and I wanted to watch it again now that I am older and my views and beliefs have changed. Yeah this is a bad movie. The movie is full of is full of stereotypes and straw man arguments, opting to create a weak debate rather than honestly explore philosophical questions. "
@@ -188,7 +324,7 @@ const movies = [
     {
         title: "Conclave",
         year: 2024,
-        rating: 9.0,
+        rating: 8.36,
         minutes: 120,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vYEyxF1UT779RiEalpMjUT6kfdf.jpg",
         comment: "A captivating political drama that delves into the intricate world of Vatican politics. The film masterfully portrays the tension and intrigue surrounding the election of a new pope, with compelling performances and a gripping storyline that keeps viewers on the edge of their seats. The ending did feel a little rushed however."
@@ -213,7 +349,7 @@ const movies = [
     {
         title: "The Snow Queen",
         year: 1957,
-        rating: 4.8,
+        rating: 4.79,
         minutes: 68,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/ptCK2qAyGEmQBys3cImY6o6qAyp.jpg",
         comment: "This movie has that VHS movie feel to it. The story is pretty simple. It basically is just one thing happening after another, so it can be hard to follow or stay invested in it. "
@@ -229,7 +365,7 @@ const movies = [
     {
         title: "Star Wars: Episode I: The Phantom Menace",
         year: 1999,
-        rating: 5.9,
+        rating: 5.79,
         minutes: 135,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/6wkfovpn7Eq8dYNKaG5PY3q2oq6.jpg",
         comment: "I think this movie is ok. It has a few good scenes, but also a good number of bad ones. A lot of the acting is not great, and at times I found myself really bored. Maybe I'm just not a fan of Star Wars though."
@@ -237,7 +373,7 @@ const movies = [
     {
         title: "The Rocky Horror Picture Show",
         year: 1975,
-        rating: 2,
+        rating: 2.75,
         minutes: 100,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
         comment: "Honestly this movie was really hard to finish for me. There seems to be no cohesive plot that I can follow. There are so many loose ends and things that go un addressed. I also find that the dialogue and in some cases the singing leave something to be desired."   
@@ -245,24 +381,48 @@ const movies = [
     {
         title: "Ace Ventura: Pet Detective",
         year: 1994,
-        rating: 6.2,
+        rating: 6.17,
         minutes: 86,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pqiRuETmuSybfnVZ7qyeoXhQyN1.jpg",
         comment: "One of Jim Carrey earlier movies, it has the same kind of comedy and expression as you can find in many of his other films. Unfortunately I don't think this one aged very well."
 
     },
     {
+        title: "Diary of A Wimpy Kid",
+        year: "2010",
+        rating: 7.6,
+        minutes: 94,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/iLAGiPnSuODt9cn332bkFElrRig.jpg",
+        comment: ""
+    },
+    {
+        title: "Hell Raiser",
+        year: "1987",
+        rating: 8,
+        minutes: 94,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/3Z0oPHyLnk3Vx6ZMC1MiVwIrKhO.jpg",
+        comment: ""
+    },
+    {
         title: "The VelociPastor",
         year: 2017,
-        rating: 8.5,
+        rating: 8.25,
         minutes: 70,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/trSmNw63luh84MBy5XLH0UiN1BC.jpg",
         comment: "An hilarious movie that doesn't take itself seriously. There are so many good bits in this, such as 'So your parents died, Doug. It's what parents do. They die on you'."
     },
     {
+        title: "Wake Up Dead Man: A Knives Out Mystery",
+        year: "2025",
+        rating: 8,
+        minutes: 162,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/iV9LM8aUb83BjCCx2RUnKE5sSQg.jpg",
+        comment: ""
+    },
+    {
         title: "Glass Onion: A Knives Out Mystery",
         year: 2022,
-        rating: 9.00,
+        rating: 8.86,
         minutes: 139,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vDGr1YdrlfbU9wxTOdpf3zChmv9.jpg",
         comment: "This movie is another really good murder mystery. This one is set during Covid-19 which is kind of a throwback. Anyways, it is nearly as good as the first one, and is a great watch."
@@ -270,7 +430,7 @@ const movies = [
     {
         title: "Knives Out",
         year: 2019,
-        rating: 9.29,
+        rating: 9.5,
         minutes: 130,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
         comment: "An incredible murder mystery movie. It basically follows the basic idea, rich father is killed with inheritance at stake. The movie has a couple of twists and all of them are good."
@@ -278,7 +438,7 @@ const movies = [
     {
         title: "labyrinth",
         year: 1986,
-        rating: 6.9,
+        rating: 6.86,
         minutes: 101,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/hbSdA1DmNA9IlfVoqJkIWYF2oYm.jpg",
         comment: "This is a wacky movie. It has a similar vibe as through the looking glass with it's fever dream like randomness. The practical effects are really good."
@@ -286,7 +446,7 @@ const movies = [
     {
         title: "The Birds",
         year: 1963,
-        rating: 6.4,
+        rating: 6.58,
         minutes: 120,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/eClg8QPg8mwB6INIC4pyR5pAbDr.jpg",
         comment: "This is a decent movie. The use of silence is really good, and the suspense is pretty well done. The ending is a little bit of a let down though, and the acting is not the best."
@@ -310,7 +470,7 @@ const movies = [
     {
         title: "Twelve Monkeys",
         year: 1995,
-        rating: 6.1,
+        rating: 6,
         minutes: 129,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/gt3iyguaCIw8DpQZI1LIN5TohM2.jpg",
         comment: "A pretty cool time travelling movie. I kinda liked how it kept you guessing, but it felt like it may have been going on too long. The use of insanity was a really interesting twist to me. I also think that some of the cinematography was pretty decent, such as how it opened and closed with the same screen."
@@ -318,7 +478,7 @@ const movies = [
     {
         title: "Interstellar",
         year: 2014,
-        rating: 9.9,
+        rating: 9.88,
         minutes: 169,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
         comment: "An amazing film. The sound design and visuals are stunning. The story itself is really interesting, and it's fun to see how it all comes together. The power of love thing can be a little silly, but I think this movie pulled it off well. This is a movie I would love to see in theatres."
@@ -326,7 +486,7 @@ const movies = [
     {
         title: "The Adventures of Pluto Nash",  
         year: 2002,
-        rating: 4.1,
+        rating: 4.13,
         minutes: 95,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/96vvhLWWDosS1zRrfQ6XEGAzByL.jpg",
         comment: ""
@@ -334,7 +494,7 @@ const movies = [
     {
         title: "Spaceballs",  
         year: 1987,
-        rating: 7.7,
+        rating: 7.83,
         minutes: 96,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/kNbaxEsnCyWBTfANVPHayujBsxp.jpg",
         comment: "A pretty silly star wars spoof. Pretty good if that's your thing."
@@ -594,7 +754,7 @@ const movies = [
     {
         title: "Klaus",
         year: 2019,
-        rating: 9.57,
+        rating: 9.5,
         minutes: 97,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/q125RHUDgR4gjwh1QkfYuJLYkL.jpg",
         comment: "An incredibly animated christmas movie. The story is a super fun twist on the saint nick story. Probably my favourite christmas movie!"
@@ -749,7 +909,7 @@ const movies = [
     {
         title: "The Secret Life of Walter Mitty",
         year: 2013,
-        rating: 9.36,
+        rating: 9.21,
         minutes: 114,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tY6ypjKOOtujhxiSwTmvA4OZ5IE.jpg",
         comment: ""
@@ -774,7 +934,7 @@ const movies = [
     {
         title: "Baby Driver",
         year: 2017,
-        rating: 9.69,
+        rating: 9.56,
         minutes: 113,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/tYzFuYXmT8LOYASlFCkaPiAFAl0.jpg",
         comment: "An amazing heist movie. The action scenes are fantastic, the characters are well written, but what stands out the most to me is the attention to detail, especially in the sound design. The way they use sound and lack of sound in the movie is phenomenal."

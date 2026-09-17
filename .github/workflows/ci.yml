@@ -7,29 +7,20 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-and-test:
+  validate-site:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-
-
-      - name: Install Dependencies
+      - name: Validate HTML & JS Syntax
         run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+          npx htmlhint "**/*.html"
+          for file in $(find . -name "*.js" -not -path "*/.*"); do
+            echo "Checking syntax: $file"
+            node --check "$file"
+          done
 
-      - name: Run Linter
-        run: npm run lint --if-present
-
-      - name: Run Automated Tests
-        run: npm test --if-present
+      - name: Run Map Data Validation Script
+        run: python .github/scripts/validate_map_data.py

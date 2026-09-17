@@ -1,0 +1,6 @@
+# These owners will be the default owners for everything in the repo.
+# @MobDude will be requested for review when someone opens a pull request.
+* @MobDude
+
+# Anyone can open PRs touching this path without Code Owner review
+/nether-map/ 

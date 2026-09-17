@@ -558,5 +558,15 @@
     "major": false,
     "labelX": 593,
     "labelZ": 880
+  },
+  {
+    "name": "Frostmere",
+    "x": -4873,
+    "z": -548,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -4853,
+    "labelZ": -568
   }
 ]

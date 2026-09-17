@@ -311,5 +311,10 @@
     "start": "Intersection X",
     "end": ".Elmsvuur32",
     "color": "#df8600"
+  },
+  {
+    "start": "Frostmere",
+    "end": "Abandoned",
+    "color": "#67BED9"
   }
 ]

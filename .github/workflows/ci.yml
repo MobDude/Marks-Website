@@ -23,4 +23,5 @@ jobs:
           done
 
       - name: Run Map Data Validation Script
+        working-directory: ./nether-map
         run: python .github/scripts/validate_map_data.py

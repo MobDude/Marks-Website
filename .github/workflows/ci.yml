@@ -1,0 +1,27 @@
+name: CI Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate HTML & JS Syntax
+        run: |
+          npx htmlhint "**/*.html"
+          for file in $(find . -name "*.js" -not -path "*/.*"); do
+            echo "Checking syntax: $file"
+            node --check "$file"
+          done
+
+      - name: Run Map Data Validation Script
+        working-directory: ./nether-map
+        run: python "$GITHUB_WORKSPACE/.github/scripts/validate_map_data.py"

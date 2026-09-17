@@ -1,11 +1,13 @@
+/* Cached DOM references */
 const svg = document.getElementById("map");
 const viewport = document.getElementById("viewport");
 const gridLayer = document.getElementById("grid-layer");
+const boundaryLayer = document.getElementById("boundary-layer");
 const routeLayer = document.getElementById("route-layer");
 const stationLayer = document.getElementById("station-layer");
 const labelLayer = document.getElementById("label-layer");
 const tooltip = document.getElementById("tooltip");
-// const stationCard = document.getElementById("station-card");
+
 const gridToggle = document.getElementById("grid-toggle");
 const scaleLegend = document.getElementById("scale-legend");
 const scaleLine = document.getElementById("scale-line");
@@ -13,43 +15,56 @@ const scaleDistance = document.getElementById("scale-distance");
 const gridSize = document.getElementById("grid-size");
 const overworldScale = document.getElementById("overworld-scale");
 
-// const cardNether = document.getElementById("card-nether");
-// const cardOverworld = document.getElementById("card-overworld");
-// const cardDescription = document.getElementById("card-description");
-
 const stationModal = document.getElementById("station-modal");
 const modalTitle = document.getElementById("modal-title");
 const modalNether = document.getElementById("modal-nether");
 const modalOverworld = document.getElementById("modal-overworld");
 const modalDescription = document.getElementById("modal-description");
+const modalParagraph = document.getElementById("modal-paragraph");
 const modalClose = document.getElementById("modal-close");
+const modalWindow = document.querySelector(".modal-window");
 
+/* Map configuration */
 const SVG_NS = "http://www.w3.org/2000/svg";
-let MIN_ZOOM = 0.05;
 const MAX_ZOOM = 4;
 const GRID_STEPS = [1, 5, 10, 25, 50, 100, 250, 500, 1000];
 const VIEW_PADDING = 180;
+const NETHER_TO_OVERWORLD_SCALE = 8;
+const MOBILE_BREAKPOINT = 720;
+const MOBILE_MODAL_CLOSE_DISTANCE = 120;
+
+const WILD_TP_BOUNDARY = {
+  x: -6250,
+  z: -1875,
+  width: 12500,
+  height: 3750
+};
 
 const LINE_NAMES = {
   "#df8600": "Ice Track 61",
   "#67BED9": "Trans Siberian",
   "#B3321E": "The Meridian Line",
   "#FFAEC9": "The Bullet Line",
-  "#e53935": "Default Route" // Fallback color
+  "#e53935": "Default Route"
 };
 
-const boundaryLayer = document.getElementById("boundary-layer");
-
+let minZoom = 0.05;
 let stations = [];
 let stationByName = new Map();
 let transform = { x: 0, y: 0, scale: 1 };
 let defaultTransform = { x: 0, y: 0, scale: 1 };
 let drag = null;
 let pinch = null;
+let modalTouchStartY = 0;
+let modalTouchCurrentY = 0;
+let isDraggingModal = false;
 
 init();
 
+/* Data loading */
 async function init() {
+  handleExportMode();
+
   try {
     const [stationResponse, routeResponse] = await Promise.all([
       fetch("stations.json"),
@@ -70,6 +85,7 @@ async function init() {
     generateLineLegend(routes);
     setupInitialView();
     bindControls();
+    bindModalSwipe();
   } catch (error) {
     console.error("Map data unavailable:", error.message);
   }
@@ -85,69 +101,7 @@ function createSvgElement(tag, attributes = {}) {
   return element;
 }
 
-function drawGrid() {
-  gridLayer.replaceChildren();
-
-  const gridStep = getGridStep();
-  const majorGridStep = getMajorGridStep(gridStep);
-  const bounds = getVisibleBounds();
-  const startX = roundDown(bounds.minX, gridStep);
-  const endX = roundUp(bounds.maxX, gridStep);
-  const startZ = roundDown(bounds.minZ, gridStep);
-  const endZ = roundUp(bounds.maxZ, gridStep);
-  const labelSize = Math.max(11 / transform.scale, 0.8);
-  const labelOffset = 24 / transform.scale;
-
-  for (let x = startX; x <= endX; x += gridStep) {
-    const isMajor = isGridMultiple(x, majorGridStep);
-    const line = createSvgElement("line", {
-      x1: x,
-      y1: startZ,
-      x2: x,
-      y2: endZ,
-      class: x === 0 ? "grid-axis" : `grid-line${isMajor ? " major" : ""}`
-    });
-    gridLayer.appendChild(line);
-
-    if (isMajor) {
-      const label = createSvgElement("text", {
-        x,
-        y: startZ + labelOffset,
-        class: "grid-label",
-        "font-size": labelSize,
-        "text-anchor": "middle"
-      });
-      label.textContent = `X ${x}`;
-      gridLayer.appendChild(label);
-    }
-  }
-
-  for (let z = startZ; z <= endZ; z += gridStep) {
-    const isMajor = isGridMultiple(z, majorGridStep);
-    const line = createSvgElement("line", {
-      x1: startX,
-      y1: z,
-      x2: endX,
-      y2: z,
-      class: z === 0 ? "grid-axis" : `grid-line${isMajor ? " major" : ""}`
-    });
-    gridLayer.appendChild(line);
-
-    if (isMajor) {
-      const label = createSvgElement("text", {
-        x: startX + labelOffset,
-        y: z - 8 / transform.scale,
-        class: "grid-label",
-        "font-size": labelSize
-      });
-      label.textContent = `Z ${z}`;
-      gridLayer.appendChild(label);
-    }
-  }
-
-  updateScaleLegend(gridStep);
-}
-
+/* Drawing */
 function drawRoutes(routes) {
   routeLayer.replaceChildren();
 
@@ -161,10 +115,12 @@ function drawRoutes(routes) {
     }
 
     const pathData = buildRoutePath(start, end, route);
+
     routeLayer.appendChild(createSvgElement("path", {
       d: pathData,
       class: "route-outline"
     }));
+
     routeLayer.appendChild(createSvgElement("path", {
       d: pathData,
       class: "route-line",
@@ -176,10 +132,10 @@ function drawRoutes(routes) {
 function buildRoutePath(start, end, route) {
   if (Array.isArray(route.via) && route.via.length > 0) {
     const points = [start, ...route.via, end];
-    return points.map((point, index) => {
-      const command = index === 0 ? "M" : "L";
-      return `${command} ${point.x} ${point.z}`;
-    }).join(" ");
+
+    return points
+        .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x} ${point.z}`)
+        .join(" ");
   }
 
   return `M ${start.x} ${start.z} L ${end.x} ${end.z}`;
@@ -232,11 +188,12 @@ function drawStations() {
     group.addEventListener("click", (event) => {
       event.stopPropagation();
       showStation(station, event);
-      openStationModal(station); 
+      openStationModal(station);
     });
 
     stationLayer.appendChild(group);
-    if (station.major){
+
+    if (station.major) {
       const label = createSvgElement("text", {
         x: station.labelX ?? station.x + 24,
         y: station.labelZ ?? station.z - 18,
@@ -245,59 +202,94 @@ function drawStations() {
       });
 
       label.textContent = station.name;
-
-      //save a reference so it can be updated when zooming.
       station.labelElement = label;
-
       labelLayer.appendChild(label);
-    } else{
+    } else {
       station.labelElement = null;
     }
   });
 }
 
-function showStation(station, event) {
-  const overworldX = station.x * 8;
-  const overworldZ = station.z * 8;
+function drawMapBoundary() {
+  boundaryLayer.replaceChildren();
 
-  // stationCard.querySelector("h2").textContent = station.name;
-  // cardNether.textContent = `X ${station.x}, Z ${station.z}`;
-  // cardOverworld.textContent = `X ${overworldX}, Z ${overworldZ}`;
-  // cardDescription.textContent = station.description || "No description provided.";
-  
-  const descriptionHtml = station.description
-      ? `<span class="tooltip-desc">${escapeHtml(station.description)}</span>`
-      : '';
-  
-  tooltip.hidden = false;
-  tooltip.innerHTML = `
-    <strong>${escapeHtml(station.name)}</strong>
-    <span>Nether: X ${station.x}, Z ${station.z}</span>
-    <span>Overworld: X ${overworldX}, Z ${overworldZ}</span>
-    ${descriptionHtml}
-  `;
-  moveTooltip(event);
+  boundaryLayer.appendChild(createSvgElement("rect", {
+    x: WILD_TP_BOUNDARY.x,
+    y: WILD_TP_BOUNDARY.z,
+    width: WILD_TP_BOUNDARY.width,
+    height: WILD_TP_BOUNDARY.height,
+    class: "map-boundary"
+  }));
 }
 
-function hideTooltip() {
-  tooltip.hidden = true;
-}
+function drawGrid() {
+  gridLayer.replaceChildren();
 
-function moveTooltip(event) {
-  if (!event || typeof event.clientX !== "number") {
-    return;
+  const gridStep = getGridStep();
+  const majorGridStep = getMajorGridStep(gridStep);
+  const bounds = getVisibleBounds();
+  const startX = roundDown(bounds.minX, gridStep);
+  const endX = roundUp(bounds.maxX, gridStep);
+  const startZ = roundDown(bounds.minZ, gridStep);
+  const endZ = roundUp(bounds.maxZ, gridStep);
+  const labelSize = Math.max(11 / transform.scale, 0.8);
+  const labelOffset = 24 / transform.scale;
+
+  for (let x = startX; x <= endX; x += gridStep) {
+    const isMajor = isGridMultiple(x, majorGridStep);
+
+    gridLayer.appendChild(createSvgElement("line", {
+      x1: x,
+      y1: startZ,
+      x2: x,
+      y2: endZ,
+      class: x === 0 ? "grid-axis" : `grid-line${isMajor ? " major" : ""}`
+    }));
+
+    if (isMajor) {
+      const label = createSvgElement("text", {
+        x,
+        y: startZ + labelOffset,
+        class: "grid-label",
+        "font-size": labelSize,
+        "text-anchor": "middle"
+      });
+
+      label.textContent = `X ${x}`;
+      gridLayer.appendChild(label);
+    }
   }
 
-  const offset = 14;
-  const tooltipRect = tooltip.getBoundingClientRect();
-  const x = Math.min(event.clientX + offset, window.innerWidth - tooltipRect.width - offset);
-  const y = Math.min(event.clientY + offset, window.innerHeight - tooltipRect.height - offset);
+  for (let z = startZ; z <= endZ; z += gridStep) {
+    const isMajor = isGridMultiple(z, majorGridStep);
 
-  tooltip.style.left = `${Math.max(offset, x)}px`;
-  tooltip.style.top = `${Math.max(offset, y)}px`;
+    gridLayer.appendChild(createSvgElement("line", {
+      x1: startX,
+      y1: z,
+      x2: endX,
+      y2: z,
+      class: z === 0 ? "grid-axis" : `grid-line${isMajor ? " major" : ""}`
+    }));
+
+    if (isMajor) {
+      const label = createSvgElement("text", {
+        x: startX + labelOffset,
+        y: z - 8 / transform.scale,
+        class: "grid-label",
+        "font-size": labelSize
+      });
+
+      label.textContent = `Z ${z}`;
+      gridLayer.appendChild(label);
+    }
+  }
+
+  updateScaleLegend(gridStep);
 }
 
+/* Controls and map movement */
 function bindControls() {
+  document.getElementById("help").addEventListener("click", openHelpModal);
   document.getElementById("zoom-in").addEventListener("click", () => zoomAtCenter(1.6));
   document.getElementById("zoom-out").addEventListener("click", () => zoomAtCenter(0.625));
   document.getElementById("reset-view").addEventListener("click", resetView);
@@ -312,7 +304,8 @@ function bindControls() {
 
   if (legendTab && legendPanel) {
     legendTab.addEventListener("click", () => {
-      legendPanel.classList.toggle("is-collapsed");
+      const isCollapsed = legendPanel.classList.toggle("is-collapsed");
+      legendTab.setAttribute("aria-expanded", String(!isCollapsed));
     });
   }
 
@@ -328,9 +321,10 @@ function bindControls() {
   window.addEventListener("resize", setupInitialView);
 
   modalClose.addEventListener("click", closeStationModal);
-  // Also close if clicking outside the modal window container
-  stationModal.addEventListener("click", (e) => {
-    if (e.target === stationModal) closeStationModal();
+  stationModal.addEventListener("click", (event) => {
+    if (event.target === stationModal) {
+      closeStationModal();
+    }
   });
 }
 
@@ -348,8 +342,23 @@ function setupInitialView() {
     y: (height - boundsHeight * scale) / 2 - bounds.minZ * scale,
     scale
   };
-  MIN_ZOOM = scale * 0.25;
-  resetView();
+
+  minZoom = scale * 0.25;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramX = urlParams.get("x");
+  const paramZ = urlParams.get("z");
+  const paramZoom = urlParams.get("zoom");
+
+  if (paramX !== null && paramZ !== null) {
+    const targetX = parseFloat(paramX);
+    const targetZ = parseFloat(paramZ);
+    const targetZoom = paramZoom ? parseFloat(paramZoom) : scale;
+
+    setViewportPosition(targetX, targetZ, targetZoom);
+  } else {
+    resetView();
+  }
 }
 
 function resetView() {
@@ -359,15 +368,16 @@ function resetView() {
 
 function handleWheel(event) {
   event.preventDefault();
+
   const factor = event.deltaY < 0 ? 1.12 : 0.88;
   zoomAtPoint(factor, event.clientX, event.clientY);
 }
 
-function handleTouchStart(e) {
-  if (e.touches.length === 2) {
-    e.preventDefault();
+function handleTouchStart(event) {
+  if (event.touches.length === 2) {
+    event.preventDefault();
 
-    const [a, b] = e.touches;
+    const [a, b] = event.touches;
 
     pinch = {
       startDist: getDistance(a, b),
@@ -375,86 +385,60 @@ function handleTouchStart(e) {
       center: getCenter(a, b)
     };
 
-    drag = null; // stop pan while pinching
+    drag = null;
   }
 
-  if (e.touches.length === 1 && !pinch) {
-    const t = e.touches[0];
+  if (event.touches.length === 1 && !pinch) {
+    const touch = event.touches[0];
 
     drag = {
-      startX: t.clientX,
-      startY: t.clientY,
+      startX: touch.clientX,
+      startY: touch.clientY,
       originX: transform.x,
       originY: transform.y
     };
   }
 }
 
-function handleTouchMove(e) {
-  if (e.touches.length === 2 && pinch) {
-    e.preventDefault();
+function handleTouchMove(event) {
+  if (event.touches.length === 2 && pinch) {
+    event.preventDefault();
 
-    const [a, b] = e.touches;
-
-    const dist = getDistance(a, b);
-    const factor = dist / pinch.startDist;
-
-    const nextScale = clamp(
-        pinch.startScale * factor,
-        MIN_ZOOM,
-        MAX_ZOOM
-    );
-
+    const [a, b] = event.touches;
+    const distance = getDistance(a, b);
+    const factor = distance / pinch.startDist;
+    const nextScale = clamp(pinch.startScale * factor, minZoom, MAX_ZOOM);
     const rect = svg.getBoundingClientRect();
-    const cx = pinch.center.x - rect.left;
-    const cy = pinch.center.y - rect.top;
-
+    const centerX = pinch.center.x - rect.left;
+    const centerY = pinch.center.y - rect.top;
     const actualFactor = nextScale / transform.scale;
 
-    transform.x = cx - (cx - transform.x) * actualFactor;
-    transform.y = cy - (cy - transform.y) * actualFactor;
+    transform.x = centerX - (centerX - transform.x) * actualFactor;
+    transform.y = centerY - (centerY - transform.y) * actualFactor;
     transform.scale = nextScale;
 
     applyTransform();
   }
 
-  if (e.touches.length === 1 && drag && !pinch) {
-    const t = e.touches[0];
+  if (event.touches.length === 1 && drag && !pinch) {
+    const touch = event.touches[0];
 
-    transform.x = drag.originX + (t.clientX - drag.startX);
-    transform.y = drag.originY + (t.clientY - drag.startY);
+    transform.x = drag.originX + (touch.clientX - drag.startX);
+    transform.y = drag.originY + (touch.clientY - drag.startY);
 
     applyTransform();
   }
 }
 
-function handleTouchEnd() {
-  if (pinch && event?.touches?.length < 2) {
+function handleTouchEnd(event) {
+  if (pinch && event.touches.length < 2) {
     pinch = null;
   }
 
-  if (event?.touches?.length === 0) {
+  if (event.touches.length === 0) {
     drag = null;
     pinch = null;
   }
-}
-
-function zoomAtCenter(factor) {
-  const rect = svg.getBoundingClientRect();
-  zoomAtPoint(factor, rect.left + rect.width / 2, rect.top + rect.height / 2);
-}
-
-function zoomAtPoint(factor, clientX, clientY) {
-  const rect = svg.getBoundingClientRect();
-  const pointX = clientX - rect.left;
-  const pointY = clientY - rect.top;
-  const nextScale = clamp(transform.scale * factor, MIN_ZOOM, MAX_ZOOM);
-  const actualFactor = nextScale / transform.scale;
-
-  transform.x = pointX - (pointX - transform.x) * actualFactor;
-  transform.y = pointY - (pointY - transform.y) * actualFactor;
-  transform.scale = nextScale;
-  applyTransform();
 }
 
 function startPan(event) {
@@ -464,6 +448,7 @@ function startPan(event) {
 
   svg.setPointerCapture(event.pointerId);
   svg.classList.add("dragging");
+
   drag = {
     pointerId: event.pointerId,
     startX: event.clientX,
@@ -492,6 +477,24 @@ function endPan(event) {
   svg.classList.remove("dragging");
 }
 
+function zoomAtCenter(factor) {
+  const rect = svg.getBoundingClientRect();
+  zoomAtPoint(factor, rect.left + rect.width / 2, rect.top + rect.height / 2);
+}
+
+function zoomAtPoint(factor, clientX, clientY) {
+  const rect = svg.getBoundingClientRect();
+  const pointX = clientX - rect.left;
+  const pointY = clientY - rect.top;
+  const nextScale = clamp(transform.scale * factor, minZoom, MAX_ZOOM);
+  const actualFactor = nextScale / transform.scale;
+
+  transform.x = pointX - (pointX - transform.x) * actualFactor;
+  transform.y = pointY - (pointY - transform.y) * actualFactor;
+  transform.scale = nextScale;
+  applyTransform();
+}
+
 function applyTransform() {
   viewport.setAttribute(
     "transform",
@@ -502,6 +505,188 @@ function applyTransform() {
   drawGrid();
 }
 
+/* Station details */
+function showStation(station, event) {
+  const overworldX = station.x * NETHER_TO_OVERWORLD_SCALE;
+  const overworldZ = station.z * NETHER_TO_OVERWORLD_SCALE;
+  const descriptionHtml = station.description
+    ? `<span class="tooltip-desc">${escapeHtml(station.description)}</span>`
+    : "";
+
+  tooltip.hidden = false;
+  tooltip.innerHTML = `
+    <strong>${escapeHtml(station.name)}</strong>
+    <span>Nether: X ${station.x}, Z ${station.z}</span>
+    <span>Overworld: X ${overworldX}, Z ${overworldZ}</span>
+    ${descriptionHtml}
+  `;
+
+  moveTooltip(event);
+}
+
+function hideTooltip() {
+  tooltip.hidden = true;
+}
+
+function moveTooltip(event) {
+  if (!event || typeof event.clientX !== "number") {
+    return;
+  }
+
+  const offset = 14;
+  const tooltipRect = tooltip.getBoundingClientRect();
+  const x = Math.min(event.clientX + offset, window.innerWidth - tooltipRect.width - offset);
+  const y = Math.min(event.clientY + offset, window.innerHeight - tooltipRect.height - offset);
+
+  tooltip.style.left = `${Math.max(offset, x)}px`;
+  tooltip.style.top = `${Math.max(offset, y)}px`;
+}
+
+function openStationModal(station) {
+  
+  //reapply hidden parts
+  modalDescription.classList.remove("formatted-text");
+  document.getElementById("modal-meta").hidden = false;
+  document.getElementById("modal-divider").hidden = false;
+  document.getElementById("modal-photos-placeholder").hidden = false;
+  
+  const overworldX = station.x * NETHER_TO_OVERWORLD_SCALE;
+  const overworldZ = station.z * NETHER_TO_OVERWORLD_SCALE;
+
+  modalTitle.textContent = station.name;
+  modalNether.textContent = `X ${station.x}, Z ${station.z}`;
+  modalOverworld.textContent = `X ${overworldX}, Z ${overworldZ}`;
+
+  if (station.description) {
+    modalDescription.innerHTML = formatStationDescription(station.description);
+  } else {
+    modalDescription.textContent = "No description provided.";
+  }
+
+  if (modalWindow) {
+    modalWindow.style.transform = "";
+  }
+
+  stationModal.hidden = false;
+}
+
+function closeStationModal() {
+  if (window.innerWidth <= MOBILE_BREAKPOINT && modalWindow) {
+    modalWindow.style.transform = "translateY(100%)";
+
+    setTimeout(() => {
+      stationModal.hidden = true;
+      modalWindow.style.transform = "";
+    }, 300);
+
+    return;
+  }
+
+  stationModal.hidden = true;
+}
+
+function bindModalSwipe() {
+  if (!modalWindow) {
+    return;
+  }
+
+  modalWindow.addEventListener("touchstart", (event) => {
+    const modalContent = modalWindow.querySelector(".modal-content");
+
+    if (modalContent && modalContent.scrollTop > 0) {
+      return;
+    }
+
+    modalTouchStartY = event.touches[0].clientY;
+    modalTouchCurrentY = modalTouchStartY;
+    isDraggingModal = true;
+    modalWindow.classList.add("is-dragging");
+  }, { passive: true });
+
+  modalWindow.addEventListener("touchmove", (event) => {
+    if (!isDraggingModal) {
+      return;
+    }
+
+    modalTouchCurrentY = event.touches[0].clientY;
+    const deltaY = modalTouchCurrentY - modalTouchStartY;
+
+    if (deltaY > 0) {
+      modalWindow.style.transform = `translateY(${deltaY}px)`;
+    }
+  }, { passive: true });
+
+  modalWindow.addEventListener("touchend", () => {
+    if (!isDraggingModal) {
+      return;
+    }
+
+    isDraggingModal = false;
+    modalWindow.classList.remove("is-dragging");
+
+    const deltaY = modalTouchCurrentY - modalTouchStartY;
+
+    if (deltaY > MOBILE_MODAL_CLOSE_DISTANCE) {
+      closeStationModal();
+    } else {
+      modalWindow.style.transform = "translateY(0)";
+    }
+
+    modalTouchStartY = 0;
+    modalTouchCurrentY = 0;
+  });
+}
+
+/* Legend */
+function generateLineLegend(routes) {
+  const legendList = document.getElementById("legend-list");
+
+  if (!legendList) {
+    return;
+  }
+
+  legendList.replaceChildren(
+      createLegendItem(createNodeSwatch("major"), "Station"),
+      createLegendItem(createNodeSwatch("minor"), "Intersection"),
+      createLegendItem(createElement("div", "legend-boundary-swatch"), "Wild TP Border"),
+      createElement("li", "legend-divider")
+  );
+
+  const uniqueColors = [...new Set(routes.map((route) => route.color || "#e53935"))];
+
+  uniqueColors.forEach((color) => {
+    const matchingKey = Object.keys(LINE_NAMES)
+        .find((key) => key.toLowerCase() === color.toLowerCase());
+    const lineName = matchingKey ? LINE_NAMES[matchingKey] : `Line (${color})`;
+    const swatch = createElement("div", "legend-color-swatch");
+
+    swatch.style.backgroundColor = color;
+    legendList.appendChild(createLegendItem(swatch, lineName));
+  });
+}
+
+function createLegendItem(swatch, text) {
+  const item = createElement("li", "legend-item");
+  const label = document.createElement("span");
+
+  label.textContent = text;
+  item.appendChild(swatch);
+  item.appendChild(label);
+
+  return item;
+}
+
+function createNodeSwatch(type) {
+  return createElement("div", `legend-node ${type}`);
+}
+
+function createElement(tag, className) {
+  const element = document.createElement(tag);
+  element.className = className;
+  return element;
+}
+
+/* Geometry and formatting utilities */
 function getBounds(padding = 0) {
   if (!stations.length) {
     return { minX: -500, maxX: 500, minZ: -500, maxZ: 500 };
@@ -534,8 +719,9 @@ function getVisibleBounds() {
 
 function getGridStep() {
   const minimumScreenGap = 24;
+
   return GRID_STEPS.find((step) => step * transform.scale >= minimumScreenGap)
-    || GRID_STEPS[GRID_STEPS.length - 1];
+      || GRID_STEPS[GRID_STEPS.length - 1];
 }
 
 function getMajorGridStep(gridStep) {
@@ -557,16 +743,33 @@ function isGridMultiple(value, step) {
 function updateScaleLegend(gridStep) {
   const targetWidth = 130;
   const distance = GRID_STEPS
-    .slice()
-    .reverse()
-    .find((step) => step * transform.scale <= targetWidth)
-    || GRID_STEPS[0];
+          .slice()
+          .reverse()
+          .find((step) => step * transform.scale <= targetWidth)
+      || GRID_STEPS[0];
   const lineWidth = clamp(distance * transform.scale, 28, 180);
 
   scaleLine.style.width = `${lineWidth}px`;
   scaleDistance.textContent = `${formatNumber(distance)} Nether block${distance === 1 ? "" : "s"}`;
   gridSize.textContent = `Grid: ${formatNumber(gridStep)} x ${formatNumber(gridStep)} Nether block${gridStep === 1 ? "" : "s"}`;
-  overworldScale.textContent = `Overworld: ${formatNumber(distance * 8)} blocks`;
+  overworldScale.textContent = `Overworld: ${formatNumber(distance * NETHER_TO_OVERWORLD_SCALE)} blocks`;
+}
+
+function updateStationLabels() {
+  const targetScreenFontSize = 10;
+  const screenConstantFontSize = targetScreenFontSize / transform.scale;
+
+  stations.forEach((station) => {
+    if (station.labelElement) {
+      station.labelElement.style.fontSize = `${screenConstantFontSize}px`;
+    }
+  });
+}
+
+function formatStationDescription(description) {
+  return escapeHtml(description)
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+      .replaceAll("\n", "<br>");
 }
 
 function formatNumber(value) {
@@ -587,11 +790,11 @@ function clamp(value, min, max) {
 
 function escapeHtml(value) {
   return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
 }
 
 function getDistance(a, b) {
@@ -605,120 +808,71 @@ function getCenter(a, b) {
   };
 }
 
-function updateStationLabels() {
-  const baseSize = 10; // The targeted screen-space font size in pixels
+/* URL Query Parameter & Viewport Utilities */
+function handleExportMode() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const exportType = urlParams.get("export");
 
-  // Invert the map scale so the text dimensions match screen pixels perfectly
-  const screenConstantFontSize = baseSize / transform.scale;
-
-  stations.forEach((station) => {
-    const label = station.labelElement;
-    if (!label) return;
-
-    // Apply the inverse size to override the external CSS stylesheet
-    label.style.fontSize = `${screenConstantFontSize}px`;
-  });
-}
-
-function generateLineLegend(routes) {
-  const legendList = document.getElementById("legend-list");
-  if (!legendList) return;
-
-  legendList.innerHTML = ""; // Clear existing placeholder nodes
-
-  // --- Add Major Station to Legend ---
-  const majorLi = document.createElement("li");
-  majorLi.className = "legend-item";
-  const majorSwatch = document.createElement("div");
-  majorSwatch.className = "legend-node major"; // Styled like your map node
-  const majorText = document.createElement("span");
-  majorText.textContent = "Station";
-  majorLi.appendChild(majorSwatch);
-  majorLi.appendChild(majorText);
-  legendList.appendChild(majorLi);
-
-  // --- Add Minor Station to Legend ---
-  const minorLi = document.createElement("li");
-  minorLi.className = "legend-item";
-  const minorSwatch = document.createElement("div");
-  minorSwatch.className = "legend-node minor"; // Styled like your map node
-  const minorText = document.createElement("span");
-  minorText.textContent = "Intersection";
-  minorLi.appendChild(minorSwatch);
-  minorLi.appendChild(minorText);
-  legendList.appendChild(minorLi);
-
-  // --- Add Map Boundary to Legend ---
-  const boundaryLi = document.createElement("li");
-  boundaryLi.className = "legend-item";
-  const boundarySwatch = document.createElement("div");
-  boundarySwatch.className = "legend-boundary-swatch"; 
-  const boundaryText = document.createElement("span");
-  boundaryText.textContent = "Wild TP Border";
-  boundaryLi.appendChild(boundarySwatch);
-  boundaryLi.appendChild(boundaryText);
-  legendList.appendChild(boundaryLi);
-  
-  // --- Separator Line ---
-  const divider = document.createElement("li");
-  divider.className = "legend-divider";
-  legendList.appendChild(divider);
-
-  // Extract all unique line colors found across the dataset
-  const uniqueColors = [...new Set(routes.map(r => r.color || "#e53935"))];
-
-  uniqueColors.forEach(color => {
-    const canonicalColor = color.toLowerCase();
-
-    // Attempt matching key from the mapping or fallback gracefully
-    const matchingKey = Object.keys(LINE_NAMES).find(k => k.toLowerCase() === canonicalColor);
-    const lineName = matchingKey ? LINE_NAMES[matchingKey] : `Line (${color})`;
-
-    const li = document.createElement("li");
-    li.className = "legend-item";
-
-    const swatch = document.createElement("div");
-    swatch.className = "legend-color-swatch";
-    swatch.style.backgroundColor = color;
-
-    const text = document.createElement("span");
-    text.textContent = lineName;
-
-    li.appendChild(swatch);
-    li.appendChild(text);
-    legendList.appendChild(li);
-  });
-}
-
-function openStationModal(station) {
-  // Only activate on desktop devices
-  if (window.matchMedia("(hover: hover)").matches) {
-    const overworldX = station.x * 8;
-    const overworldZ = station.z * 8;
-
-    modalTitle.textContent = station.name;
-    modalNether.textContent = `X ${station.x}, Z ${station.z}`;
-    modalOverworld.textContent = `X ${overworldX}, Z ${overworldZ}`;
-    modalDescription.textContent = station.description || "No description provided.";
-
-    stationModal.hidden = false;
+  if (exportType === "legend") {
+    document.documentElement.classList.add("export-legend");
+  } else if (exportType === "minecraft" || urlParams.has("print")) {
+    document.documentElement.classList.add("export-mode");
   }
 }
 
-function closeStationModal() {
-  stationModal.hidden = true;
+function setViewportPosition(worldX, worldZ, customScale) {
+  const rect = svg.getBoundingClientRect();
+  const width = Math.max(rect.width, 1);
+  const height = Math.max(rect.height, 1);
+
+  const scale = clamp(customScale || transform.scale, minZoom, MAX_ZOOM);
+
+  const x = (width / 2) - (worldX * scale);
+  const y = (height / 2) - (worldZ * scale);
+
+  transform = { x, y, scale };
+  applyTransform();
 }
 
-function drawMapBoundary() {
-  boundaryLayer.replaceChildren();
+function openHelpModal(){
 
-  const boundary = createSvgElement("rect", {
-    x: -6250,
-    y: -1875,
-    width: 12500,
-    height: 3750,
-    class: "map-boundary"
-  });
+  modalTitle.textContent = "Map Help & Guide";
+  
+  const helpText = `While this site has been designed to be simple to use, you may still find yourself confused at times. So here's some help!
 
-  boundaryLayer.appendChild(boundary);
+The map can be panned by dragging the main viewing area, and zooming by either scrolling, or pinching. On the top right, you will notice that there are buttons for zooming in "+", and zooming out "-", as well as one to reset back to the default view in case you get lost in the void. Next to that is the button to show and hide the grid.
+
+The card on the top left displays the website title, a short description, and when the map was last updated. It is only visible on suitably large screens, so don't worry if you can't see it!
+
+On the bottom of your screen you will find the grid scale. Make sure the grid is enabled, otherwise it won't be visible! This will give you an idea of the distance you are looking at, both in the Nether, and in the Overworld. Handy!
+
+Finally, to the right you can find the map legend. It can be opened and closed by clicking on the tab. It displays the markers found on the map, as well as the names for each of the transit lines.
+
+While that is all that you will normally see, you can find out even more information by simply clicking on a station. This will open a window displaying the exact coordinates of the station, and, if available, a description and photos.
+
+If you have a station on the map, and want to update its details, simply upload the details to <a href="https://www.mcverse.city/warps" target="_blank" rel="noopener noreferrer">mcverse.city/warps</a>. I occasionally check in to update this. If you think I missed your changes, message me in game or on Discord and I'll do my best to get to it.
+
+If you have any questions, suggestions, or concerns, feel free to send me a message.`;
+
+  modalDescription.classList.add("formatted-text");
+  modalDescription.innerHTML=formatHelpText(helpText);
+  
+  //hide unneeded parts of modal
+  document.getElementById("modal-meta").hidden = true;
+  document.getElementById("modal-divider").hidden = true;
+  document.getElementById("modal-photos-placeholder").hidden = true;
+  
+  if (modalWindow) {
+    modalWindow.style.transform = "";
+  }
+  
+  stationModal.hidden = false;
+}
+
+function formatHelpText(text){
+  return text
+      .trim()
+      .split(/\n\s*\n/) // Split into separate paragraphs on empty lines
+      .map((paragraph) => `<p>${paragraph.replaceAll("\n", "<br>")}</p>`)
+      .join("");
 }

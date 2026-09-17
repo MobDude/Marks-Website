@@ -20,16 +20,6 @@
     "labelZ": -1556
   },
   {
-    "name": "E2",
-    "x": -2508,
-    "z": 456,
-    "description": "End of the Line.",
-    "color": "#000000",
-    "major": false,
-    "labelX": -2488,
-    "labelZ": 436
-  },
-  {
     "name": "Intersection G",
     "x": -1360,
     "z": 456,
@@ -40,12 +30,12 @@
     "labelZ": 436
   },
   {
-    "name": "To MCverseCity",
+    "name": "Intersection W",
     "x": 574,
     "z": 0,
     "description": "",
     "color": "#000000",
-    "major": true,
+    "major": false,
     "labelX": 594,
     "labelZ": -20
   },
@@ -220,16 +210,6 @@
     "labelZ": 2347
   },
   {
-    "name": "E4",
-    "x": -2879,
-    "z": -1536,
-    "description": "End of the Line.",
-    "color": "#000000",
-    "major": false,
-    "labelX": -2859,
-    "labelZ": -1556
-  },
-  {
     "name": "Intersection L",
     "x": -2876,
     "z": -1536,
@@ -241,22 +221,22 @@
   },
   {
     "name": "E6",
-    "x": -2876,
-    "z": -540,
+    "x": -3166,
+    "z": 1262,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": -2856,
-    "labelZ": -520
+    "labelX": -3146,
+    "labelZ": 1242
   },
   {
     "name": "E5",
-    "x": -2966,
+    "x": -3356,
     "z": 1435,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": -2946,
+    "labelX": -3336,
     "labelZ": 1415
   },
   {
@@ -281,13 +261,13 @@
   },
   {
     "name": "EcS",
-    "x": -1498,
+    "x": -1560,
     "z": 1855,
     "description": "",
     "color": "#000000",
     "major": true,
-    "labelX": -1478,
-    "labelZ": 1815
+    "labelX": -1540,
+    "labelZ": 1835
   },
   {
     "name": "Intersection M",
@@ -398,5 +378,185 @@
     "major": true,
     "labelX": -3015,
     "labelZ": -568
+  },
+  {
+    "name": "Intersection P",
+    "x": -1360,
+    "z": -67,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": -87
+  },
+  {
+    "name": "CIRCUIT",
+    "x": -472,
+    "z": -67,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -452,
+    "labelZ": -87
+  },
+  {
+    "name": "LeHe",
+    "x": -1482,
+    "z": -1814,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -1462,
+    "labelZ": -1834
+  },
+  {
+    "name": "Riverside",
+    "x": -2840,
+    "z": 572,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -2820,
+    "labelZ": 552
+  },
+  {
+    "name": "Intersection Q",
+    "x": -1482,
+    "z": -1536,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1462,
+    "labelZ": -1556
+  },
+  {
+    "name": "Intersection R",
+    "x": -2840,
+    "z": 456,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2820,
+    "labelZ": 436
+  },
+  {
+    "name": "Intersection S",
+    "x": 572,
+    "z": 2495,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 592,
+    "labelZ": 2475
+  },
+  {
+    "name": "Mats1300",
+    "x": 817,
+    "z": 2967,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 837,
+    "labelZ": 2947
+  },
+  {
+    "name": "Hydropolis",
+    "x": 1070,
+    "z": -374,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 1090,
+    "labelZ": -394
+  },
+  {
+    "name": "E7",
+    "x": 1074,
+    "z": -374,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 1094,
+    "labelZ": -394
+  },
+  {
+    "name": "Intersection T",
+    "x": 573,
+    "z": -374,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 593,
+    "labelZ": -394
+  },
+  {
+    "name": "Intersection U",
+    "x": -2877,
+    "z": 573,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2877,
+    "labelZ": 573
+  },
+  {
+    "name": "Intersection V",
+    "x": -2877,
+    "z": 456,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2877,
+    "labelZ": 456
+  },
+  {
+    "name": "E2",
+    "x": -3254,
+    "z": -1542,
+    "description": "End of the Line.",
+    "color": "#000000",
+    "major": false,
+    "labelX": -3234,
+    "labelZ": -1562
+  },
+  {
+    "name": "SogeRonin",
+    "x": -2620,
+    "z": 1219,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -2600,
+    "labelZ": 1199
+  },
+  {
+    "name": ".Elmsvuur32",
+    "x": 422,
+    "z": 900,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 442,
+    "labelZ": 880
+  },
+  {
+    "name": "MCVerse City",
+    "x": 725,
+    "z": 0,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 745,
+    "labelZ": -20
+  },
+  {
+    "name": "Intersection X",
+    "x": 573,
+    "z": 900,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 593,
+    "labelZ": 880
   }
 ]

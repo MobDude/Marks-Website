@@ -220,16 +220,6 @@
     "labelZ": -1556
   },
   {
-    "name": "E6",
-    "x": -3166,
-    "z": 1262,
-    "description": "End of the Line.",
-    "color": "#000000",
-    "major": false,
-    "labelX": -3146,
-    "labelZ": 1242
-  },
-  {
     "name": "E5",
     "x": -3356,
     "z": 1435,
@@ -568,5 +558,15 @@
     "major": true,
     "labelX": -4853,
     "labelZ": -568
+  },
+  {
+    "name": "Intersection Y",
+    "x": -3166,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -3146,
+    "labelZ": 1415
   }
 ]

@@ -221,12 +221,12 @@
   },
   {
     "name": "E5",
-    "x": -3356,
+    "x": -4191,
     "z": 1435,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": -3336,
+    "labelX": -4171,
     "labelZ": 1415
   },
   {
@@ -567,6 +567,46 @@
     "color": "#000000",
     "major": false,
     "labelX": -3146,
+    "labelZ": 1415
+  },
+  {
+    "name": "Intersection Z",
+    "x": -3356,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -3336,
+    "labelZ": 1415
+  },
+  {
+    "name": "Raven's Eyrie",
+    "x": -4144,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": -4124,
+    "labelZ": 1415
+  },
+  {
+    "name": "Intersection α",
+    "x": -3166,
+    "z": 1244,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -3146,
+    "labelZ": 1224
+  },
+  {
+    "name": "Intersection ß", 
+    "x": -2966,
+    "z": 1435,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -2946,
     "labelZ": 1415
   }
 ]

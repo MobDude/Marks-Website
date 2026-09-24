@@ -215,7 +215,7 @@
     "color": "#B3321E"
   },
   {
-    "start": "E5",
+    "start": "Intersection Z",
     "end": "KingsMere",
     "color": "#B3321E"
   },
@@ -316,5 +316,21 @@
     "start": "Frostmere",
     "end": "Abandoned",
     "color": "#67BED9"
+  },
+  {
+    "start": "Intersection α",
+    "end": "Intersection ß",
+    "color": "#B3321E",
+    "via": [
+      {
+        "x": -2966,
+        "z": 1244
+      }
+    ]
+  },
+  {
+    "start": "KingsMere",
+    "end": "Intersection α",
+    "color": "#B3321E"
   }
 ]

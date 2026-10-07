@@ -139,7 +139,7 @@
     ]
   },
   {
-    "start": "E3",
+    "start": "Intersection γ",
     "end": "ITZA",
     "color": "#FFAEC9"
   },
@@ -201,7 +201,7 @@
   },
   {
     "start": "Intersection H",
-    "end": "E3",
+    "end": "Intersection γ",
     "color": "#FFAEC9"
   },
   {
@@ -332,5 +332,30 @@
     "start": "KingsMere",
     "end": "Intersection α",
     "color": "#B3321E"
+  },
+  {
+    "start": "Intersection γ",
+    "end": "Intersection δ",
+    "color": "#FFAEC9",
+    "via": [
+      {
+        "x": 2744,
+        "z": 2494
+      },
+      {
+        "x": 2744,
+        "z": 1339
+      }
+    ]
+  },
+  {
+    "start": "Intersection δ",
+    "end": "E3",
+    "color": "#FFAEC9"
+  },
+  {
+    "start": "Intersection δ",
+    "end": "ArkMarket",
+    "color": "#FFAEC9"
   }
 ]

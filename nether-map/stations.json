@@ -1,13 +1,13 @@
 [
   {
     "name": "E3",
-    "x": 2694,
-    "z": 2494,
+    "x": 2944,
+    "z": 1339,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": 2714,
-    "labelZ": 2474
+    "labelX": 2924,
+    "labelZ": 1319
   },
   {
     "name": "Intersection I",
@@ -608,5 +608,35 @@
     "major": false,
     "labelX": -2946,
     "labelZ": 1415
+  },
+  {
+    "name": "Intersection γ",
+    "x": 2694,
+    "z": 2494,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 2714,
+    "labelZ": 2474
+  },
+  {
+    "name": "Intersection δ",
+    "x": 2910,
+    "z": 1339,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 2930,
+    "labelZ": 1319
+  },
+  {
+    "name": "ArkMarket",
+    "x": 2910,
+    "z": 866,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 2930,
+    "labelZ": 846
   }
 ]

@@ -335,18 +335,19 @@
   },
   {
     "start": "Intersection γ",
-    "end": "Intersection δ",
+    "end": "Intersection ε",
     "color": "#FFAEC9",
     "via": [
       {
         "x": 2744,
         "z": 2494
-      },
-      {
-        "x": 2744,
-        "z": 1339
       }
     ]
+  },
+  {
+    "start": "Intersection ε",
+    "end": "Intersection δ",
+    "color": "#FFAEC9"
   },
   {
     "start": "Intersection δ",
@@ -357,5 +358,16 @@
     "start": "Intersection δ",
     "end": "ArkMarket",
     "color": "#FFAEC9"
+  },
+  {
+    "start": "Intersection ε",
+    "end": "TerraNovia",
+    "color": "#FFAEC9",
+    "via": [
+      {
+        "x": 2744,
+        "z": 1289
+      }
+    ]
   }
 ]

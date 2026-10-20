@@ -1,12 +1,12 @@
 [
   {
     "name": "E3",
-    "x": 3363,
+    "x": 3979,
     "z": 1339,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": 3383,
+    "labelX": 3999,
     "labelZ": 1319
   },
   {
@@ -553,7 +553,7 @@
     "name": "Frostmere",
     "x": -4873,
     "z": -548,
-    "description": "",
+    "description": "Welcome to Frostmere! Frostmere is a growing town looking for semi active players who want to build, contribute, and be part of our thriving community. We ask all residents and visitors to respect our town and fellow players by not griefing, stealing, or damaging anyone’s builds if we allow your trust. We’re looking for players who want to create houses, shops, farms, public projects, and other amenities that help our town grow. Whether you’re a skilled builder, trader, or explorer, there’s a place for you here. Join Frostmere and help us expand into something amazing, while having fun and making new friends along the way! { Me & my friend are usually on almost everyday, and we are both 19, so we would like to only have players above the age 18. We have currently 3-4 other players that don’t play a lot apart of Frostmere. (PS. I am an xbox player and my friend plays on pc, so we can use game chat, and discord. )}",
     "color": "#000000",
     "major": true,
     "labelX": -4853,
@@ -638,5 +638,25 @@
     "major": true,
     "labelX": 2930,
     "labelZ": 846
+  },
+  {
+    "name": "TerraNovia",
+    "x": 2687,
+    "z": 1289,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 2707,
+    "labelZ": 1269
+  },
+  {
+    "name": "Intersection ε",
+    "x": 2744,
+    "z": 1339,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 2764,
+    "labelZ": 1319
   }
 ]

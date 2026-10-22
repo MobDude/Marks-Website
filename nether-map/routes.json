@@ -369,5 +369,20 @@
         "z": 1289
       }
     ]
+  },
+  {
+    "start": "Intersection ζ",
+    "end": "E6",
+    "color": "#899499"
+  },
+  {
+    "start": "Intersection η",
+    "end": "Bladess",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection θ",
+    "end": "E8",
+    "color": "#899499"
   }
 ]

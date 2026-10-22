@@ -1,12 +1,12 @@
 [
   {
     "name": "E3",
-    "x": 3979,
+    "x": 4062,
     "z": 1339,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": 3999,
+    "labelX": 4082,
     "labelZ": 1319
   },
   {
@@ -658,5 +658,65 @@
     "major": false,
     "labelX": 2764,
     "labelZ": 1319
+  },
+  {
+    "name": "Intersection ζ",
+    "x": 4030,
+    "z": 1339,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -4010,
+    "labelZ": 1319
+  },
+  {
+    "name": "Intersection η",
+    "x": -1360,
+    "z": -90,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": -1340,
+    "labelZ": -110
+  },
+  {
+    "name": "Bladess",
+    "x": -1711,
+    "z": -90,
+    "description": "The future sight of decked out 2.5!",
+    "color": "#000000",
+    "major": true,
+    "labelX": -1691,
+    "labelZ": -130
+  },
+  {
+    "name": "E6",
+    "x": 4030,
+    "z": -1168,
+    "description": "End of the line.",
+    "color": "#000000",
+    "major": false,
+    "labelX": 4030,
+    "labelZ": -1188
+  },
+  {
+    "name": "E8",
+    "x": 3755,
+    "z": -374,
+    "description": "End of the line.",
+    "color": "#000000",
+    "major": false,
+    "labelX": 3785,
+    "labelZ": -394
+  },
+  {
+    "name": "Intersection θ",
+    "x": 4030,
+    "z": -374,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 4050,
+    "labelZ": -394
   }
 ]

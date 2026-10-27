@@ -1,4 +1,34 @@
 const movies = [
+{
+        title: "They Live",
+        year: "1989",
+        rating: 4.43,
+        minutes: 94,
+        poster: "https://media.themoviedb.org/t/p/w220_and_h330_face/ngnybFTuopfbfmmEeX9jjBQQmF6.jpg",
+{
+        title: "Austin Powers: International Man of Mystery",
+        year: "1997",
+        rating: 6.44,
+        minutes: 89,
+        poster: "https://media.themoviedb.org/t/p/w220_and_h330_face/5uD4dxNX8JKFjWKYMHyOsqhi5pN.jpg",
+        comment: ""
+    },
+{
+        title: "Bigfoot Goes to Hell",
+        year: "2023",
+        rating: 0.11,
+        minutes: 61,
+        poster: "https://media.themoviedb.org/t/p/w220_and_h330_face/ghQSuP7Dzh7tEWB5Ssh9VP86zTb.jpg",
+comment: ""
+    },
+{
+        title: "The Man Who Killed Hitler and Then the Bigfoot",
+        year: "2018",
+        rating: 6.11,
+        minutes: 98,
+        poster: "https://media.themoviedb.org/t/p/w220_and_h330_face/kQNeWBT1VqtSMtgfEn3zFjRogyH.jpg",
+        comment: ""
+    },
     {
         title: "Stand By Me",
         year: "1986",

@@ -1,11 +1,77 @@
 const movies = [
-{
+    {
+        title: "Good Will Hunting",
+        year: "1997",
+        rating: 9.28,
+        minutes: 126,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/z2FnLKpFi1HPO7BEJxdkv6hpJSU.jpg",
+        comment: ""
+    },
+    {
+        title: "Prisoners",
+        year: "2013",
+        rating: 7.56,
+        minutes: 153,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/uhviyknTT5cEQXbn6vWIqfM4vGm.jpg",
+        comment: ""
+    },
+    {
+        title: "FernGully: The Last Rainforest",
+        year: "1992",
+        rating: 5.00,
+        minutes: 76,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/xkJxdeaibcrcsi1XHvT0IuOjdzB.jpg",
+        comment: ""
+    },
+    {
+        title: "Frankenweenie",
+        year: "2012",
+        rating: 5.07,
+        minutes: 87,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/yGjVbLVdZRBlZTTQVBsj2KUjL1s.jpg",
+        comment: ""
+    },
+    {
+        title: "Friday the 13th",
+        year: "1980",
+        rating: 6.8,
+        minutes: 95,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/uGGpnWHOmWTARVN9wbC1nPxNgps.jpg",
+        comment: ""
+    },
+    {
+        title: "Train to Busan",
+        year: "2016",
+        rating: 8.42,
+        minutes: 118,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg",
+        comment: ""
+    },
+    {
+        title: "Jojo Rabbit",
+        year: "2019",
+        rating: 8.88,
+        minutes: 108,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/1mqL7VG4Ix8wmxwypmCA1HTHBky.jpg",
+        comment: ""
+    },
+    {
+        title: "Whiplash",
+        year: "2014",
+        rating: 9.5,
+        minutes: 107,
+        poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
+        comment: ""
+    },
+    {
         title: "They Live",
         year: "1989",
         rating: 4.43,
         minutes: 94,
         poster: "https://media.themoviedb.org/t/p/w220_and_h330_face/ngnybFTuopfbfmmEeX9jjBQQmF6.jpg",
-{
+        comment: ""
+    },
+    {
         title: "Austin Powers: International Man of Mystery",
         year: "1997",
         rating: 6.44,
@@ -13,15 +79,15 @@ const movies = [
         poster: "https://media.themoviedb.org/t/p/w220_and_h330_face/5uD4dxNX8JKFjWKYMHyOsqhi5pN.jpg",
         comment: ""
     },
-{
+    {
         title: "Bigfoot Goes to Hell",
         year: "2023",
         rating: 0.11,
         minutes: 61,
         poster: "https://media.themoviedb.org/t/p/w220_and_h330_face/ghQSuP7Dzh7tEWB5Ssh9VP86zTb.jpg",
-comment: ""
+        comment: ""
     },
-{
+    {
         title: "The Man Who Killed Hitler and Then the Bigfoot",
         year: "2018",
         rating: 6.11,
@@ -48,7 +114,7 @@ comment: ""
     {
         title: "Hereditary",
         year: "2018",
-        rating: 9.63,
+        rating: 9.5,
         minutes: 127,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/4GFPuL14eXi66V96xBWY73Y9PfR.jpg",
         comment: ""
@@ -333,7 +399,7 @@ comment: ""
         minutes: 110,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/b9Q2WR62yB5Aq0hd6kyRFS9cc3Y.jpg",
         comment: "I went into this expecting a disaster movie with biblical proportions, and was really disappointed. The movie drags on so much. It takes over half an hour for the main plot point to happen, and even when it does, there is nothing interesting about it. Really just boring. "
-        
+
     },
     {
         title: "Gods Not Dead",
@@ -406,7 +472,7 @@ comment: ""
         rating: 2.75,
         minutes: 100,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
-        comment: "Honestly this movie was really hard to finish for me. There seems to be no cohesive plot that I can follow. There are so many loose ends and things that go un addressed. I also find that the dialogue and in some cases the singing leave something to be desired."   
+        comment: "Honestly this movie was really hard to finish for me. There seems to be no cohesive plot that I can follow. There are so many loose ends and things that go un addressed. I also find that the dialogue and in some cases the singing leave something to be desired."
     },
     {
         title: "Ace Ventura: Pet Detective",
@@ -514,7 +580,7 @@ comment: ""
         comment: "An amazing film. The sound design and visuals are stunning. The story itself is really interesting, and it's fun to see how it all comes together. The power of love thing can be a little silly, but I think this movie pulled it off well. This is a movie I would love to see in theatres."
     },
     {
-        title: "The Adventures of Pluto Nash",  
+        title: "The Adventures of Pluto Nash",
         year: 2002,
         rating: 4.13,
         minutes: 95,
@@ -522,7 +588,7 @@ comment: ""
         comment: ""
     },
     {
-        title: "Spaceballs",  
+        title: "Spaceballs",
         year: 1987,
         rating: 7.83,
         minutes: 96,
@@ -531,7 +597,7 @@ comment: ""
 
     },
     {
-        title: "The Stranger by the Shore" ,
+        title: "The Stranger by the Shore",
         year: 2020,
         rating: 3.0,
         minutes: 59,
@@ -539,7 +605,7 @@ comment: ""
         comment: "The movie itself was kinda forgettable. The animation was decent, but I noticed that everyone's necks were really long and I couldn't unsee it."
     },
     {
-        title: "Jerry &, Marge Go Large" ,
+        title: "Jerry &, Marge Go Large",
         year: 2022,
         rating: 8.0,
         minutes: 96,
@@ -550,7 +616,7 @@ comment: ""
         title: "Bit",
         year: 2019,
         rating: 2.92,
-        minutes:94,
+        minutes: 94,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/9SlKmu0a1G1eihI29WMQogBWgzr.jpg",
         comment: "Gay vampires, uh power corrupts, and a rat hole. This is a movie I guess."
     },
@@ -702,7 +768,7 @@ comment: ""
     },
     {
         title: "Encino Man",
-        year: 1992, 
+        year: 1992,
         rating: 5.8,
         minutes: 108,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/y8HtL6pyjfODdHOFgciFVFmt8Eq.jpg",
@@ -971,7 +1037,7 @@ comment: ""
     },
     {
         title: "Look Back",
-        year: 2024, 
+        year: 2024,
         rating: 8.5,
         minutes: 58,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/4f2EcNkp1Mvp9wE5w7HKxcmACWg.jpg",
@@ -1133,7 +1199,7 @@ comment: ""
         title: "Spy Kids",
         year: 2001,
         rating: 3.5,
-        minutes : 88,
+        minutes: 88,
         poster: "https://www.themoviedb.org/t/p/w600_and_h900_face/j3rUkHIAAoKr6jU30q3Db4fcIF9.jpg",
         comment: ""
     },
@@ -1369,11 +1435,11 @@ function calculateStats(movieArray) {
     const minutes = totalMinutes % 60;
 
     const best = [...movieArray]
-        .sort((a,b) => b.rating - a.rating)
+        .sort((a, b) => b.rating - a.rating)
         .slice(0, 10);
 
     const worst = [...movieArray]
-        .sort((a,b) => a.rating - b.rating)
+        .sort((a, b) => a.rating - b.rating)
         .slice(0, 10);
 
     const stats = document.getElementById("movie-stats");
@@ -1397,7 +1463,7 @@ function calculateStats(movieArray) {
 }
 
 function getStarRating(movie) {
-    const stars = movie.rating /2;
+    const stars = movie.rating / 2;
     return Math.round(stars * 2) / 2;
 }
 

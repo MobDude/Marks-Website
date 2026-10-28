@@ -1,0 +1,98 @@
+[
+  {
+    "hour": 0,
+    "listens": 0
+  },
+  {
+    "hour": 1,
+    "listens": 0
+  },
+  {
+    "hour": 2,
+    "listens": 0
+  },
+  {
+    "hour": 3,
+    "listens": 0
+  },
+  {
+    "hour": 4,
+    "listens": 3
+  },
+  {
+    "hour": 5,
+    "listens": 34
+  },
+  {
+    "hour": 6,
+    "listens": 17
+  },
+  {
+    "hour": 7,
+    "listens": 30
+  },
+  {
+    "hour": 8,
+    "listens": 7
+  },
+  {
+    "hour": 9,
+    "listens": 2
+  },
+  {
+    "hour": 10,
+    "listens": 2
+  },
+  {
+    "hour": 11,
+    "listens": 4
+  },
+  {
+    "hour": 12,
+    "listens": 0
+  },
+  {
+    "hour": 13,
+    "listens": 7
+  },
+  {
+    "hour": 14,
+    "listens": 38
+  },
+  {
+    "hour": 15,
+    "listens": 54
+  },
+  {
+    "hour": 16,
+    "listens": 14
+  },
+  {
+    "hour": 17,
+    "listens": 22
+  },
+  {
+    "hour": 18,
+    "listens": 9
+  },
+  {
+    "hour": 19,
+    "listens": 4
+  },
+  {
+    "hour": 20,
+    "listens": 19
+  },
+  {
+    "hour": 21,
+    "listens": 7
+  },
+  {
+    "hour": 22,
+    "listens": 22
+  },
+  {
+    "hour": 23,
+    "listens": 5
+  }
+]

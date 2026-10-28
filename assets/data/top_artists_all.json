@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Imagine Dragons",
+    "listens": 10
+  },
+  {
+    "name": "Andy Grammer",
+    "listens": 9
+  },
+  {
+    "name": "Ed Sheeran",
+    "listens": 9
+  },
+  {
+    "name": "Nick Jonas",
+    "listens": 8
+  },
+  {
+    "name": "OneRepublic",
+    "listens": 7
+  },
+  {
+    "name": "Daya",
+    "listens": 6
+  },
+  {
+    "name": "Elvis Presley",
+    "listens": 6
+  },
+  {
+    "name": "Phillip Phillips",
+    "listens": 5
+  },
+  {
+    "name": "The Chainsmokers, MOTi",
+    "listens": 5
+  },
+  {
+    "name": "Anne-Marie",
+    "listens": 4
+  }
+]

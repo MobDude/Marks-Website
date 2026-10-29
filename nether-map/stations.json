@@ -1,12 +1,12 @@
 [
   {
     "name": "E3",
-    "x": 4062,
+    "x": 5400,
     "z": 1339,
     "description": "End of the Line.",
     "color": "#000000",
     "major": false,
-    "labelX": 4082,
+    "labelX": 5420,
     "labelZ": 1319
   },
   {
@@ -718,5 +718,35 @@
     "major": false,
     "labelX": 4050,
     "labelZ": -394
+  },
+  {
+    "name": "Intersection ι",
+    "x": 5285,
+    "z": 1339,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 5305,
+    "labelZ": 1319
+  },
+  {
+    "name": "Cailleach",
+    "x": 5400,
+    "z": 1157,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 5420,
+    "labelZ": 1137
+  },
+  {
+    "name": "Lunar Grove",
+    "x": 5285,
+    "z": 1581,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 5305,
+    "labelZ": 1561
   }
 ]

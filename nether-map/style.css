@@ -542,7 +542,7 @@ input {
     opacity: 0.8;
 }
 
-#modal-description,
+#modal-description:not(:has(.help-accordion-group)),
 .tooltip-desc {
     white-space: pre-line;
 }
@@ -920,4 +920,164 @@ html.export-legend .legend-divider {
     margin: 4px 0 !important;
     height: 2px !important;
     background: #d2d6dc !important;
+}
+#gps-panel {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(-270px);
+    width: 270px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #111;
+    box-shadow: 3px 3px 0 #111;
+    padding: 12px;
+    z-index: 10;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+
+    /* Constrain panel to screen height with internal scrolling if needed */
+    max-height: calc(100dvh - 32px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* When open, slide it fully into view */
+#gps-panel.open {
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Make the inner content area scrollable if the viewport is short */
+#gps-panel .legend-content {
+    overflow-y: auto;
+    max-height: calc(100dvh - 60px);
+    padding-right: 2px; /* Prevent scrollbar overlap */
+}
+
+/* The vertical protruding tab */
+#gps-tab {
+    position: absolute;
+    right: -32px; /* Sticks out to the right of the panel */
+    top: 16px;
+    background: #ffffff;
+    border: 2px solid #111;
+    border-left: none;
+    padding: 10px 6px;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #111;
+    border-radius: 0 4px 4px 0;
+}
+#gps-results {
+    font-size: 0.82rem;
+    margin-top: 6px;
+    padding-left: 6px;
+    border-top: 1px solid #ccc;
+    padding-top: 6px;
+    max-height: 200px; /* Limits the height so it won't overflow the panel */
+    overflow-y: auto;  /* Adds a clean scrollbar when steps get long */
+}
+/* Outer dark border for depth and contrast */
+.gps-route-outline {
+    fill: none;
+    stroke: #111;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 35; /* Slightly wider than the inner line */
+    opacity: 0.9;
+}
+
+/* Vibrant animated inner route line */
+.gps-highlight-line {
+    fill: none;
+    stroke: #FBF719;
+    stroke-width: 30;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: gpsPulse 1.5s infinite alternate;
+}
+
+@keyframes gpsPulse {
+    0% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 2px rgba(251, 247, 25, 0.4));
+    }
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px rgba(251, 247, 25, 0.9));
+    }
+}
+/* Animated dashed center line to indicate travel direction */
+.gps-route-flow {
+    fill: none;
+    stroke: #111; /* Dark dashes for high contrast against the yellow */
+    stroke-width: 14;
+    stroke-dasharray: 30 50; /* Dash length and gap */
+    stroke-linecap: round;
+    animation: gpsFlow 1.2s linear infinite;
+}
+
+@keyframes gpsFlow {
+    from {
+        stroke-dashoffset: 80; /* Matches sum of dasharray (30 + 50) for seamless looping */
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+/* Container for accordion items to control gap without negative margins */
+.help-accordion-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Adjust gap between cards directly here */
+    margin: 8px 0;
+}
+
+.help-accordion-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 8px 0;
+}
+
+.help-accordion {
+    border: 2px solid #111;
+    border-radius: 4px;
+    background: #fdfdfd;
+    box-shadow: 2px 2px 0 #111;
+    overflow: hidden;
+    margin: 4px;
+}
+
+.help-accordion summary {
+    padding: 6px 10px;
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+    background: #f0f0f0;
+    user-select: none;
+}
+
+.help-accordion summary:hover {
+    background: #e4e4e4;
+}
+
+.help-accordion[open] summary {
+    border-bottom: 2px solid #111;
+}
+
+.help-accordion-body {
+    padding: 0 10px;
+}
+
+/* Tighten paragraph spacing inside accordions and modal descriptions */
+#modal-description p,
+.help-accordion p {
+    margin: 4px 0 !important;
+    padding: 4px;
+    font-size: 0.85rem;
+    line-height: 1.35;
 }

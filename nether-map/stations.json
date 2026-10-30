@@ -88,17 +88,6 @@
     "image": ""
   },
   {
-    "name": "NamiLuxe",
-    "x": 1736,
-    "z": -1140,
-    "description": "",
-    "color": "#000000",
-    "major": true,
-    "labelX": 1756,
-    "labelZ": -1160,
-    "image": ""
-  },
-  {
     "name": "Intersection C",
     "x": 572,
     "z": -1140,
@@ -210,13 +199,13 @@
   },
   {
     "name": "The Sanctum",
-    "x": 1826,
-    "z": -1150,
+    "x": 1818,
+    "z": -1152,
     "description": "",
     "color": "#000000",
     "major": true,
-    "labelX": 1846,
-    "labelZ": -1170,
+    "labelX": 1838,
+    "labelZ": -1172,
     "image": ""
   },
   {
@@ -660,7 +649,7 @@
     "image": ""
   },
   {
-    "name": "Intersection ß",
+    "name": "Intersection β",
     "x": -2966,
     "z": 1435,
     "description": "",
@@ -822,6 +811,28 @@
     "major": true,
     "labelX": 5305,
     "labelZ": 1561,
+    "image": ""
+  },
+  {
+    "name": "Intersection κ",
+    "x": 1736,
+    "z": -1140,
+    "description": "",
+    "color": "#000000",
+    "major": false,
+    "labelX": 1756,
+    "labelZ": -1160,
+    "image": ""
+  },
+  {
+    "name": "NamiLuxe",
+    "x": 1745,
+    "z": -1140,
+    "description": "",
+    "color": "#000000",
+    "major": true,
+    "labelX": 17565,
+    "labelZ": -1160,
     "image": ""
   }
 ]

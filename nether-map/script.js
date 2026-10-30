@@ -80,6 +80,9 @@ async function init() {
         const routes = await routeResponse.json();
         stationByName = new Map(stations.map((station) => [station.name, station]));
 
+        // Initialize GPS routing engine
+        initGPS(stations, routes);
+        
         drawRoutes(routes);
         drawStations();
         drawMapBoundary();
@@ -846,32 +849,53 @@ function setViewportPosition(worldX, worldZ, customScale) {
 }
 
 function openHelpModal() {
-
     modalTitle.textContent = "Map Help & Guide";
 
-    const helpText = `While this site has been designed to be simple to use, you may still find yourself confused at times. So here's some help!
+    const helpHTML = `
+        <p style="margin: -10px 0 -10px 0; font-size: 0.85rem;">Welcome to the map! Click a topic below to expand its guide:</p>
+        
+        <div class="help-accordion-group">
+            <details class="help-accordion" open>
+                <summary>Getting Around & Controls</summary>
+                <div class="help-accordion-body">
+                    <p>The map can be panned by dragging the main viewing area, and zooming by either scrolling, or pinching. On the top right, you will notice that there are buttons for zooming in <strong>"+"</strong>, and zooming out <strong>"-"</strong>, as well as one to <strong>Reset</strong> back to the default view in case you get lost in the endless white void. Next to that is the <strong>Grid</strong> button to show and hide the grid.</p>
+                    <p>On the bottom of your screen you will find the grid scale. Make sure the grid is enabled, otherwise it won't be visible! This will give you an idea of the distance you are looking at, both in the Nether, and in the Overworld.</p>
+                </div>
+            </details>
 
-The map can be panned by dragging the main viewing area, and zooming by either scrolling, or pinching. On the top right, you will notice that there are buttons for zooming in "+", and zooming out "-", as well as one to reset back to the default view in case you get lost in the void. Next to that is the button to show and hide the grid.
+            <details class="help-accordion">
+                <summary>GPS Route Finder</summary>
+                <div class="help-accordion-body">
+                    <p>On the left side, you'll find the <strong>GPS Route Finder</strong> tab. Click it to slide open the panel, choose your starting station and destination, and click <strong>Find Route</strong> to calculate the shortest path, total block distances, and step-by-step directions.</p>
+                </div>
+            </details>
 
-The card on the top left displays the website title, a short description, and when the map was last updated. It is only visible on suitably large screens, so don't worry if you can't see it!
+            <details class="help-accordion">
+                <summary>Map Legend & Lines</summary>
+                <div class="help-accordion-body">
+                    <p>To the right you can find the map <strong>Legend</strong>. It can be opened and closed by clicking on its side tab. It displays the markers found on the map, as well as the names for each of the transit lines.</p>
+                </div>
+            </details>
 
-On the bottom of your screen you will find the grid scale. Make sure the grid is enabled, otherwise it won't be visible! This will give you an idea of the distance you are looking at, both in the Nether, and in the Overworld. Handy!
+            <details class="help-accordion">
+                <summary>Station Details & Updates</summary>
+                <div class="help-accordion-body">
+                    <p>You can find out even more information by simply clicking on any station. This will open a window displaying the exact coordinates of the station, and, if available, a description and photos.</p>
+                    <p>If you have a station on the map, and want to update its details, simply upload the details to <a href="https://www.mcverse.city/warps" target="_blank" rel="noopener noreferrer">mcverse.city/warps</a>. I occasionally check in to update this. If you think I missed your changes, message me in game or on Discord and I'll do my best to get to it.</p>
+                </div>
+            </details>
+        </div>
 
-Finally, to the right you can find the map legend. It can be opened and closed by clicking on the tab. It displays the markers found on the map, as well as the names for each of the transit lines.
-
-While that is all that you will normally see, you can find out even more information by simply clicking on a station. This will open a window displaying the exact coordinates of the station, and, if available, a description and photos.
-
-If you have a station on the map, and want to update its details, simply upload the details to <a href="https://www.mcverse.city/warps" target="_blank" rel="noopener noreferrer">mcverse.city/warps</a>. I occasionally check in to update this. If you think I missed your changes, message me in game or on Discord and I'll do my best to get to it.
-
-If you have any questions, suggestions, or concerns, feel free to send me a message.`;
+        <p style="margin: -10px 0 -10px 0; font-size: 0.85rem;">If you have any questions, suggestions, or concerns, feel free to send me a message in game or on Discord.</p>
+    `;
 
     modalDescription.classList.add("formatted-text");
-    modalDescription.innerHTML = formatHelpText(helpText);
+    modalDescription.innerHTML = helpHTML; // Assign directly without formatHelpText()
 
-    //hide unneeded parts of modal
+    // hide unneeded parts of modal
     document.getElementById("modal-meta").hidden = true;
     document.getElementById("modal-divider").hidden = true;
-    
+
     const photoWrap = document.getElementById("modal-photos-wrap");
     if (photoWrap) photoWrap.hidden = true;
 
@@ -880,12 +904,4 @@ If you have any questions, suggestions, or concerns, feel free to send me a mess
     }
 
     stationModal.hidden = false;
-}
-
-function formatHelpText(text) {
-    return text
-        .trim()
-        .split(/\n\s*\n/) // Split into separate paragraphs on empty lines
-        .map((paragraph) => `<p>${paragraph.replaceAll("\n", "<br>")}</p>`)
-        .join("");
 }

@@ -37,7 +37,7 @@
   },
   {
     "start": "Intersection C",
-    "end": "Intersection D",
+    "end": "Intersection T",
     "color": "#df8600"
   },
   {
@@ -66,7 +66,17 @@
     "color": "#df8600"
   },
   {
+    "start": "Intersection D",
+    "end": "Intersection T",
+    "color": "#df8600"
+  },
+  {
     "start": "Intersection W",
+    "end": "Intersection X",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection X",
     "end": "Intersection E",
     "color": "#df8600"
   },
@@ -106,8 +116,33 @@
     "color": "#67BED9"
   },
   {
+    "start": "Intersection U",
+    "end": "Intersection V",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection U",
+    "end": "Intersection α",
+    "color": "#67BED9",
+    "via": [
+      {
+        "x": -2877,
+        "z": 803
+      },
+      {
+        "x": -3166,
+        "z": 803
+      }
+    ]
+  },
+  {
     "start": "Intersection G",
-    "end": "Intersection I",
+    "end": "Intersection P",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection η",
+    "end": "Intersection P",
     "color": "#B3321E"
   },
   {
@@ -117,25 +152,37 @@
   },
   {
     "start": "NamiLuxe",
-    "end": "NamiLuxe",
+    "end": "Intersection κ",
+    "color": "#FFAEC9"
+  },
+  {
+    "start": "The Sanctum",
+    "end": "Intersection κ",
+    "color": "#df8600",
+    "via": [
+      {
+        "x": 1818,
+        "z": -1154
+      },
+      {
+        "x": 1736,
+        "z": -1154
+      }
+    ]},
+  {
+    "start": "Intersection κ",
+    "end": "The Sanctum",
     "color": "#df8600",
     "via": [
       {
         "x": 1736,
-        "z": -1154
-      },
-      {
-        "x": 1818,
-        "z": -1154
-      },
-      {
-        "x": 1818,
         "z": -1126
       },
       {
-        "x": 1736,
+        "x": 1818,
         "z": -1126
       }
+      
     ]
   },
   {
@@ -144,7 +191,7 @@
     "color": "#FFAEC9"
   },
   {
-    "start": "TeaTree",
+    "start": "Intersection Q",
     "end": "Intersection L",
     "color": "#67BED9"
   },
@@ -184,6 +231,21 @@
     "color": "#B3321E"
   },
   {
+    "start": "Intersection I",
+    "end": "Intersection Q",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection I",
+    "end": "Intersection η",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection I",
+    "end": "TeaTree",
+    "color": "#67BED9"
+  },
+  {
     "start": "Intersection K",
     "end": "IceTown",
     "color": "#B3321E"
@@ -206,7 +268,7 @@
   },
   {
     "start": "Intersection N",
-    "end": "E5",
+    "end": "Intersection β",
     "color": "#B3321E"
   },
   {
@@ -217,6 +279,16 @@
   {
     "start": "Intersection Z",
     "end": "KingsMere",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection Z",
+    "end": "Raven's Eyrie",
+    "color": "#B3321E"
+  },
+  {
+    "start": "E5",
+    "end": "Raven's Eyrie",
     "color": "#B3321E"
   },
   {
@@ -231,18 +303,8 @@
   },
   {
     "start": "Intersection O",
-    "end": "Intersection Y",
-    "color": "#67BED9",
-    "via": [
-      {
-        "x": -2887,
-        "z": 803
-      },
-      {
-        "x": -3166,
-        "z": 803
-      }
-    ]
+    "end": "Intersection V",
+    "color": "#67BED9"
   },
   {
     "start": "Intersection P",
@@ -308,6 +370,21 @@
     "color": "#df8600"
   },
   {
+    "start": "Intersection Y",
+    "end": "Intersection Z",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection Y",
+    "end": "Intersection α",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection Y",
+    "end": "Intersection β",
+    "color": "#B3321E"
+  },
+  {
     "start": "Intersection X",
     "end": ".Elmsvuur32",
     "color": "#df8600"
@@ -319,7 +396,7 @@
   },
   {
     "start": "Intersection α",
-    "end": "Intersection ß",
+    "end": "Intersection β",
     "color": "#B3321E",
     "via": [
       {
@@ -351,7 +428,7 @@
   },
   {
     "start": "Intersection δ",
-    "end": "E3",
+    "end": "Intersection ζ",
     "color": "#FFAEC9"
   },
   {
@@ -372,8 +449,13 @@
   },
   {
     "start": "Intersection ζ",
-    "end": "E6",
+    "end": "Intersection θ",
     "color": "#899499"
+  },
+  {
+    "start": "Intersection ζ",
+    "end": "Intersection ι",
+    "color": "#FFAEC9"
   },
   {
     "start": "Intersection η",
@@ -386,8 +468,18 @@
     "color": "#899499"
   },
   {
+    "start": "Intersection θ",
+    "end": "E6",
+    "color": "#899499"
+  },
+  {
     "start": "Intersection ι",
     "end": "Lunar Grove",
+    "color": "#FFAEC9"
+  },
+  {
+    "start": "Intersection ι",
+    "end": "E3",
     "color": "#FFAEC9"
   },
   {

@@ -67,6 +67,11 @@
   },
   {
     "start": "Intersection W",
+    "end": "Intersection X",
+    "color": "#df8600"
+  },
+  {
+    "start": "Intersection X",
     "end": "Intersection E",
     "color": "#df8600"
   },

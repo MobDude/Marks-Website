@@ -12,7 +12,7 @@ import argparse
 import time
 from datetime import datetime, timezone, timedelta
 
-from backend.music_stats.database import get_connection, init_db
+from database import get_connection, init_db
 
 
 PERIODS = ("all_time", "this_year", "this_month", "this_week")

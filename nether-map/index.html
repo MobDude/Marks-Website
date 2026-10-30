@@ -1,104 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCVerse Highway 61 Map</title>
-  <link rel="icon" href="I61-clean.png?v=1.2.1">
-  <link rel="stylesheet" href="style.css?v=1.2.1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCVerse Highway 61 Map</title>
+    <link rel="icon" href="I61-clean.png?v=1.3.0">
+    <link rel="stylesheet" href="style.css?v=1.3.0">
 </head>
 <body>
-  <main class="map-shell">
+<main class="map-shell">
     <header class="top-bar">
-      <div>
-        <h1>Nether Ice Highway Map</h1>
-        <p>A map of MCVerse's Nether Ice Highway System at Y=61.<br>Updated: Sept. 15, 2026</p>
-      </div>
-      <div class="controls" aria-label="Map controls">
-        <button type="button" id="help" title="Help" aria-label="Help">?</button>
-        <button type="button" id="zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
-        <button type="button" id="zoom-out" title="Zoom out" aria-label="Zoom out">-</button>
-        <button type="button" id="reset-view">Reset</button>
-        <label class="grid-toggle">
-          <input type="checkbox" id="grid-toggle" checked>
-          Grid
-        </label>
-      </div>
+        <div>
+            <h1>Nether Ice Highway Map</h1>
+            <p>A map of MCVerse's Nether Ice Highway System at Y=61.<br>Updated: Oct. 30, 2026</p>
+        </div>
+        <div class="controls" aria-label="Map controls">
+            <button type="button" id="help" title="Help" aria-label="Help">?</button>
+            <button type="button" id="zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
+            <button type="button" id="zoom-out" title="Zoom out" aria-label="Zoom out">-</button>
+            <button type="button" id="reset-view">Reset</button>
+            <label class="grid-toggle">
+                <input type="checkbox" id="grid-toggle" checked>
+                Grid
+            </label>
+        </div>
     </header>
 
     <section class="map-wrap" aria-label="Interactive Nether map">
-      <svg id="map" role="img" aria-labelledby="map-title map-desc">
-        <title id="map-title">MCVerse Highway 61 Map</title>
-        <desc id="map-desc">A transit map of MCVerse Highway 61 using Minecraft Nether X/Z coordinates.</desc>
-        <defs>
-          <filter id="station-shadow" x="-40%" y="-40%" width="180%" height="180%">
-            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.18"></feDropShadow>
-          </filter>
-        </defs>
-        <g id="viewport">
-          <!-- Drawing order matters: grid and boundary sit below routes, stations, and labels. -->
-          <g id="grid-layer"></g>
-          <g id="boundary-layer"></g>
-          <g id="route-layer"></g>
-          <g id="station-layer"></g>
-          <g id="label-layer"></g>
-        </g>
-      </svg>
+        <svg id="map" role="img" aria-labelledby="map-title map-desc">
+            <title id="map-title">MCVerse Highway 61 Map</title>
+            <desc id="map-desc">A transit map of MCVerse Highway 61 using Minecraft Nether X/Z coordinates.</desc>
+            <defs>
+                <filter id="station-shadow" x="-40%" y="-40%" width="180%" height="180%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.18"></feDropShadow>
+                </filter>
+            </defs>
+            <g id="viewport">
+                <!-- Drawing order matters: grid and boundary sit below routes, stations, and labels. -->
+                <g id="grid-layer"></g>
+                <g id="boundary-layer"></g>
+                <g id="route-layer"></g>
+                <g id="station-layer"></g>
+                <g id="label-layer"></g>
+            </g>
+        </svg>
 
-      <aside id="line-legend" class="line-legend" aria-label="Route Legend">
-        <button
-          type="button"
-          id="legend-toggle-tab"
-          class="legend-tab"
-          aria-label="Toggle Legend"
-          aria-controls="legend-list"
-          aria-expanded="true"
-        >
-          <span>Legend</span>
-        </button>
+        <aside id="line-legend" class="line-legend" aria-label="Route Legend">
+            <button
+                    type="button"
+                    id="legend-toggle-tab"
+                    class="legend-tab"
+                    aria-label="Toggle Legend"
+                    aria-controls="legend-list"
+                    aria-expanded="true"
+            >
+                <span>Legend</span>
+            </button>
 
-        <h3>Transit Lines</h3>
-        <ul id="legend-list"></ul>
-      </aside>
-      
-      <div id="scale-legend" class="scale-legend" aria-live="polite">
-        <div class="scale-line" id="scale-line"></div>
-        <strong id="scale-distance">100 Nether blocks</strong>
-        <span id="grid-size">Grid: 100 x 100 Nether blocks</span>
-        <span id="overworld-scale">Overworld: 800 blocks</span>
-      </div>
+            <h3>Transit Lines</h3>
+            <ul id="legend-list"></ul>
+        </aside>
 
-      <div id="tooltip" class="tooltip" hidden></div>
-
-      <div id="station-modal" class="modal-overlay" hidden>
-        <div class="modal-window">
-          <div class="modal-drag-handle"></div>
-          <button type="button" id="modal-close" class="modal-close-btn" aria-label="Close details">&times;</button>
-          <div class="modal-content">
-            <h2 id="modal-title">Station Name</h2>
-            <div class="modal-meta" id="modal-meta">
-              <div class="meta-block">
-                <strong>Nether Coordinates</strong>
-                <span id="modal-nether">X 0, Z 0</span>
-              </div>
-              <div class="meta-block">
-                <strong>Overworld Coordinates</strong>
-                <span id="modal-overworld">X 0, Z 0</span>
-              </div>
-            </div>
-            <hr class="modal-divider" id="modal-divider" />
-            <p id="modal-description"></p>
-
-            <div class="modal-photos-placeholder" id="modal-photos-placeholder">
-              <span>[ Photos section coming soon ]</span>
-            </div>
-          </div>
+        <div id="scale-legend" class="scale-legend" aria-live="polite">
+            <div class="scale-line" id="scale-line"></div>
+            <strong id="scale-distance">100 Nether blocks</strong>
+            <span id="grid-size">Grid: 100 x 100 Nether blocks</span>
+            <span id="overworld-scale">Overworld: 800 blocks</span>
         </div>
-      </div>
+
+        <div id="tooltip" class="tooltip" hidden></div>
+
+        <div id="station-modal" class="modal-overlay" hidden>
+            <div class="modal-window">
+                <div class="modal-drag-handle"></div>
+                <button type="button" id="modal-close" class="modal-close-btn" aria-label="Close details">&times;
+                </button>
+                <div class="modal-content">
+                    <h2 id="modal-title">Station Name</h2>
+                    <div class="modal-meta" id="modal-meta">
+                        <div class="meta-block">
+                            <strong>Nether Coordinates</strong>
+                            <span id="modal-nether">X 0, Z 0</span>
+                        </div>
+                        <div class="meta-block">
+                            <strong>Overworld Coordinates</strong>
+                            <span id="modal-overworld">X 0, Z 0</span>
+                        </div>
+                    </div>
+                    <hr class="modal-divider" id="modal-divider"/>
+                    <p id="modal-description"></p>
+
+                    <div class="modal-photos-container" id="modal-photos-wrap" hidden>
+                        <img id="modal-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Station Preview">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
-  
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script src="script.js?v=1.2.1"></script>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="script.js?v=1.3.0"></script>
 </body>
 </html>

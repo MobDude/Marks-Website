@@ -139,7 +139,7 @@
     ]
   },
   {
-    "start": "E3",
+    "start": "Intersection γ",
     "end": "ITZA",
     "color": "#FFAEC9"
   },
@@ -201,7 +201,7 @@
   },
   {
     "start": "Intersection H",
-    "end": "E3",
+    "end": "Intersection γ",
     "color": "#FFAEC9"
   },
   {
@@ -215,7 +215,7 @@
     "color": "#B3321E"
   },
   {
-    "start": "E5",
+    "start": "Intersection Z",
     "end": "KingsMere",
     "color": "#B3321E"
   },
@@ -231,7 +231,7 @@
   },
   {
     "start": "Intersection O",
-    "end": "E6",
+    "end": "Intersection Y",
     "color": "#67BED9",
     "via": [
       {
@@ -311,5 +311,88 @@
     "start": "Intersection X",
     "end": ".Elmsvuur32",
     "color": "#df8600"
+  },
+  {
+    "start": "Frostmere",
+    "end": "Abandoned",
+    "color": "#67BED9"
+  },
+  {
+    "start": "Intersection α",
+    "end": "Intersection ß",
+    "color": "#B3321E",
+    "via": [
+      {
+        "x": -2966,
+        "z": 1244
+      }
+    ]
+  },
+  {
+    "start": "KingsMere",
+    "end": "Intersection α",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection γ",
+    "end": "Intersection ε",
+    "color": "#FFAEC9",
+    "via": [
+      {
+        "x": 2744,
+        "z": 2494
+      }
+    ]
+  },
+  {
+    "start": "Intersection ε",
+    "end": "Intersection δ",
+    "color": "#FFAEC9"
+  },
+  {
+    "start": "Intersection δ",
+    "end": "E3",
+    "color": "#FFAEC9"
+  },
+  {
+    "start": "Intersection δ",
+    "end": "ArkMarket",
+    "color": "#FFAEC9"
+  },
+  {
+    "start": "Intersection ε",
+    "end": "TerraNovia",
+    "color": "#FFAEC9",
+    "via": [
+      {
+        "x": 2744,
+        "z": 1289
+      }
+    ]
+  },
+  {
+    "start": "Intersection ζ",
+    "end": "E6",
+    "color": "#899499"
+  },
+  {
+    "start": "Intersection η",
+    "end": "Bladess",
+    "color": "#B3321E"
+  },
+  {
+    "start": "Intersection θ",
+    "end": "E8",
+    "color": "#899499"
+  },
+  {
+    "start": "Intersection ι",
+    "end": "Lunar Grove",
+    "color": "#FFAEC9"
+  },
+  {
+    "start": "E3",
+    "end": "Cailleach",
+    "color": "#FFAEC9"
   }
 ]

@@ -544,12 +544,13 @@ function moveTooltip(event) {
 }
 
 function openStationModal(station) {
-
-    //reapply hidden parts
+    // Reapply hidden parts
     modalDescription.classList.remove("formatted-text");
     document.getElementById("modal-meta").hidden = false;
     document.getElementById("modal-divider").hidden = false;
-    document.getElementById("modal-photos-placeholder").hidden = false;
+
+    const photoWrap = document.getElementById("modal-photos-wrap");
+    const modalImg = document.getElementById("modal-img"); // Make sure your <img> has this id inside the container
 
     const overworldX = station.x * NETHER_TO_OVERWORLD_SCALE;
     const overworldZ = station.z * NETHER_TO_OVERWORLD_SCALE;
@@ -562,6 +563,15 @@ function openStationModal(station) {
         modalDescription.innerHTML = formatStationDescription(station.description);
     } else {
         modalDescription.textContent = "No description provided.";
+    }
+
+    // --- Image Handling ---
+    if (station.image && modalImg) {
+        modalImg.src = station.image;
+        photoWrap.hidden = false;
+    } else {
+        if (modalImg) modalImg.src = "";
+        photoWrap.hidden = true;
     }
 
     if (modalWindow) {
@@ -861,7 +871,9 @@ If you have any questions, suggestions, or concerns, feel free to send me a mess
     //hide unneeded parts of modal
     document.getElementById("modal-meta").hidden = true;
     document.getElementById("modal-divider").hidden = true;
-    document.getElementById("modal-photos-placeholder").hidden = true;
+    
+    const photoWrap = document.getElementById("modal-photos-wrap");
+    if (photoWrap) photoWrap.hidden = true;
 
     if (modalWindow) {
         modalWindow.style.transform = "";

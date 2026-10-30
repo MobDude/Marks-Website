@@ -3,6 +3,7 @@
    ========================================== */
 
 let routeGraph = new Map();
+let nodeCoordsMap = new Map(); // Maps node keys to { x, z } coordinates
 
 // Initialize the GPS module once stations are loaded
 function initGPS(stationsList, routesList) {
@@ -14,16 +15,23 @@ function initGPS(stationsList, routesList) {
 // Build adjacency graph with geometric fallback for intermediate stations
 function buildGraph(stationsList, routesList) {
     routeGraph.clear();
+    nodeCoordsMap.clear();
 
     const stationByName = new Map(stationsList.map(s => [s.name, s]));
 
-    function addEdge(u, v, weight) {
+    function addEdge(u, v, weight, p1, p2) {
         if (!routeGraph.has(u)) routeGraph.set(u, new Map());
         if (!routeGraph.has(v)) routeGraph.set(v, new Map());
         if (!routeGraph.get(u).has(v) || routeGraph.get(u).get(v) > weight) {
             routeGraph.get(u).set(v, weight);
             routeGraph.get(v).set(u, weight);
         }
+
+        // Store coordinates for map rendering lookup
+        const uKey = p1.name || `coord_${p1.x}_${p1.z}`;
+        const vKey = p2.name || `coord_${p2.x}_${p2.z}`;
+        nodeCoordsMap.set(uKey, { x: p1.x, z: p1.z });
+        nodeCoordsMap.set(vKey, { x: p2.x, z: p2.z });
     }
 
     routesList.forEach(route => {
@@ -50,7 +58,7 @@ function buildGraph(stationsList, routesList) {
 
             const u = p1.name || `coord_${p1.x}_${p1.z}`;
             const v = p2.name || `coord_${p2.x}_${p2.z}`;
-            addEdge(u, v, dist);
+            addEdge(u, v, dist, p1, p2);
         }
     });
 }
@@ -69,7 +77,6 @@ function findShortestPath(startName, endName) {
     distances.set(startName, 0);
 
     while (unvisited.size > 0) {
-        // Find unvisited node with smallest distance
         let current = null;
         let shortestDist = Infinity;
         unvisited.forEach(node => {
@@ -81,7 +88,7 @@ function findShortestPath(startName, endName) {
         });
 
         if (current === null || shortestDist === Infinity) break;
-        if (current === endName) break; // Reached destination
+        if (current === endName) break;
 
         unvisited.delete(current);
 
@@ -107,8 +114,54 @@ function findShortestPath(startName, endName) {
         curr = previous.get(curr);
     }
 
-    if (path.length === 1 && path[0] !== startName) return null; // No path found
+    if (path.length === 1 && path[0] !== startName) return null;
     return { path, totalDistance: distances.get(endName) };
+}
+
+function renderGpsRoute(path) {
+    let layer = document.getElementById("gps-route-layer");
+    if (!layer) {
+        const viewport = document.getElementById("viewport");
+        if (viewport) {
+            layer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            layer.id = "gps-route-layer";
+            viewport.appendChild(layer);
+        }
+    }
+    if (!layer) return;
+    layer.innerHTML = "";
+
+    if (!path || path.length < 2) return;
+
+    const points = path.map(nodeName => {
+        const coords = nodeCoordsMap.get(nodeName);
+        return coords ? `${coords.x},${coords.z}` : null;
+    }).filter(Boolean).join(" ");
+
+    if (!points) return;
+
+    // 1. Dark outline layer for contrast
+    const outline = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+    outline.setAttribute("points", points);
+    outline.setAttribute("class", "gps-route-outline");
+    layer.appendChild(outline);
+
+    // 2. Vibrant neon yellow inner line
+    const polyline = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+    polyline.setAttribute("points", points);
+    polyline.setAttribute("class", "gps-highlight-line");
+    layer.appendChild(polyline);
+
+    // 3. Animated dashed flow layer for direction
+    const flowLine = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+    flowLine.setAttribute("points", points);
+    flowLine.setAttribute("class", "gps-route-flow");
+    layer.appendChild(flowLine);
+}
+
+function clearGpsRoute() {
+    const layer = document.getElementById("gps-route-layer");
+    if (layer) layer.innerHTML = "";
 }
 
 // Populate UI Dropdowns
@@ -120,7 +173,6 @@ function populateRouteDropdowns(stationsList) {
     const sortedStations = [...stationsList].sort((a, b) => a.name.localeCompare(b.name));
 
     sortedStations.forEach(station => {
-        // Skip pure internal coordinate nodes if any
         if (station.name.startsWith("Intersection")) return;
 
         fromSelect.add(new Option(station.name, station.name));
@@ -139,14 +191,19 @@ function bindGPSControls() {
 
         if (!fromVal || !toVal || fromVal === toVal) {
             resultContainer.innerHTML = "<span style='color: #d32f2f;'>Please select two different stations.</span>";
+            clearGpsRoute();
             return;
         }
 
         const result = findShortestPath(fromVal, toVal);
         if (!result) {
             resultContainer.innerHTML = "<span>No route found between these stations.</span>";
+            clearGpsRoute();
             return;
         }
+
+        // Render the highlighted path on the map
+        renderGpsRoute(result.path);
 
         const distanceBlocks = Math.round(result.totalDistance);
         const overworldBlocks = distanceBlocks * 8;

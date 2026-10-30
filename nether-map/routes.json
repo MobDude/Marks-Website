@@ -233,7 +233,7 @@
   {
     "start": "Intersection I",
     "end": "Intersection Q",
-    "color": "#B3321E"
+    "color": "#67BED9"
   },
   {
     "start": "Intersection I",
@@ -243,7 +243,7 @@
   {
     "start": "Intersection I",
     "end": "TeaTree",
-    "color": "#B3321E"
+    "color": "#67BED9"
   },
   {
     "start": "Intersection K",
@@ -372,17 +372,17 @@
   {
     "start": "Intersection Y",
     "end": "Intersection Z",
-    "color": "#df8600"
+    "color": "#B3321E"
   },
   {
     "start": "Intersection Y",
     "end": "Intersection α",
-    "color": "#df8600"
+    "color": "#67BED9"
   },
   {
     "start": "Intersection Y",
     "end": "Intersection β",
-    "color": "#df8600"
+    "color": "#B3321E"
   },
   {
     "start": "Intersection X",
@@ -455,7 +455,7 @@
   {
     "start": "Intersection ζ",
     "end": "Intersection ι",
-    "color": "#899499"
+    "color": "#FFAEC9"
   },
   {
     "start": "Intersection η",

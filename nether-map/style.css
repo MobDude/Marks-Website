@@ -925,7 +925,7 @@ html.export-legend .legend-divider {
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%) translateX(-270px); /* Hidden by default, leaving just the tab */
+    transform: translateY(-50%) translateX(-270px);
     width: 270px;
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid #111;
@@ -934,11 +934,23 @@ html.export-legend .legend-divider {
     z-index: 10;
     box-sizing: border-box;
     transition: transform 0.3s ease;
+
+    /* Constrain panel to screen height with internal scrolling if needed */
+    max-height: calc(100dvh - 32px);
+    display: flex;
+    flex-direction: column;
 }
 
 /* When open, slide it fully into view */
 #gps-panel.open {
     transform: translateY(-50%) translateX(0);
+}
+
+/* Make the inner content area scrollable if the viewport is short */
+#gps-panel .legend-content {
+    overflow-y: auto;
+    max-height: calc(100dvh - 60px);
+    padding-right: 2px; /* Prevent scrollbar overlap */
 }
 
 /* The vertical protruding tab */
@@ -962,10 +974,59 @@ html.export-legend .legend-divider {
 #gps-results {
     font-size: 0.82rem;
     margin-top: 6px;
+    padding-left: 6px;
     border-top: 1px solid #ccc;
     padding-top: 6px;
     max-height: 200px; /* Limits the height so it won't overflow the panel */
     overflow-y: auto;  /* Adds a clean scrollbar when steps get long */
+}
+/* Outer dark border for depth and contrast */
+.gps-route-outline {
+    fill: none;
+    stroke: #111;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 35; /* Slightly wider than the inner line */
+    opacity: 0.9;
+}
+
+/* Vibrant animated inner route line */
+.gps-highlight-line {
+    fill: none;
+    stroke: #FBF719;
+    stroke-width: 30;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: gpsPulse 1.5s infinite alternate;
+}
+
+@keyframes gpsPulse {
+    0% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 2px rgba(251, 247, 25, 0.4));
+    }
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px rgba(251, 247, 25, 0.9));
+    }
+}
+/* Animated dashed center line to indicate travel direction */
+.gps-route-flow {
+    fill: none;
+    stroke: #111; /* Dark dashes for high contrast against the yellow */
+    stroke-width: 14;
+    stroke-dasharray: 30 50; /* Dash length and gap */
+    stroke-linecap: round;
+    animation: gpsFlow 1.2s linear infinite;
+}
+
+@keyframes gpsFlow {
+    from {
+        stroke-dashoffset: 80; /* Matches sum of dasharray (30 + 50) for seamless looping */
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 /* Container for accordion items to control gap without negative margins */
 .help-accordion-group {
